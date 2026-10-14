@@ -1235,18 +1235,16 @@ body{background:var(--tile-a);color:var(--body)}
 .ugc-fan .ugc-tile:hover .ugc-media img{transform:none}
 .ugc-fan .ugc-tile figcaption{opacity:0;transition:opacity .4s ease}
 .ugc-fan .ugc-tile.is-center{cursor:default}
+.ugc-fan{cursor:grab;user-select:none;-webkit-user-select:none}
+.ugc-fan:active{cursor:grabbing}
+.ugc-fan img{-webkit-user-drag:none}
 .ugc-fan .ugc-tile.is-center figcaption{opacity:1}
 .ugc-fan:focus-visible .ugc-tile.is-center .ugc-media{outline:2px solid var(--fg);outline-offset:4px}
-.ugc-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:20px}
-.ugc-arrow{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--fg);background:var(--tint);
-  border:1px solid var(--hair-strong);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transition:border-color .3s,background-color .3s,transform .2s}
-.ugc-arrow:hover{border-color:var(--fg)}
-.ugc-arrow:active{transform:scale(.95)}
-.ugc-arrow:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
-.ugc-dots{display:flex;gap:8px}
-.ugc-dots i{width:6px;height:6px;border-radius:50%;background:var(--hair-strong);transition:background-color .3s,transform .3s}
-.ugc-dots i.on{background:var(--fg);transform:scale(1.3)}
-.ugc-note{text-align:center}
+@media (min-width:900px){
+  /* Desktop: 4:5 posts, and the outer cards reach the left and right edges of the screen */
+  .ugc-fan{--cw:clamp(320px,30vw,460px);height:calc(var(--cw) * 5 / 4 + 52px)}
+  .ugc-fan .ugc-media{aspect-ratio:4/5}
+}
 </style>
 </head>
 <body>
@@ -1675,7 +1673,7 @@ body{background:var(--tile-a);color:var(--body)}
         <h2 id="ugcTitle" data-reveal>Worn by you</h2>
         <p data-reveal>Tag XPresence on Instagram and your post could appear here.</p>
       </div>
-      <div class="ugc-fan" id="ugcFan" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Customer posts. Use the arrow keys to browse.">
+      <div class="ugc-fan" id="ugcFan" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Customer posts. Tap a side post, swipe or use the arrow keys to browse.">
       <div class="ugc-row">
         <figure class="ugc-tile"><div class="ugc-media"><img src="assets/him-spray.webp" alt="Spraying Power before heading out" loading="lazy" style="object-position:40% 40%"></div><figcaption><span class="cap">@handle</span><a href="#power" class="text-link">Wearing Power</a></figcaption></figure>
         <figure class="ugc-tile"><div class="ugc-media"><img src="assets/her-lobby.webp" alt="Holding Focus in a hotel lobby" loading="lazy" style="object-position:42% 30%"></div><figcaption><span class="cap">@handle</span><a href="#focus" class="text-link">Wearing Focus</a></figcaption></figure>
@@ -1685,12 +1683,6 @@ body{background:var(--tile-a);color:var(--body)}
         <figure class="ugc-tile"><div class="ugc-media"><img src="assets/together-rome.webp" alt="Two people in Rome with Focus" loading="lazy" style="object-position:50% 40%"></div><figcaption><span class="cap">@handle</span><a href="#focus" class="text-link">Wearing Focus</a></figcaption></figure>
       </div>
       </div>
-      <div class="ugc-ctrl">
-        <button class="ugc-arrow" id="ugcPrev" aria-label="Previous post"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <div class="ugc-dots" id="ugcDots" aria-hidden="true"></div>
-        <button class="ugc-arrow" id="ugcNext" aria-label="Next post"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
-      </div>
-      <p class="cap ugc-note">Sample tiles for layout. Customer posts replace these at launch.</p>
     </div>
   </section>
 
@@ -2208,14 +2200,12 @@ body{background:var(--tile-a);color:var(--body)}
     track.appendChild(copy);
   })();
 
-  /* UGC: straight card fan. Five posts show at once; arrows, dots, swipe, keys or a tap on a side card bring it forward. */
+  /* UGC: straight card fan. Five posts show at once; swipe, arrow keys or a tap on a side card bring it forward.
+     On desktop the outer cards sit flush with the screen edges, so the fan spans the full width. */
   (function ugcFan() {
     const fan = document.getElementById('ugcFan');
     if (!fan) return;
     const cards = [...fan.querySelectorAll('.ugc-tile')], n = cards.length;
-    const dotsEl = document.getElementById('ugcDots');
-    dotsEl.innerHTML = cards.map(() => '<i></i>').join('');
-    const dots = [...dotsEl.children];
     // Looks by distance from the centre: front, one step back, two steps back. Straight, so no rotation.
     const LOOK = [{ s: 1, y: 0, b: 1 }, { s: 0.86, y: 0.05, b: 0.62 }, { s: 0.74, y: 0.11, b: 0.38 }];
     const prev = new Map();
@@ -2224,6 +2214,14 @@ body{background:var(--tile-a);color:var(--body)}
     const narrow = matchMedia('(max-width: 699px)');
     const step = () => cards[0].offsetWidth * (narrow.matches ? 0.5 : 0.62);
     const H = () => cards[0].querySelector('.ugc-media').offsetHeight;
+    // Horizontal position for a distance from the centre. Desktop: slot 2 lands flush with the screen edge.
+    const posX = d => {
+      const a = Math.abs(d), sg = Math.sign(d);
+      if (narrow.matches) return d * step();
+      const cw = cards[0].offsetWidth, half = document.documentElement.clientWidth / 2;
+      const x2 = half - LOOK[2].s * cw / 2, x1 = x2 * 0.52;
+      return sg * (a === 0 ? 0 : a === 1 ? x1 : a === 2 ? x2 : x2 + cw);
+    };
     function layout(dur, push) {
       const X = step(), h = H();
       cards.forEach((c, i) => {
@@ -2233,24 +2231,21 @@ body{background:var(--tile-a);color:var(--body)}
         c.querySelectorAll('a').forEach(l => { l.tabIndex = d === 0 ? 0 : -1; });
         if (a > 2) {
           const side = was !== undefined ? (Math.sign(was) || 1) : Math.sign(d);
-          gsap.to(c, { x: side * 3 * X, scale: 0.6, opacity: 0, zIndex: 0, duration: dur * 0.8, ease: 'power2.in', overwrite: 'auto' });
+          gsap.to(c, { x: posX(side * 3), scale: 0.6, opacity: 0, zIndex: 0, duration: dur * 0.8, ease: 'power2.in', overwrite: 'auto' });
         } else {
           const L = LOOK[a];
-          let x = d * X, y = L.y * h, sc = L.s;
+          let x = posX(d), y = L.y * h, sc = L.s;
           if (push !== null) {
             const pd = d - push;
             if (pd === 0) { y -= h * 0.03; sc *= 1.04; } else x += Math.sign(pd) * X * 0.18 / Math.abs(pd);
           }
-          if (was !== undefined && Math.abs(was) > 2) gsap.set(c, { x: Math.sign(d) * 3 * X, scale: 0.6, opacity: 0 });
+          if (was !== undefined && Math.abs(was) > 2) gsap.set(c, { x: posX(Math.sign(d) * 3), scale: 0.6, opacity: 0 });
           gsap.to(c, { x, y, scale: sc, opacity: 1, zIndex: 10 - a, filter: 'brightness(' + L.b + ')', duration: dur, ease: 'power3.out', overwrite: 'auto' });
         }
         prev.set(i, d);
       });
-      dots.forEach((dt, i) => dt.classList.toggle('on', i === center));
     }
     const go = i => { center = ((i % n) + n) % n; hovered = null; layout(reduce ? 0 : 0.6, null); };
-    document.getElementById('ugcPrev').addEventListener('click', () => go(center - 1));
-    document.getElementById('ugcNext').addEventListener('click', () => go(center + 1));
     fan.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft') { e.preventDefault(); go(center - 1); }
       if (e.key === 'ArrowRight') { e.preventDefault(); go(center + 1); }
@@ -2264,14 +2259,31 @@ body{background:var(--tile-a);color:var(--body)}
       });
     });
     fan.addEventListener('mouseleave', () => { if (hovered !== null && entered) { hovered = null; layout(0.5, null); } });
-    // Swipe on touch screens
-    let sx = null;
-    fan.addEventListener('pointerdown', e => { sx = e.clientX; });
-    fan.addEventListener('pointerup', e => {
-      if (sx === null) return;
-      const dx = e.clientX - sx; sx = null;
-      if (Math.abs(dx) > 40) go(center + (dx < 0 ? 1 : -1));
+    // Swipe on touch, drag with the mouse, or scroll sideways on a trackpad: one post per gesture.
+    let sx = null, dragged = false;
+    fan.addEventListener('pointerdown', e => { sx = e.clientX; dragged = false; });
+    fan.addEventListener('pointermove', e => {
+      if (sx === null || dragged) return;
+      const dx = e.clientX - sx;
+      if (Math.abs(dx) > 40) { dragged = true; sx = null; go(center + (dx < 0 ? 1 : -1)); }
     });
+    const endDrag = () => { sx = null; };
+    fan.addEventListener('pointerup', endDrag);
+    fan.addEventListener('pointerleave', endDrag);
+    fan.addEventListener('pointercancel', endDrag);
+    // A drag must not also count as a click on the card it ended over
+    fan.addEventListener('click', e => { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
+    fan.querySelectorAll('img').forEach(img => { img.draggable = false; });
+    let wheelAcc = 0, wheelLock = 0;
+    fan.addEventListener('wheel', e => {
+      // Only sideways scrolling moves the fan; vertical scrolling still scrolls the page.
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      const now = performance.now();
+      if (now < wheelLock) return;
+      wheelAcc += e.deltaX;
+      if (Math.abs(wheelAcc) > 30) { go(center + (wheelAcc > 0 ? 1 : -1)); wheelAcc = 0; wheelLock = now + 450; }
+    }, { passive: false });
     addEventListener('resize', () => layout(0, null));
     // Cards wait stacked at the centre, then fan out the first time the section comes into view.
     layout(0, null);
@@ -2283,7 +2295,7 @@ body{background:var(--tile-a);color:var(--body)}
         const d = dist(i), a = Math.abs(d);
         if (a > 2) return;
         const L = LOOK[a];
-        gsap.to(c, { x: d * X, y: L.y * h, scale: L.s, opacity: 1, zIndex: 10 - a, filter: 'brightness(' + L.b + ')',
+        gsap.to(c, { x: posX(d), y: L.y * h, scale: L.s, opacity: 1, zIndex: 10 - a, filter: 'brightness(' + L.b + ')',
           duration: 1.2, ease: 'elastic.out(1.05,.78)', delay: 0.15 + (d + 2) * 0.06 });
       });
       setTimeout(() => { entered = true; }, 1600);
