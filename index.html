@@ -1115,6 +1115,9 @@ body.menu-open .nav{--fg:#171615;--cream:#171615;--hair-strong:#c4beb5}
 .wt-phase{font-family:var(--text);font-size:.875rem;color:var(--muted)}
 .wt-step h3{margin-top:6px;font-size:clamp(1.5rem,2.6vw,2.4rem)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* A screen-reader-only span is absolutely positioned, so it needs a positioned ancestor inside any
+   scroller. Without one it escapes the horizontal collection carousel and widens the page on phones. */
+.col-card,.col-meta,.wt-phase{position:relative}
 @media (min-width:900px){
   .wt-stage{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;
     grid-template-areas:"media head" "media mid" "media buy";column-gap:6vw;row-gap:0;align-items:stretch;
