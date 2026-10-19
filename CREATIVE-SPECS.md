@@ -66,7 +66,7 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 ## 8. What's inside (notes panel, one per fragrance)
 | Slot | Now | Desktop | Phone | Export | Safe area |
 |---|---|---|---|---|---|
-| Focus / Warmth / Power notes image | `*-bottle.webp` | 641×800 (4:5) | 335×168 (2:1) | **1600×2000 (4:5)** plus a **1600×800 (2:1)** phone version (recommended) | Phones show only a thin centre band, so use a separate wide crop |
+| Focus / Warmth / Power notes image | desktop `*-bottle.webp`; phones `notes-*-phone.webp` (335×188, client creative) | about 641×620 (close to 1:1) | 335×188 (16:9) | Desktop **1600×2000 (4:5)**; phone **1005×564 (16:9, 3×)** for sharp retina | Bottle centred; phone crop shows the whole bottle |
 
 Ideal content: the 3D bottle with its own notes floating around it (the Pinterest reference in CREATIVE-BRIEF.md).
 

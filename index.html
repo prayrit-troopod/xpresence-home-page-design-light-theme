@@ -1627,6 +1627,12 @@ body{background:var(--tile-a);color:var(--body)}
   .np-pyramid dd{font-size:clamp(1.15rem,1.6vw,1.45rem)}
   .np-stats b{font-size:1.4rem}
 }
+/* Notes on phones: a dedicated 16:9 crop per fragrance with the whole bottle in frame */
+.np-media picture{display:contents}
+@media (max-width:899px){
+  .np-media{aspect-ratio:16/9}
+  .np-media #npImg{object-position:50% 50%}
+}
 </style>
 </head>
 <body>
@@ -1941,7 +1947,7 @@ body{background:var(--tile-a);color:var(--body)}
         <button class="notes-tab" role="tab" aria-selected="false" aria-controls="notesPanel" data-n="power" tabindex="-1">Power</button>
       </div>
       <div class="notes-panel theme-focus" id="notesPanel" role="tabpanel">
-        <div class="np-media"><img id="npImg" src="assets/focus-bottle.webp" alt="Focus, 30 ml Eau de Parfum" loading="lazy"></div>
+        <div class="np-media"><picture><source id="npSrc" media="(max-width:899px)" srcset="assets/notes-focus-phone.webp" width="335" height="188"><img id="npImg" src="assets/focus-bottle.webp" alt="Focus, 30 ml Eau de Parfum" loading="lazy"></picture></div>
         <div class="np-info">
           <p class="cap" id="npFamily">Fresh, citrus, aquatic</p>
           <h3 id="npName">Focus</h3>
@@ -2906,7 +2912,7 @@ body{background:var(--tile-a);color:var(--body)}
       panel.classList.remove('theme-focus', 'theme-power', 'theme-warmth');
       panel.classList.add('theme-' + k);
       const img = document.getElementById('npImg');
-      img.src = pr.img; img.alt = pr.name + ', 30 ml Eau de Parfum';
+      document.getElementById('npSrc').srcset = 'assets/notes-' + k + '-phone.webp'; img.src = pr.img; img.alt = pr.name + ', 30 ml Eau de Parfum';
       set('npFamily', n.family); set('npName', pr.name); set('npTop', n.top); set('npHeart', n.heart); set('npBase', n.base);
       armAdd(document.getElementById('npAdd'), k);
     }
