@@ -1552,6 +1552,18 @@ body{background:var(--tile-a);color:var(--body)}
 .wt-couple picture{display:block;width:100%;height:100%}
 .wt-couple img{object-position:50% 28%}
 @media (max-width:899px){ .wt-couple img{object-position:50% 38%} }
+/* Discovery motion: word mask for the heading, and a single light sweep over the box photo
+   (it replays softly on hover on desktop) */
+#dsTitle .dw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+#dsTitle .dw > span{display:inline-block}
+.ds-box{overflow:hidden}
+.ds-box::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,244,214,.38) 48%,rgba(255,255,255,.12) 54%,transparent 66%);
+  transform:translateX(-120%);opacity:0}
+.ds-box.is-lit::after{animation:ds-sweep 1.6s cubic-bezier(.6,0,.2,1) forwards}
+@media (hover:hover){ .ds-box:hover::after{animation:ds-sweep 1.4s cubic-bezier(.6,0,.2,1)} }
+@keyframes ds-sweep{0%{transform:translateX(-120%);opacity:1}100%{transform:translateX(120%);opacity:1}}
+@media (prefers-reduced-motion:reduce){ .ds-box::after{display:none} }
 </style>
 </head>
 <body>
@@ -2345,6 +2357,39 @@ body{background:var(--tile-a);color:var(--body)}
 
   /* DISCOVERY: the creative settles in as it scrolls past */
   if (!reduce) gsap.utils.toArray('.ds-figure img').forEach(img => gsap.fromTo(img, { scale: 1.08 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.ds-gallery', start: 'top bottom', end: 'bottom top', scrub: true } }));
+
+  /* DISCOVERY: an entrance in one breath. The heading rises word by word, the box photo opens upward,
+     a light sweep crosses the gold tray, the portable shot slides in, then badges and the button follow.
+     On phones the photo pair nudges sideways once to show it can be swiped. */
+  (function discoveryMotion() {
+    const sec = document.getElementById('discovery');
+    if (!sec || reduce) return;
+    const h = document.getElementById('dsTitle'), sub = h.nextElementSibling;
+    h.removeAttribute('data-reveal'); if (sub) sub.removeAttribute('data-reveal');
+    h.innerHTML = h.textContent.trim().split(/\s+/).map(w => '<span class="dw"><span>' + w + '</span></span>').join(' ');
+    const gal = sec.querySelector('.ds-gallery'), box = sec.querySelector('.ds-box'), carry = sec.querySelector('.ds-carry');
+    gsap.set([box, carry], { clipPath: 'inset(100% 0% 0% 0%)' });
+    gsap.set(carry, { xPercent: 12 });
+    gsap.set(sec.querySelectorAll('.ds-specs li, .ds-actions > *'), { y: 18, autoAlpha: 0 });
+    gsap.set(sub, { y: 14, autoAlpha: 0 });
+    const tl = gsap.timeline({ paused: true });
+    tl.from(h.querySelectorAll('.dw > span'), { yPercent: 110, duration: 0.9, stagger: 0.04, ease: 'expo.out' })
+      .to(sub, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'expo.out' }, '-=0.75')
+      .to(box, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.0, ease: 'expo.inOut', clearProps: 'clipPath' }, '-=0.6')
+      .add(() => box.classList.add('is-lit'), '-=0.35')
+      .to(carry, { clipPath: 'inset(0% 0% 0% 0%)', xPercent: 0, duration: 1.0, ease: 'expo.out', clearProps: 'clipPath,transform' }, '-=0.75')
+      .to(sec.querySelectorAll('.ds-specs li'), { y: 0, autoAlpha: 1, duration: 0.5, stagger: 0.05, ease: 'expo.out' }, '-=0.8')
+      .to(sec.querySelectorAll('.ds-actions > *'), { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.08, ease: 'expo.out' }, '-=0.45')
+      .add(() => {
+        // Swipe hint on phones: slide one card's width a little, then settle back
+        if (gal.scrollWidth <= gal.clientWidth + 4) return;
+        gal.style.scrollSnapType = 'none';
+        gsap.timeline({ onComplete: () => { gal.style.scrollSnapType = ''; } })
+          .to(gal, { scrollLeft: 70, duration: 0.7, ease: 'power2.inOut' })
+          .to(gal, { scrollLeft: 0, duration: 0.8, ease: 'power2.inOut' }, '+=0.25');
+      });
+    ScrollTrigger.create({ trigger: sec, start: 'top 72%', once: true, onEnter: () => tl.play() });
+  })();
 
   /* HOUSE: word-masked heading, tiles scale in from 0.8 */
   const ht = document.getElementById('houseTitle');
