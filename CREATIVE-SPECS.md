@@ -38,7 +38,7 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 ## 5. Warmth chapter (pinned evening timeline)
 | Slot | Now | Desktop | Phone | Export | Safe area |
 |---|---|---|---|---|---|
-| 21:00 First spray | Pinterest ⚠ (dinner table) | 612×796 (≈3:4) | 335×290 (≈7:6; 216 tall on short phones) | **1500×2000 (3:4)** | Subject in the **middle band**: phones crop to a wide strip. Keep the **bottom-left** quiet (big "21:00" clock overlay) |
+| 21:00 First spray | `warmth-campaign-couple.webp` (1122×1402) on desktop, `warmth-campaign-couple-mobile.webp` (1200×1000) on phones | 612×796 (≈3:4) | 335×290 (≈7:6; 216 tall on short phones) | **1500×2000 (3:4)** | Subject in the **middle band**: phones crop to a wide strip. Keep the **bottom-left** quiet (big "21:00" clock overlay) |
 | 22:30 The heart opens | Pinterest ⚠ (rose) | same | same | **1500×2000** | same |
 | 01:00 The base settles | Pinterest ⚠ (vanilla) | same | same | **1500×2000** | same |
 | 8+ hours On skin | `her-evening.webp` (1024×1536) | same | same | **1500×2000** | same; model wearing Warmth |
@@ -113,5 +113,5 @@ Used in the notes panels, finder thumbnails, quiz results, the sticky Add to bag
 | Campaign film, with sound | `film.mp4` (854×480) | 1098×617 (16:9) | 333×186 | **1920×1080 MP4 (16:9)**, 15–30 s, plus a muted-friendly cut |
 
 ## Totals
-- **Must replace (unlicensed Pinterest references):** 5 Focus note floats, 3 Warmth timeline images, 2 Warmth note thumbnails (leather, raspberry). The rose and vanilla thumbnails reuse the timeline images.
+- **Must replace (unlicensed Pinterest references):** 5 Focus note floats, 2 Warmth timeline images (22:30, 01:00), 2 Warmth note thumbnails (leather, raspberry). The rose and vanilla thumbnails reuse the timeline images.
 - **Unique new creatives for a full refresh:** about 45 stills and 4 videos (hero film, Power "arrival" panel, POWER text fill, campaign film).

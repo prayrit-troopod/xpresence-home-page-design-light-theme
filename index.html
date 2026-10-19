@@ -1548,6 +1548,10 @@ body{background:var(--tile-a);color:var(--body)}
   .focus-stage .focus-word{top:var(--fb-top,42%)}
   .focus-stage #focusInfo{top:var(--fi-top,auto);bottom:auto}
 }
+/* 21:00 slide: a landscape 6:5 file on phones, the portrait on desktop */
+.wt-couple picture{display:block;width:100%;height:100%}
+.wt-couple img{object-position:50% 28%}
+@media (max-width:899px){ .wt-couple img{object-position:50% 38%} }
 </style>
 </head>
 <body>
@@ -1724,7 +1728,7 @@ body{background:var(--tile-a);color:var(--body)}
     <!-- Warmth: pinned evening timeline. Pinterest images are third-party references (not licensed): replace before launch. See CREATIVE-BRIEF.md. -->
     <div class="wt-stage" id="wtStage">
       <div class="wt-media" aria-hidden="true">
-        <figure class="wt-layer is-on"><img src="https://i.pinimg.com/736x/4a/a5/af/4aa5afe8fe47210c62388b5ad6a81dba.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" style="object-position:50% 55%"></figure>
+        <figure class="wt-layer is-on wt-couple"><picture><source media="(max-width:899px)" srcset="assets/warmth-campaign-couple-mobile.webp" width="1200" height="1000"><img src="assets/warmth-campaign-couple.webp" width="1122" height="1402" alt="" loading="lazy"></picture></figure>
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
         <figure class="wt-layer"><img src="assets/her-evening.webp" alt="" loading="lazy" style="object-position:60% 30%"></figure>
