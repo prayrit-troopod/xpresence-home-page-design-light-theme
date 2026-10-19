@@ -1543,6 +1543,11 @@ body{background:var(--tile-a);color:var(--body)}
   .ds-carry img{position:absolute;inset:0;height:100%}
   .ds-carry .col-usp{left:16px;bottom:16px}
 }
+@media (max-width:899px){
+  .focus-stage .focus-bottle{width:var(--fb-w,min(64vw,calc(48svh * .8)));top:var(--fb-top,42%)}
+  .focus-stage .focus-word{top:var(--fb-top,42%)}
+  .focus-stage #focusInfo{top:var(--fi-top,auto);bottom:auto}
+}
 </style>
 </head>
 <body>
@@ -2121,6 +2126,29 @@ body{background:var(--tile-a);color:var(--body)}
     return '<span class="w' + (gold ? ' gold' : '') + '">' + w.replace('*', '') + '</span>';
   }).join(' ');
   gsap.to('#manifesto .w', { opacity: 1, stagger: 0.08, ease: 'none', scrollTrigger: { trigger: '.manifesto', start: 'top 75%', end: 'bottom 60%', scrub: true } });
+
+  /* FOCUS on phones: size the bottle to the space left after the product block, then centre bottle + block
+     as one group, so there is never an empty band between them on tall or short screens. */
+  (function focusFit() {
+    const stage = document.getElementById('focusStage'), bottle = stage && stage.querySelector('.focus-bottle'), info = document.getElementById('focusInfo');
+    if (!stage || !bottle || !info) return;
+    const mq = matchMedia('(max-width: 899px)');
+    const fit = () => {
+      if (!mq.matches) { stage.style.removeProperty('--fb-w'); stage.style.removeProperty('--fb-top'); stage.style.removeProperty('--fi-top'); return; }
+      const vh = stage.clientHeight, nav = (document.querySelector('.nav') || {}).offsetHeight || 56, gap = 24, pad = 16;
+      const infoH = info.offsetHeight;
+      const room = vh - nav - pad * 2 - gap - infoH;                    // height left for the bottle
+      const w = Math.max(140, Math.min(stage.clientWidth * 0.72, room * 0.8)); // bottle is 4:5
+      const h = w * 1.25, top = nav + pad + Math.max(0, (vh - nav - pad * 2 - (h + gap + infoH)) / 2);
+      stage.style.setProperty('--fb-w', w + 'px');
+      stage.style.setProperty('--fb-top', (top + h / 2) + 'px');
+      stage.style.setProperty('--fi-top', (top + h + gap) + 'px');
+    };
+    fit();
+    addEventListener('resize', fit);
+    ScrollTrigger.addEventListener('refreshInit', fit);
+    if (document.fonts) document.fonts.ready.then(fit);
+  })();
 
   /* FOCUS: bottle grows, creatives drift past (image scale and fade) */
   const fTl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '#focusStage', start: 'top top', end: () => '+=' + window.innerHeight * 2.2, pin: true, scrub: 0.8, anticipatePin: 1 } });
