@@ -1550,7 +1550,7 @@ body{background:var(--tile-a);color:var(--body)}
 }
 /* 21:00 slide: a landscape 6:5 file on phones, the portrait on desktop */
 .wt-couple picture{display:block;width:100%;height:100%}
-.wt-couple img{object-position:50% 28%}
+.wt-couple img{object-position:50% 40%}
 @media (max-width:899px){ .wt-couple img{object-position:50% 38%} }
 /* Discovery motion: word mask for the heading, and a single light sweep over the box photo
    (it replays softly on hover on desktop) */
@@ -1602,6 +1602,12 @@ body{background:var(--tile-a);color:var(--body)}
   .pb-p.pb-warmth img{max-width:none !important;width:145% !important;right:auto !important;left:0 !important;object-position:50% 77% !important}
   .pb-warmth a::after{background:linear-gradient(90deg,var(--wash) 0%,color-mix(in srgb,var(--wash) 80%,transparent) 34%,transparent 54%)}
   .pb-warmth .pb-cap{max-width:50%}
+}
+/* Problem triptych, Warmth panel on desktop: the office shot sits low in the photo, so the image is drawn taller
+   and anchored to the bottom, which lifts the bottle into the clear upper half above the line */
+@media (min-width:900px){
+  .pb-p.pb-warmth img{height:150% !important;top:auto !important;bottom:0 !important;object-position:47% 100% !important}
+  .pb-warmth a::after{background:linear-gradient(0deg,var(--wash) 0%,color-mix(in srgb,var(--wash) 85%,transparent) 22%,transparent 45%)}
 }
 </style>
 </head>
@@ -1668,7 +1674,7 @@ body{background:var(--tile-a);color:var(--body)}
           <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You refuse to dilute who you are.</span><span class="pb-name">Focus</span></span>
         </a></li>
         <li class="pb-p pb-warmth"><a href="#warmth">
-          <picture><source media="(max-width:899px)" srcset="assets/problem-warmth-mobile.webp" width="1030" height="1527"><img src="assets/warmth-pack.webp" alt="Warmth on an office desk" loading="lazy" style="object-position:40% 60%"></picture>
+          <img src="assets/problem-warmth-mobile.webp" width="1030" height="1527" alt="Warmth on an office desk" loading="lazy">
           <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You make people feel at home.</span><span class="pb-name">Warmth</span></span>
         </a></li>
         <li class="pb-p pb-power"><a href="#power">
@@ -1783,7 +1789,7 @@ body{background:var(--tile-a);color:var(--body)}
     <!-- Warmth: pinned evening timeline. Pinterest images are third-party references (not licensed): replace before launch. See CREATIVE-BRIEF.md. -->
     <div class="wt-stage" id="wtStage">
       <div class="wt-media" aria-hidden="true">
-        <figure class="wt-layer is-on wt-couple"><picture><source media="(max-width:899px)" srcset="assets/warmth-campaign-couple-mobile.webp" width="1200" height="1000"><img src="assets/warmth-campaign-couple.webp" width="1122" height="1402" alt="" loading="lazy"></picture></figure>
+        <figure class="wt-layer is-on wt-couple"><img src="assets/warmth-couple-both.webp" width="1200" height="1000" alt="" loading="lazy"></figure>
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
         <figure class="wt-layer"><img src="assets/her-evening.webp" alt="" loading="lazy" style="object-position:60% 30%"></figure>
@@ -2764,7 +2770,7 @@ body{background:var(--tile-a);color:var(--body)}
       qEl = document.getElementById('quizQ'), opts = document.getElementById('quizOpts'), back = document.getElementById('quizBack');
     const Q = [
       { q: 'When are you at your best?', img: true, opts: [
-        { p: 'focus',  label: 'The workday', sub: 'From the 9 AM stand-up onwards.', img: 'assets/focus-tailoring.webp' },
+        { p: 'focus',  label: 'The workday', sub: 'From the 9 AM stand-up onwards.', img: 'assets/quiz-workday.webp', pos: '70% 42%' },
         { p: 'power',  label: 'The big moment', sub: 'The pitch, the appraisal, the deal.', img: 'assets/him-car.webp' },
         { p: 'warmth', label: 'The evening', sub: 'Friday drinks, dinners, sangeets.', img: 'assets/her-evening.webp' } ] },
       { q: 'How should the room read you?', img: true, opts: [
@@ -2797,7 +2803,7 @@ body{background:var(--tile-a);color:var(--body)}
       opts.className = 'quiz-opts ' + (item.img ? 'img' : 'text');
       opts.innerHTML = item.opts.map((o, i) =>
         '<button type="button" class="quiz-opt" data-i="' + i + '">' +
-          (o.img ? '<span class="qo-img"><img src="' + o.img + '" alt=""></span>' : '') +
+          (o.img ? '<span class="qo-img"><img src="' + o.img + '" alt=""' + (o.pos ? ' style="object-position:' + o.pos + '"' : '') + '></span>' : '') +
           '<span class="qo-body"><span class="qo-label">' + o.label + '</span>' + (o.sub ? '<span class="qo-sub">' + o.sub + '</span>' : '') + '</span>' +
         '</button>').join('');
     }

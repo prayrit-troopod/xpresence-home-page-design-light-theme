@@ -38,7 +38,7 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 ## 5. Warmth chapter (pinned evening timeline)
 | Slot | Now | Desktop | Phone | Export | Safe area |
 |---|---|---|---|---|---|
-| 21:00 First spray | `warmth-campaign-couple.webp` (1122×1402) on desktop, `warmth-campaign-couple-mobile.webp` (1200×1000) on phones | 612×796 (≈3:4) | 335×290 (≈7:6; 216 tall on short phones) | **1500×2000 (3:4)** | Subject in the **middle band**: phones crop to a wide strip. Keep the **bottom-left** quiet (big "21:00" clock overlay) |
+| 21:00 First spray | `warmth-couple-both.webp` (1200×1000, both holding Warmth) on desktop and phones | 612×796 (≈3:4) | 335×290 (≈7:6; 216 tall on short phones) | **1500×2000 (3:4)** | Subject in the **middle band**: phones crop to a wide strip. Keep the **bottom-left** quiet (big "21:00" clock overlay) |
 | 22:30 The heart opens | Pinterest ⚠ (rose) | same | same | **1500×2000** | same |
 | 01:00 The base settles | Pinterest ⚠ (vanilla) | same | same | **1500×2000** | same |
 | 8+ hours On skin | `her-evening.webp` (1024×1536) | same | same | **1500×2000** | same; model wearing Warmth |
