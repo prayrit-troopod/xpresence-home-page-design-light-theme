@@ -1609,6 +1609,11 @@ body{background:var(--tile-a);color:var(--body)}
   .pb-p.pb-warmth img{height:150% !important;top:auto !important;bottom:0 !important;object-position:47% 100% !important}
   .pb-warmth a::after{background:linear-gradient(0deg,var(--wash) 0%,color-mix(in srgb,var(--wash) 85%,transparent) 22%,transparent 45%)}
 }
+/* Problem heading: two balanced lines on desktop, three on phones, in either font (PP Cirka locally,
+   Cormorant Garamond on the public site). Smaller scale, wider measure, no one-word orphans. */
+#problem .pb-q{font-size:clamp(2rem,3.6vw,3.5rem);line-height:1.08;letter-spacing:-.015em;max-width:24ch;text-wrap:balance}
+#problem .pb-q em{white-space:nowrap}
+@media (max-width:899px){ #problem .pb-q{font-size:clamp(1.9rem,8.4vw,2.4rem);max-width:none} }
 </style>
 </head>
 <body>
