@@ -2871,6 +2871,25 @@ body{background:var(--tile-a);color:var(--body)}
     render();
   })();
 
+  /* NOTES on desktop: size the panel from the real screen, so heading, tabs and the whole panel always fit
+     below the top bar with a little air, whatever the browser chrome, font or zoom */
+  (function notesFit() {
+    const sec = document.getElementById('notes'), panel = document.getElementById('notesPanel'), head = document.getElementById('notesTitle');
+    if (!sec || !panel || !head) return;
+    const mq = matchMedia('(min-width: 900px)');
+    const fit = () => {
+      if (!mq.matches) { panel.style.removeProperty('height'); return; }
+      const nav = (document.querySelector('.nav') || {}).offsetHeight || 56;
+      const above = panel.getBoundingClientRect().top - head.getBoundingClientRect().top; // heading + subline + tabs
+      const h = Math.round(Math.max(380, Math.min(620, window.innerHeight - nav - 28 - above - 28)));
+      panel.style.height = h + 'px';
+    };
+    fit();
+    addEventListener('resize', fit);
+    ScrollTrigger.addEventListener('refreshInit', fit);
+    if (document.fonts) document.fonts.ready.then(fit);
+  })();
+
   /* NOTES: tabs swap the notes panel and its product colour */
   (function notesTabs() {
     const panel = document.getElementById('notesPanel');
