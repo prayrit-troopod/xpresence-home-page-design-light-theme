@@ -1586,6 +1586,8 @@ body{background:var(--tile-a);color:var(--body)}
 /* Discovery gallery with three photos: desktop shows all three in one row; phones swipe through them */
 .ds-pocket img{object-position:50% 48%}
 @media (min-width:900px){ .ds-gallery{grid-template-columns:1.778fr .742fr .742fr} }
+/* Finder on phones: the subline is gone, so the match photo takes that space (2:1 -> 4:3) */
+@media (max-width:899px){ #occasions .occ-media{aspect-ratio:4/3} }
 </style>
 </head>
 <body>
@@ -1921,7 +1923,6 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="shop-wrap">
       <div class="sec-head">
         <h2 id="occTitle" data-reveal>How do you want to feel today?</h2>
-        <p data-reveal>Pick a mood or a moment. We'll match the fragrance.</p>
       </div>
       <div class="occ-mode" role="group" aria-label="Browse by">
         <button class="occ-m is-on" type="button" data-mode="mood" aria-pressed="true">By mood</button>
@@ -2676,7 +2677,7 @@ body{background:var(--tile-a);color:var(--body)}
         { k: 'calm',       t: 'Calm',       p: 'focus',  img: 'assets/her-lobby.webp',         alt: 'Holding Focus in a hotel lobby', why: 'Jasmine, peony and sweet cedarwood keep it calm, even on deadline day.' },
         { k: 'comfort',    t: 'Comfort',    p: 'warmth', img: 'assets/warmth-pack.webp',       alt: 'Warmth with its terracotta case', why: 'Creamy vanilla and sandalwood, worn close.' },
         { k: 'sensuality', t: 'Sensuality', p: 'warmth', img: 'assets/her-evening.webp',       alt: 'Warmth in evening light', why: 'Leather, raspberry and spiced rose, for evenings that linger.' },
-        { k: 'authority',  t: 'Authority',  p: 'power',  img: 'assets/him-desk.webp',          alt: 'Power on a glass desk', why: 'Spiced rum and tobacco set the tone before you speak.' },
+        { k: 'authority',  t: 'Authority',  p: 'power',  img: 'assets/finder-power-bench.webp', pos: '50% 62%', alt: 'A woman in a black tailored suit seated beside Power on a glass bench', why: 'Spiced rum and tobacco set the tone before you speak.' },
         { k: 'magnetism',  t: 'Magnetism',  p: 'power',  img: 'assets/him-spray.webp',         alt: 'Spraying Power', why: 'A defiant tuberose over guaiacwood holds the room after you leave.' }
       ],
       moment: [
@@ -2689,7 +2690,7 @@ body{background:var(--tile-a);color:var(--body)}
 
     function apply(o) {
       const pr = PRODUCTS[o.p];
-      media.innerHTML = o.img ? '<img src="' + o.img + '" alt="' + o.alt + '">' : trioHTML();
+      media.innerHTML = o.img ? '<img src="' + o.img + '" alt="' + o.alt + '"' + (o.pos ? ' style="object-position:' + o.pos + '"' : '') + '>' : trioHTML();
       cap.textContent = (mode === 'mood' ? 'To feel ' : 'For ') + o.t.toLowerCase();
       name.textContent = pr.name;
       why.textContent = o.why;
