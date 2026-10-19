@@ -1520,6 +1520,29 @@ body{background:var(--tile-a);color:var(--body)}
   #focusInfo p,.p-product .info p{max-width:32ch;margin-left:auto;margin-right:auto}
   .p-product{width:calc(100vw - 2 * var(--gutter))}
 }
+/* Power strip: the office creative keeps its own proportions, so the whole image shows (capped at the tall-panel height) */
+.p-panel.fit .ph{height:auto;aspect-ratio:1075 / 1463;max-height:66svh}
+@media (min-width:900px){ .p-panel.fit .ph{max-height:74svh} }
+.p-panel.fit .ph img{object-position:50% 50%}
+/* Discovery Set: the set in its box beside the portable story (a 10 ml going into a bag).
+   Desktop: one row, both photos the same height. Phones: a swipeable pair in the same square slot,
+   so the heading and Add to bag still share one screen. */
+.ds-gallery{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  margin:0 calc(var(--gutter) * -1);padding:0 var(--gutter);scroll-padding-inline:var(--gutter);outline:none}
+.ds-gallery::-webkit-scrollbar{display:none}
+.ds-gallery:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.ds-gallery .ds-figure{position:relative;scroll-snap-align:start;margin:0}
+.ds-gallery .ds-figure img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}
+.ds-box img{object-position:50% 74%}
+.ds-carry img{object-position:50% 52%}
+.ds-carry .col-usp{position:absolute;left:12px;bottom:12px;top:auto}
+@media (min-width:900px){
+  .ds-gallery{grid-auto-flow:row;grid-template-columns:1.778fr .742fr;grid-auto-columns:auto;gap:16px;overflow:visible;margin:0;padding:0}
+  .ds-gallery .ds-figure img{aspect-ratio:auto}
+  .ds-box img{aspect-ratio:16/9 !important;object-position:50% 50%}
+  .ds-carry img{position:absolute;inset:0;height:100%}
+  .ds-carry .col-usp{left:16px;bottom:16px}
+}
 </style>
 </head>
 <body>
@@ -1753,12 +1776,12 @@ body{background:var(--tile-a);color:var(--body)}
         <div class="ph"><video src="assets/him-power.mp4" poster="assets/him-power-poster.jpg" autoplay muted loop playsinline preload="metadata" style="object-position:40% 50%"></video></div>
         <figcaption><b>The arrival</b><span>14:30</span></figcaption>
       </figure>
-      <figure class="p-panel high">
-        <div class="ph"><img src="assets/power-office.webp" alt="A woman in a tailored black suit at a desk, Power in front of her" loading="lazy" style="object-position:50% 60%"></div>
+      <figure class="p-panel short fit">
+        <div class="ph"><img src="assets/power-office.webp" alt="A woman in a tailored black suit at a desk, Power in front of her" loading="lazy" style="object-position:50% 72%"></div>
         <figcaption><b>The meeting</b><span>15:10</span></figcaption>
       </figure>
-      <figure class="p-panel short">
-        <div class="ph"><img src="assets/him-desk.webp" alt="Power on a glass desk beside a fountain pen" loading="lazy" style="object-position:50% 72%"></div>
+      <figure class="p-panel high">
+        <div class="ph"><img src="assets/him-desk.webp" alt="Power on a glass desk beside a fountain pen" loading="lazy" style="object-position:50% 60%"></div>
         <figcaption><b>The desk</b><span>17:45</span></figcaption>
       </figure>
       <figure class="p-panel tall">
@@ -1785,13 +1808,20 @@ body{background:var(--tile-a);color:var(--body)}
         <h2 id="dsTitle" data-reveal>Try all three before you commit.</h2>
         <p data-reveal>Three 10 ml bottles for ₹999. Wear each for a day, then choose your 30 ml.</p>
       </div>
-      <figure class="ds-figure">
-        <picture>
-          <source media="(min-width:900px)" srcset="assets/discovery-creative-16x9.webp" width="1672" height="941">
-          <img src="assets/discovery-creative-9x16.webp" width="941" height="1672" loading="lazy"
-            alt="The Discovery Set: Power, Focus and Warmth, 10 ml each, in a gold-lined box on a houndstooth jacket">
-        </picture>
-      </figure>
+      <div class="ds-gallery" tabindex="0" role="region" aria-label="Discovery Set photos">
+        <figure class="ds-figure ds-box">
+          <picture>
+            <source media="(min-width:900px)" srcset="assets/discovery-creative-16x9.webp" width="1672" height="941">
+            <img src="assets/discovery-creative-9x16.webp" width="941" height="1672" loading="lazy"
+              alt="The Discovery Set: Power, Focus and Warmth, 10 ml each, in a gold-lined box on a houndstooth jacket">
+          </picture>
+        </figure>
+        <figure class="ds-figure ds-carry">
+          <img src="assets/discovery-power-bag.webp" width="1080" height="1456" loading="lazy"
+            alt="A 10 ml Power bottle slipped into a black handbag">
+          <figcaption class="col-usp">10 ml · fits any bag</figcaption>
+        </figure>
+      </div>
       <div class="ds-foot">
         <ul class="ds-specs" aria-label="Discovery Set details">
           <li>3 × 10 ml</li><li>Unisex</li><li>Eau de Parfum</li>
@@ -2276,7 +2306,7 @@ body{background:var(--tile-a);color:var(--body)}
   })();
 
   /* DISCOVERY: the creative settles in as it scrolls past */
-  if (!reduce) gsap.fromTo('.ds-figure img', { scale: 1.08 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.ds-figure', start: 'top bottom', end: 'bottom top', scrub: true } });
+  if (!reduce) gsap.utils.toArray('.ds-figure img').forEach(img => gsap.fromTo(img, { scale: 1.08 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.ds-gallery', start: 'top bottom', end: 'bottom top', scrub: true } }));
 
   /* HOUSE: word-masked heading, tiles scale in from 0.8 */
   const ht = document.getElementById('houseTitle');

@@ -58,8 +58,9 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 ## 7. Discovery Set
 | Slot | Now | Desktop | Phone | Export | Safe area |
 |---|---|---|---|---|---|
-| Set creative, desktop | `discovery-creative-16x9.webp` (1672×941) | 1281×721 (16:9) | — | **2560×1440 (16:9)** | Box and bottles centred |
-| Set creative, phone | `discovery-creative-9x16.webp` (941×1672) | — | 335×335 (1:1 crop) | **1600×1600 (1:1)** or keep 1080×1920 with the box in the middle square | Box and bottles centred |
+| Set creative, desktop | `discovery-creative-16x9.webp` (1672×941) | 893×502 (16:9) | — | **2560×1440 (16:9)** | Box and bottles centred |
+| Set creative, phone | `discovery-creative-9x16.webp` (941×1672) | — | 288×288 (1:1 crop, first swipe card) | **1600×1600 (1:1)** or keep 1080×1920 with the box in the middle square | Box and bottles centred |
+| Portable shot (10 ml into a bag) | `discovery-power-bag.webp` (1080×1456, client creative) | 372×502 beside the set (≈3:4) | 288×288 (1:1, second swipe card) | **1200×1600 (3:4)** | Bottle and hands centred; bottom-left clear for the "10 ml · fits any bag" pill |
 
 ## 8. What's inside (notes panel, one per fragrance)
 | Slot | Now | Desktop | Phone | Export | Safe area |
