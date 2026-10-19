@@ -1614,6 +1614,19 @@ body{background:var(--tile-a);color:var(--body)}
 #problem .pb-q{font-size:clamp(2rem,3.6vw,3.5rem);line-height:1.08;letter-spacing:-.015em;max-width:24ch;text-wrap:balance}
 #problem .pb-q em{white-space:nowrap}
 @media (max-width:899px){ #problem .pb-q{font-size:clamp(1.9rem,8.4vw,2.4rem);max-width:none} }
+/* What's inside on desktop: heading, tabs and the whole panel fit one screen. The panel height follows the
+   viewport (capped), the photo fills it, and the notes column tightens to match. */
+@media (min-width:900px){
+  .notes .sec-head{margin-bottom:20px}
+  .notes-tabs{margin-bottom:24px}
+  .notes-panel{height:clamp(460px,calc(100svh - var(--nav) - 250px),640px);overflow:hidden}
+  .np-media{min-height:0;height:100%;aspect-ratio:auto}
+  .np-media img{height:100%}
+  .np-info{padding:clamp(28px,4svh,44px) clamp(36px,4vw,56px);gap:14px;justify-content:center}
+  .np-pyramid div{padding:clamp(9px,1.4svh,14px) 0}
+  .np-pyramid dd{font-size:clamp(1.15rem,1.6vw,1.45rem)}
+  .np-stats b{font-size:1.4rem}
+}
 </style>
 </head>
 <body>
@@ -2920,7 +2933,6 @@ body{background:var(--tile-a);color:var(--body)}
       { el: () => $('#focus'),     own: () => $('#focusInfo .btn') },
       { el: () => (powerEl && powerEl.parentElement.classList.contains('pin-spacer') ? powerEl.parentElement : powerEl), own: () => $('.p-product .btn') },
       { el: () => $('#warmth'),    own: () => $('.wt-buy .btn') },
-      { el: () => $('#occasions'), own: () => $('#occAdd') },
       { el: () => $('#quiz'),      own: () => { const r = $('#quizResult'); return r && !r.hidden ? $('#qrAdd') : null; } }
     ];
     let shown = '';
