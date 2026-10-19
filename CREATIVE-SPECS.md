@@ -13,7 +13,7 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 ## 2. Problem statement triptych ("Ever walked into a room…")
 | Slot | Now | Desktop | Phone | Export | Safe area |
 |---|---|---|---|---|---|
-| Focus panel | `focus-tailoring.webp` | 419×504, widens to ~560 on hover | 335×170 (2:1) | **1600×2000 (4:5)** | Subject in the **upper-right quarter**: desktop text sits bottom-left over a colour wash, phone text sits on the left |
+| Focus panel | `problem-focus.webp` (1086×1448, client creative) | 419×504, widens to ~560 on hover | 335×170 (2:1) | **1600×2000 (4:5)** | Subject in the **upper-right quarter**: desktop text sits bottom-left over a colour wash, phone text sits on the left |
 | Warmth panel | `warmth-pack.webp` | same | same | **1600×2000 (4:5)** | same |
 | Power panel | `him-dressing.webp` | same | same | **1600×2000 (4:5)** | same |
 
@@ -61,6 +61,7 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 | Set creative, desktop | `discovery-creative-16x9.webp` (1672×941) | 893×502 (16:9) | — | **2560×1440 (16:9)** | Box and bottles centred |
 | Set creative, phone | `discovery-creative-9x16.webp` (941×1672) | — | 288×288 (1:1 crop, first swipe card) | **1600×1600 (1:1)** or keep 1080×1920 with the box in the middle square | Box and bottles centred |
 | Portable shot (10 ml into a bag) | `discovery-power-bag.webp` (1080×1456, client creative) | 372×502 beside the set (≈3:4) | 288×288 (1:1, second swipe card) | **1200×1600 (3:4)** | Bottle and hands centred; bottom-left clear for the "10 ml · fits any bag" pill |
+| Pocket shot (10 ml Focus in a suit pocket) | `discovery-focus-suit.webp` (1125×1398, client creative) | ≈284×383 third in the row | 288×288 (third swipe card) | **1200×1600 (3:4)** | Hand and bottle centred; bottom-left clear for the pill |
 
 ## 8. What's inside (notes panel, one per fragrance)
 | Slot | Now | Desktop | Phone | Export | Safe area |
