@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="video" href="assets/ritual.mp4">
+<link rel="preload" as="image" href="assets/hero-model-poster.jpg">
 <style>
 :root{
   --ink:#000000;
@@ -56,8 +56,8 @@ em{font-style:italic}
 .btn:active{transform:scale(.97)}
 .btn-light{background:var(--cream);color:var(--ink)}
 .btn-light:hover{background:#fff}
-.btn-ghost{border:1px solid rgba(236,235,231,.45);color:var(--cream)}
-.btn-ghost:hover{background:rgba(236,235,231,.1);border-color:var(--cream)}
+.btn-ghost{border:1px solid rgba(243,243,240,.45);color:var(--cream)}
+.btn-ghost:hover{background:rgba(243,243,240,.1);border-color:var(--cream)}
 .btn-focus{background:var(--focus);color:#f4efe6}
 .btn-focus:hover{background:#0b4a3e}
 .btn-power{background:var(--cream);color:var(--power)}
@@ -71,7 +71,7 @@ em{font-style:italic}
 
 /* ---------- NAV ---------- */
 .nav{position:fixed;inset:0 0 auto 0;height:var(--nav);z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--gutter);transition:background-color .6s,backdrop-filter .6s,border-color .6s;border-bottom:1px solid transparent}
-.nav.is-solid{background:rgba(14,14,15,.72);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);border-bottom-color:var(--hair)}
+.nav.is-solid{background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);border-bottom-color:var(--hair)}
 .nav-side{display:flex;align-items:center;gap:28px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
 .nav-side.right{justify-content:flex-end}
 .nav-side a{position:relative;opacity:.86;transition:opacity .3s}
@@ -84,14 +84,14 @@ em{font-style:italic}
 .menu-btn{display:inline-flex;flex-direction:column;gap:6px;width:28px;padding:8px 0}
 .menu-btn span{display:block;height:1px;background:var(--cream);transition:transform .5s var(--ease)}
 .menu-btn span:last-child{width:60%}
-.bag-count{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:999px;border:1px solid rgba(236,235,231,.5);font-size:.66rem;letter-spacing:0;margin-left:6px;transition:background-color .3s,color .3s}
+.bag-count{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:999px;border:1px solid rgba(243,243,240,.5);font-size:.66rem;letter-spacing:0;margin-left:6px;transition:background-color .3s,color .3s}
 .bag-count.bump{background:var(--cream);color:var(--ink)}
 @media (min-width:900px){
   .nav-link-d{display:inline}
   .menu-btn{display:none}
   .logo{font-size:1.6rem}
 }
-.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(14,14,15,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;padding:var(--nav) var(--gutter) 40px;clip-path:inset(0 0 100% 0);transition:clip-path .9s var(--ease)}
+.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;padding:var(--nav) var(--gutter) 40px;clip-path:inset(0 0 100% 0);transition:clip-path .9s var(--ease)}
 .mobile-menu.open{clip-path:inset(0 0 0 0)}
 .mobile-menu a{font-family:var(--serif);font-size:clamp(2.4rem,11vw,4rem);font-weight:400;line-height:1.15;display:block}
 .mobile-menu a em{color:var(--gold)}
@@ -103,8 +103,8 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .hero-media{position:absolute;inset:0;clip-path:inset(0 0 0 0);overflow:hidden}
 .hero-media video,.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 50%;transform-origin:50% 50%}
 .hero-media::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(14,14,15,.55) 0%,rgba(14,14,15,0) 26%,rgba(14,14,15,.15) 48%,rgba(14,14,15,.94) 92%),
-  radial-gradient(120% 80% at 70% 40%,rgba(14,14,15,0) 0%,rgba(14,14,15,.45) 100%)}
+  linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,.15) 48%,rgba(0,0,0,.94) 92%),
+  radial-gradient(120% 80% at 70% 40%,rgba(0,0,0,0) 0%,rgba(0,0,0,.45) 100%)}
 .hero-panel{display:none}
 .hero-content{position:absolute;left:var(--gutter);right:var(--gutter);bottom:max(7svh,28px);z-index:3}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6.2vw,7.2rem);line-height:.98;letter-spacing:-.01em;margin:18px 0 20px}
@@ -116,8 +116,8 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 @media (min-width:900px){
   .hero-media{left:40%}
   .hero-media::after{background:
-    linear-gradient(90deg,rgba(14,14,15,.75) 0%,rgba(14,14,15,0) 30%),
-    linear-gradient(180deg,rgba(14,14,15,.5) 0%,rgba(14,14,15,0) 22%,rgba(14,14,15,0) 70%,rgba(14,14,15,.6) 100%)}
+    linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 30%),
+    linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 70%,rgba(0,0,0,.6) 100%)}
   .hero-panel{display:block;position:absolute;inset:0 60% 0 0;background:
     var(--ink)}
   .hero-content{left:var(--gutter);right:auto;max-width:64vw;bottom:12svh}
@@ -136,13 +136,13 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .cast-col.her{grid-area:her}
 .cast-name{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(2rem,4.4vw,4.4rem);line-height:.9;display:flex;align-items:baseline;justify-content:space-between}
 .cast-name small{font-family:var(--sans);font-style:normal;font-size:.82rem;color:var(--muted)}
-.frame{position:relative;width:100%;height:56svh;overflow:hidden;border-radius:4px;background:#1a1a1b;isolation:isolate}
+.frame{position:relative;width:100%;height:56svh;overflow:hidden;border-radius:4px;background:#141414;isolation:isolate}
 .layer{position:absolute;inset:0;overflow:hidden}
 .him .layer:not(:first-child){clip-path:inset(100% 0 0 0)}
 .her .layer:not(:first-child){clip-path:inset(0 0 100% 0)}
 .pan{position:absolute;inset:0;will-change:transform}
 .pan>img,.pan>video{width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 50%);transform:scale(var(--z,1));transform-origin:var(--o,50% 50%)}
-.frame::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(180deg,transparent 60%,rgba(14,14,15,.55));}
+.frame::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.55));}
 .word-mask{height:1.3em;overflow:hidden;font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.9rem);line-height:1.3;font-weight:400}
 .word-list{display:flex;flex-direction:column;transition:transform 1s var(--ease)}
 .word-list span{height:1.3em}
@@ -173,7 +173,7 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 
 /* ---------- FOCUS ---------- */
 .focus{background:radial-gradient(80% 60% at 50% 0%,#e9e7e2 0%,transparent 70%),linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);color:var(--ink);position:relative}
-.focus .eyebrow{color:rgba(14,14,15,.55)}
+.focus .eyebrow{color:rgba(0,0,0,.55)}
 .focus-head{padding:130px var(--gutter) 40px;text-align:center}
 .focus-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4.7vw,5.4rem);line-height:1.04;max-width:1300px;margin:18px auto 0}
 .focus-head h2 em{color:var(--focus)}
@@ -253,7 +253,7 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .warmth-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5.2vw,5.8rem);line-height:1.04;max-width:1300px;margin:18px auto 0}
 .warmth-head h2 em{color:#e08a6f}
 .stack{padding:0 var(--gutter)}
-.stack-card{position:sticky;top:calc(var(--nav) + 2svh + var(--i) * 14px);height:calc(100svh - var(--nav) - 7svh);margin:0 auto 7svh;max-width:1400px;border-radius:4px;overflow:hidden;transform-origin:50% 0%;background:#1a1210;border:1px solid rgba(236,235,231,.08)}
+.stack-card{position:sticky;top:calc(var(--nav) + 2svh + var(--i) * 14px);height:calc(100svh - var(--nav) - 7svh);margin:0 auto 7svh;max-width:1400px;border-radius:4px;overflow:hidden;transform-origin:50% 0%;background:#1a1210;border:1px solid rgba(243,243,240,.08)}
 .stack-card .img{position:absolute;inset:0}
 .stack-card .img img{width:100%;height:100%;object-fit:cover}
 .stack-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,11,9,0) 40%,rgba(17,11,9,.9) 100%)}
@@ -284,14 +284,14 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .together-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,6.8rem);line-height:1}
 .together-head h2 em{color:var(--gold)}
 .bento{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw;grid-auto-flow:dense;gap:10px}
-.cell{position:relative;overflow:hidden;border-radius:4px;background:#1a1a1b}
+.cell{position:relative;overflow:hidden;border-radius:4px;background:#141414}
 .cell img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .cell:hover img{transform:scale(1.05)}
-.cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(14,14,15,.7));pointer-events:none}
+.cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.7));pointer-events:none}
 .c-rome{grid-column:span 2;grid-row:span 2}
 .c-rome img{filter:contrast(1.08)}
 .c-concrete{grid-row:span 2}
-.c-type{display:flex;flex-direction:column;justify-content:space-between;padding:16px;background:linear-gradient(160deg,#1c1c1d,#121213)}
+.c-type{display:flex;flex-direction:column;justify-content:space-between;padding:16px;background:linear-gradient(160deg,#1c1c1d,#0B0B0B)}
 .c-type::after{display:none}
 .c-type p{font-family:var(--serif);font-weight:400;font-size:clamp(1.15rem,2.2vw,2.2rem);line-height:1.1}
 @media (min-width:900px){
@@ -303,18 +303,18 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 }
 
 /* ---------- DISCOVERY (horizontal accordion) ---------- */
-.discovery{background:linear-gradient(180deg,var(--ink),#121213);padding:130px var(--gutter)}
+.discovery{background:linear-gradient(180deg,var(--ink),#0B0B0B);padding:130px var(--gutter)}
 .disc-head{text-align:center;margin-bottom:48px}
 .disc-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,6.6rem);line-height:1.02;max-width:1300px;margin:18px auto 0}
 .disc-head h2 em{color:var(--gold)}
 .disc-grid{display:grid;gap:28px;max-width:1500px;margin:0 auto}
 .acc{display:flex;gap:8px;height:68svh;min-height:420px}
-.acc-panel{position:relative;flex:1;min-width:52px;overflow:hidden;border-radius:4px;cursor:pointer;transition:flex 1s var(--ease);background:#1a1a1b;text-align:left}
+.acc-panel{position:relative;flex:1;min-width:52px;overflow:hidden;border-radius:4px;cursor:pointer;transition:flex 1s var(--ease);background:#141414;text-align:left}
 .acc-panel.is-open{flex:6}
 .acc-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter 1s}
 .acc-panel:not(.is-open) img{filter:brightness(.55) saturate(.8)}
 .acc-panel:hover img{transform:scale(1.05)}
-.acc-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(14,14,15,.85));pointer-events:none}
+.acc-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.85));pointer-events:none}
 .acc-v{position:absolute;left:50%;bottom:18px;z-index:2;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);font-family:var(--serif);font-size:1.5rem;font-weight:400;transition:opacity .4s}
 .acc-panel.is-open .acc-v{opacity:0}
 .acc-body{position:absolute;left:20px;right:20px;bottom:20px;z-index:2;opacity:0;transform:translateY(16px);transition:opacity .5s .2s,transform .7s .2s var(--ease)}
@@ -325,7 +325,7 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .disc-info h3{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,3.6vw,3.6rem);line-height:1}
 .disc-info p{color:var(--muted);max-width:34ch}
 .disc-trio{display:flex;align-items:center;margin-bottom:6px}
-.disc-trio i{display:block;width:54px;height:54px;border-radius:50%;border:2px solid #121213;background-size:240%;background-position:50% 60%;margin-right:-14px}
+.disc-trio i{display:block;width:54px;height:54px;border-radius:50%;border:2px solid #0B0B0B;background-size:240%;background-position:50% 60%;margin-right:-14px}
 .disc-info .btn{align-self:flex-start;margin-top:8px}
 @media (min-width:900px){
   .discovery{padding:220px var(--gutter)}
@@ -347,11 +347,11 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .house-head h2 .hw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
 .house-head h2 .hw>span{display:inline-block}
 .house-head p{color:var(--muted);font-size:1rem;line-height:1.7;margin:22px auto 32px;max-width:72ch}
-.btn-outline{border:1px solid rgba(236,235,231,.55);color:var(--cream);padding:14px 34px}
+.btn-outline{border:1px solid rgba(243,243,240,.55);color:var(--cream);padding:14px 34px}
 .btn-outline:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
 .house-row{display:flex;gap:10px;margin-top:64px;padding:0 var(--gutter);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .house-row::-webkit-scrollbar{display:none}
-.h-tile{position:relative;flex:none;width:72vw;aspect-ratio:4/5;overflow:hidden;scroll-snap-align:center;background:#1a1a1b;cursor:pointer}
+.h-tile{position:relative;flex:none;width:72vw;aspect-ratio:4/5;overflow:hidden;scroll-snap-align:center;background:var(--card);cursor:pointer}
 .h-tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12) brightness(.92);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .9s ease}
 .h-tile:hover img,.h-tile:focus-within img{transform:scale(1.05);filter:grayscale(0) contrast(1.02) brightness(1)}
 .house-ig{display:inline-block;margin-top:40px;font-size:.9rem;color:var(--cream);border-bottom:1px solid var(--hair);padding-bottom:4px;transition:border-color .4s}
@@ -372,12 +372,12 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .foot-col a{display:block;padding:4px 0;color:var(--muted);transition:color .3s}
 .foot-col a:hover{color:var(--cream)}
 .news{grid-column:1/-1}
-.news form{display:flex;border-bottom:1px solid rgba(236,235,231,.35);margin-top:6px}
+.news form{display:flex;border-bottom:1px solid rgba(243,243,240,.35);margin-top:6px}
 .news input{flex:1;min-width:0;background:none;border:0;color:var(--cream);font:inherit;padding:12px 0;outline:none}
-.news input::placeholder{color:rgba(236,235,231,.45)}
+.news input::placeholder{color:rgba(243,243,240,.45)}
 .news button{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:0 0 0 12px}
 .foot-links{display:flex;gap:20px}
-.foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:56px;padding-top:20px;border-top:1px solid var(--hair);font-size:.72rem;color:rgba(236,235,231,.5)}
+.foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:56px;padding-top:20px;border-top:1px solid var(--hair);font-size:.72rem;color:rgba(243,243,240,.5)}
 @media (min-width:900px){
   .footer{padding:96px var(--gutter) 36px}
   .foot-grid{grid-template-columns:2fr 1fr 1fr 1fr 2fr}
@@ -390,7 +390,7 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .toast i{display:block;width:32px;height:32px;border-radius:50%;background-size:240%;background-position:50% 60%}
 
 /* ---------- 21st-inspired: Hover Preview ---------- */
-.hp{color:var(--cream);font-family:var(--serif);font-style:italic;font-size:1.12em;border-bottom:1px solid rgba(236,235,231,.35);transition:color .3s,border-color .3s}
+.hp{color:var(--cream);font-family:var(--serif);font-style:italic;font-size:1.12em;border-bottom:1px solid rgba(243,243,240,.35);transition:color .3s,border-color .3s}
 .hp:hover{border-color:var(--cream)}
 .foot-col .hp{font-family:var(--sans);font-style:normal;font-size:1em;border:0;color:var(--muted)}
 .foot-col .hp:hover{color:var(--cream)}
@@ -410,8 +410,8 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .foot-mark{margin-top:56px;cursor:default;user-select:none}
 .foot-mark svg{display:block;width:100%;height:auto;overflow:visible}
 .foot-mark text{font-family:var(--serif);font-weight:400;font-size:150px;letter-spacing:.06em;fill:transparent;stroke-width:.6}
-.fm-base{stroke:rgba(236,235,231,.12)}
-.fm-draw{stroke:rgba(236,235,231,.45);stroke-dasharray:1200;stroke-dashoffset:1200}
+.fm-base{stroke:rgba(243,243,240,.12)}
+.fm-draw{stroke:rgba(243,243,240,.45);stroke-dasharray:1200;stroke-dashoffset:1200}
 .foot-mark .fm-color{stroke:url(#fmGrad);stroke-width:1.2;fill:url(#fmGrad);fill-opacity:.08}
 
 /* ---------- Magic UI-inspired components ---------- */
@@ -427,7 +427,7 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 
 /* Hero Video Dialog */
 .film-trigger{position:absolute;z-index:4;right:var(--gutter);top:calc(var(--nav) + 22px);display:flex;align-items:center;gap:12px;color:var(--cream);text-align:left}
-.ft-icon{position:relative;flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(236,235,231,.14);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(236,235,231,.4);transition:transform .6s var(--ease),background-color .4s,color .4s}
+.ft-icon{position:relative;flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(243,243,240,.14);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(243,243,240,.4);transition:transform .6s var(--ease),background-color .4s,color .4s}
 .ft-icon svg{width:15px;height:15px;margin-left:3px}
 .ft-text{display:flex;flex-direction:column;gap:2px;font-size:.9rem}
 .ft-text small{font-size:.78rem;color:var(--muted)}
@@ -440,10 +440,10 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 }
 .film-dialog{position:fixed;inset:0;z-index:250;display:grid;place-items:center;padding:var(--gutter);visibility:hidden}
 .film-dialog.open{visibility:visible}
-.fd-backdrop{position:absolute;inset:0;background:rgba(9,9,10,.86);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);opacity:0}
+.fd-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.86);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);opacity:0}
 .fd-frame{position:relative;width:min(1100px,100%);aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000;border:1px solid var(--hair);box-shadow:0 40px 120px -30px rgba(0,0,0,.9);opacity:0}
 .fd-frame video{width:100%;height:100%;object-fit:contain;background:#000}
-.fd-close{position:absolute;z-index:2;top:calc(env(safe-area-inset-top) + 16px);right:16px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(236,235,231,.4);background:rgba(14,14,15,.5);color:var(--cream);transition:background-color .3s,color .3s}
+.fd-close{position:absolute;z-index:2;top:calc(env(safe-area-inset-top) + 16px);right:16px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(243,243,240,.4);background:rgba(0,0,0,.5);color:var(--cream);transition:background-color .3s,color .3s}
 .fd-close svg{width:14px;height:14px}
 .fd-close:hover{background:var(--cream);color:var(--ink)}
 
@@ -457,10 +457,10 @@ body.menu-open .menu-btn span:last-child{width:100%;transform:translateY(-3.5px)
 .lens{position:absolute;inset:0;z-index:5;pointer-events:none;clip-path:circle(0px at 50% 50%);overflow:hidden}
 .lens-inner{position:absolute;inset:0;transform:scale(2.2)}
 .lens-inner img{width:100%;height:100%;object-fit:cover}
-.lens-ring{position:absolute;z-index:6;left:50%;top:50%;width:160px;height:160px;margin:-80px 0 0 -80px;border-radius:50%;border:1px solid rgba(236,235,231,.75);box-shadow:0 0 0 1px rgba(0,0,0,.18),0 24px 40px -14px rgba(0,0,0,.55);pointer-events:none;opacity:0;transform:scale(.6)}
+.lens-ring{position:absolute;z-index:6;left:50%;top:50%;width:160px;height:160px;margin:-80px 0 0 -80px;border-radius:50%;border:1px solid rgba(243,243,240,.75);box-shadow:0 0 0 1px rgba(0,0,0,.18),0 24px 40px -14px rgba(0,0,0,.55);pointer-events:none;opacity:0;transform:scale(.6)}
 
 .t{color:var(--muted);font-variant-numeric:lining-nums tabular-nums}
-.focus .t{color:rgba(14,14,15,.45)}
+.focus .t{color:rgba(0,0,0,.45)}
 .together-head{flex-direction:column!important;align-items:flex-start!important}
 
 /* explicit start values so GSAP interpolates filters from full brightness */
@@ -758,7 +758,7 @@ body.bar-on .toast{bottom:92px}
    Kept from the design system: square media, pill-only buttons, restraint, rhythm.
    ========================================================================== */
 :root{
-  --c-focus:#12514A; --c-power:#1C2439; --c-warmth:#D2614F;
+  --c-focus:#1F8977; --c-power:#243D5C; --c-warmth:#BF692C;
   --bg:#F1EFEB; --fg:#171615; --body:#4a453f; --body-strong:#2a2723; --muted:#625c55; --muted-soft:#7d776f;
   --hair:#dcd8d1; --hair-strong:#bfb9b0; --card:#e7e4de; --sans:var(--text); --serif:var(--display); --surface-soft:#ebe8e3; --tint:rgba(23,22,21,.06); --link:#12514A;
   --ink:var(--bg); --cream:var(--fg);
@@ -767,12 +767,9 @@ body.bar-on .toast{bottom:92px}
   --mono:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 /* Product themes: whole bands take the product colour */
-.focus,.theme-focus{--bg:var(--c-focus);--fg:#F4F1EA;--body:rgba(244,241,234,.86);--body-strong:#F4F1EA;--muted:rgba(244,241,234,.66);--muted-soft:rgba(244,241,234,.5);
-  --hair:rgba(244,241,234,.2);--hair-strong:rgba(244,241,234,.4);--card:#0d443e;--tint:rgba(255,255,255,.1);--link:#F4F1EA;--ink:var(--bg);--cream:var(--fg)}
-.power,.theme-power{--bg:var(--c-power);--fg:#F1EFEB;--body:rgba(241,239,235,.84);--body-strong:#F1EFEB;--muted:rgba(241,239,235,.62);--muted-soft:rgba(241,239,235,.46);
-  --hair:rgba(241,239,235,.16);--hair-strong:rgba(241,239,235,.34);--card:#151c2e;--tint:rgba(255,255,255,.08);--link:#F1EFEB;--ink:var(--bg);--cream:var(--fg)}
-.warmth,.theme-warmth{--bg:var(--c-warmth);--fg:#1A1110;--body:rgba(26,17,16,.86);--body-strong:#1A1110;--muted:rgba(26,17,16,.68);--muted-soft:rgba(26,17,16,.5);
-  --hair:rgba(26,17,16,.2);--hair-strong:rgba(26,17,16,.36);--card:#de7a67;--tint:rgba(0,0,0,.08);--link:#1A1110;--ink:var(--bg);--cream:var(--fg)}
+.focus,.theme-focus{--bg:var(--c-focus);--fg:#FFFFFF;--body:#FFFFFF;--body-strong:#FFFFFF;--muted:#FFFFFF;--muted-soft:rgba(255,255,255,.8);--hair:rgba(255,255,255,.26);--hair-strong:rgba(255,255,255,.5);--card:#1A7566;--tint:rgba(255,255,255,.12);--link:#FFFFFF;--ink:var(--bg);--cream:var(--fg)}
+.power,.theme-power{--bg:var(--c-power);--fg:#F3F3F0;--body:rgba(243,243,240,.88);--body-strong:#F3F3F0;--muted:rgba(243,243,240,.68);--muted-soft:rgba(243,243,240,.5);--hair:rgba(243,243,240,.16);--hair-strong:rgba(243,243,240,.34);--card:#1D3149;--tint:rgba(255,255,255,.08);--link:#F3F3F0;--ink:var(--bg);--cream:var(--fg)}
+.warmth,.theme-warmth{--bg:var(--c-warmth);--fg:#160D08;--body:#160D08;--body-strong:#160D08;--muted:#160D08;--muted-soft:rgba(22,13,8,.7);--hair:rgba(22,13,8,.22);--hair-strong:rgba(22,13,8,.4);--card:#A95C25;--tint:rgba(0,0,0,.08);--link:#160D08;--ink:var(--bg);--cream:var(--fg)}
 .footer,.theme-dark,.film-dialog,.toast{--bg:#171615;--fg:#F1EFEB;--body:rgba(241,239,235,.8);--body-strong:#F1EFEB;--muted:rgba(241,239,235,.6);--muted-soft:rgba(241,239,235,.44);
   --hair:rgba(241,239,235,.14);--hair-strong:rgba(241,239,235,.3);--card:#211f1d;--tint:rgba(255,255,255,.08);--link:#F1EFEB;--ink:var(--bg);--cream:var(--fg)}
 .focus,.power,.warmth,.footer,.theme-focus,.theme-power,.theme-warmth{background:var(--bg);color:var(--body)}
@@ -1147,27 +1144,27 @@ body.menu-open .nav{--fg:#171615;--cream:#171615;--hair-strong:#c4beb5}
    the only saturated colours. Product themes (.focus, .power, .warmth, .theme-*) are untouched.
    ========================================================================== */
 :root{
-  --tile-a:#110F0D; --tile-b:#191613; --paper:#211D19; --espresso:#0A0908;
-  --champagne:#C8A97E;
-  --bg:var(--tile-a); --fg:#EFE7DA; --body:rgba(239,231,218,.8); --body-strong:#EFE7DA; --muted:rgba(239,231,218,.62); --muted-soft:rgba(239,231,218,.46);
-  --hair:rgba(239,231,218,.12); --hair-strong:rgba(239,231,218,.28); --card:#24201B; --surface-soft:#1E1A16; --tint:rgba(239,231,218,.07);
+  --tile-a:#000000; --tile-b:#0A0A0A; --paper:#141414; --espresso:#000000;
+  --champagne:#B7A595; --taupe:#A09084;
+  --bg:var(--tile-a); --fg:#F3F3F0; --body:rgba(243,243,240,.8); --body-strong:#F3F3F0; --muted:rgba(243,243,240,.62); --muted-soft:rgba(243,243,240,.46);
+  --hair:rgba(243,243,240,.12); --hair-strong:rgba(243,243,240,.28); --card:#171717; --surface-soft:#111111; --tint:rgba(243,243,240,.07);
   --link:var(--fg); --ink:var(--bg); --cream:var(--fg);
   color-scheme:dark;
 }
 body{background:var(--tile-a);color:var(--body)}
-::selection{background:var(--champagne);color:#110F0D}
+::selection{background:var(--champagne);color:#000000}
 .hero,.collection,.claims,.notes,.occasion,.discovery,.ugc,.house{--bg:var(--tile-a)}
 .cast,.cast-stage,.manifesto,.together,.quiz,.reviews,.faq{--bg:var(--tile-b)}
 /* Deepest tone for the film hero, dialog, toasts and footer, so the page opens and closes in the same black */
-.footer,.theme-dark,.film-dialog,.toast,.hero.theme-dark{--bg:var(--espresso);--fg:#EFE7DA;--body:rgba(239,231,218,.8);--body-strong:#EFE7DA;--muted:rgba(239,231,218,.62);
-  --muted-soft:rgba(239,231,218,.46);--hair:rgba(239,231,218,.12);--hair-strong:rgba(239,231,218,.28);--card:#1A1714;--tint:rgba(239,231,218,.07);
-  --link:#EFE7DA;--ink:var(--bg);--cream:var(--fg)}
+.footer,.theme-dark,.film-dialog,.toast,.hero.theme-dark{--bg:var(--espresso);--fg:#F3F3F0;--body:rgba(243,243,240,.8);--body-strong:#F3F3F0;--muted:rgba(243,243,240,.62);
+  --muted-soft:rgba(243,243,240,.46);--hair:rgba(243,243,240,.12);--hair-strong:rgba(243,243,240,.28);--card:#0D0D0D;--tint:rgba(243,243,240,.07);
+  --link:#F3F3F0;--ink:var(--bg);--cream:var(--fg)}
 .footer{background:var(--bg);color:var(--body);border-top:1px solid var(--hair)}
 .footer input{color:var(--fg);border-color:var(--hair-strong);background:transparent}
 .footer input::placeholder{color:var(--muted)}
 /* Nav: smoked glass over the dark tiles */
-.nav.is-solid{background:rgba(17,15,13,.78)}
-.nav:not(.is-solid),body.menu-open .nav{--fg:#EFE7DA;--cream:#EFE7DA;--hair-strong:rgba(239,231,218,.28)}
+.nav.is-solid{background:rgba(0,0,0,.78)}
+.nav:not(.is-solid),body.menu-open .nav{--fg:#F3F3F0;--cream:#F3F3F0;--hair-strong:rgba(243,243,240,.28)}
 /* Cards lift a step off the tiles */
 .rev-card,.quiz-card,.qo{background-color:var(--paper)}
 /* Type: ivory headings, champagne only for italic emphasis */
@@ -1213,14 +1210,14 @@ body{background:var(--tile-a);color:var(--body)}
 /* Collection: longevity as a USP pill on each product image */
 .col-usps{position:absolute;top:10px;left:10px;right:10px;z-index:1;display:flex;flex-wrap:wrap;gap:5px;pointer-events:none}
 .col-usp{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;
-  font-family:var(--text);font-size:.8125rem;line-height:1;color:#EFE7DA;background:rgba(17,15,13,.55);border:1px solid rgba(239,231,218,.18);
+  font-family:var(--text);font-size:.8125rem;line-height:1;color:#F3F3F0;background:rgba(0,0,0,.55);border:1px solid rgba(243,243,240,.18);
   -webkit-backdrop-filter:blur(12px) saturate(140%);backdrop-filter:blur(12px) saturate(140%);white-space:nowrap;pointer-events:none}
 .col-usp svg{flex:none;color:var(--champagne)}
 .col-usp{gap:5px;letter-spacing:-.005em}
 /* Discovery Set: the campaign creative carries the section (16:9 on desktop, 9:16 cropped to 4:5 on phones) */
 .ds-figure{margin:0;border-radius:8px;overflow:hidden;background:var(--card)}
-.ds-figure img{display:block;width:100%;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:50% 72%}
-.ds-foot{display:flex;flex-direction:column;align-items:flex-start;gap:20px;margin-top:24px}
+.ds-figure img{display:block;width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;object-position:50% 74%}
+.ds-foot{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:16px}
 .ds-specs{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .ds-specs li{height:32px;display:inline-flex;align-items:center;padding:0 14px;border:1px solid var(--hair-strong);border-radius:999px;font-size:.875rem;color:var(--fg)}
 .ds-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
@@ -1248,6 +1245,281 @@ body{background:var(--tile-a);color:var(--body)}
   .ugc-fan{--cw:clamp(320px,30vw,460px);height:calc(var(--cw) * 5 / 4 + 52px)}
   .ugc-fan .ugc-media{aspect-ratio:4/5}
 }
+/* ==========================================================================
+   Narrative layer: problem first, chapters Focus -> Warmth -> Power, Discovery Set straight after,
+   a horizontal breaker between the deep vertical chapters, and the finder that lights up the match.
+   ========================================================================== */
+/* Problem statement: the question and the wordmark answer above a triptych, one panel per fragrance,
+   each washing into its own colour. The panel you point at opens wider. */
+.problem{background:var(--tile-b);padding:var(--section) var(--gutter)}
+.pb-wrap{width:100%;max-width:1360px;margin:0 auto}
+.pb-head{display:grid;gap:28px}
+.pb-q{font-family:var(--display);font-weight:300;font-size:clamp(2.4rem,5.6vw,5.4rem);line-height:1.02;letter-spacing:-.02em;color:var(--fg);max-width:13ch}
+.pb-q em{font-style:normal;color:var(--champagne)}
+.pb-q .w{display:inline-block}
+.pb-answer{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:var(--fg)}
+.pb-logo{display:block;height:clamp(24px,2.6vw,32px);width:auto}
+.pb-is{font-size:1.0625rem;color:var(--body);max-width:30ch}
+.pb-tri{list-style:none;margin:var(--head-gap) 0 0;padding:0;display:grid;gap:10px}
+.pb-p a{position:relative;display:block;height:clamp(170px,26vw,210px);border-radius:8px;overflow:hidden;color:#fff;text-decoration:none;background:var(--card)}
+.pb-p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pb-p a::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--wash) 0%,color-mix(in srgb,var(--wash) 78%,transparent) 42%,transparent 82%)}
+.pb-focus{--wash:#1F8977}.pb-warmth{--wash:#BF692C}.pb-power{--wash:#243D5C}
+.pb-cap{position:absolute;z-index:1;left:20px;right:20px;bottom:18px;top:18px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;max-width:62%}
+.pb-x{width:22px;height:auto;color:#fff;transition:transform .6s var(--ease)}
+.pb-line{font-family:var(--display);font-weight:300;font-size:clamp(1.35rem,2vw,1.9rem);line-height:1.12;margin-top:auto}
+.pb-name{margin-top:10px;font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;font-size:.8125rem}
+.pb-name::after{content:"\00a0\203A"}
+.pb-warmth a{color:#160D08}.pb-warmth .pb-x{color:#160D08}
+.pb-p a:hover img{transform:scale(1.05)}
+.pb-p a:hover .pb-x,.pb-p a:focus-visible .pb-x{transform:rotate(90deg)}
+.pb-p a:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+@media (min-width:900px){
+  .pb-head{grid-template-columns:1fr auto;align-items:end;gap:6vw}
+  .pb-answer{align-items:flex-end;text-align:right;padding-bottom:10px}
+  .pb-tri{display:flex;gap:12px;height:min(56svh,560px)}
+  .pb-p{flex:1;min-width:0;transition:flex-grow .8s var(--ease)}
+  .pb-tri:hover .pb-p{flex-grow:.8}
+  .pb-tri .pb-p:hover,.pb-tri .pb-p:focus-within{flex-grow:1.5}
+  .pb-p a{height:100%}
+  .pb-p a::after{background:linear-gradient(0deg,var(--wash) 0%,color-mix(in srgb,var(--wash) 70%,transparent) 30%,transparent 62%)}
+  .pb-cap{left:28px;right:28px;bottom:26px;top:26px;max-width:none}
+  .pb-x{width:28px}
+  .pb-line{max-width:16ch}
+}
+/* Size, longevity and unisex badges in every chapter */
+.ch-pills{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+.ch-pills span{height:28px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;border:1px solid var(--hair-strong);font-family:var(--text);font-size:.8125rem;color:var(--fg)}
+/* Breaker: horizontal strip of moments between the Focus and Warmth chapters */
+.together{padding:var(--section) var(--gutter)}
+.hz{margin:0 calc(var(--gutter) * -1);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);scrollbar-width:none;cursor:grab;outline:none}
+.hz::-webkit-scrollbar{display:none}
+.hz.is-drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.hz:focus-visible{outline:2px solid var(--fg);outline-offset:-2px}
+.hz-row{list-style:none;margin:0;padding:0 var(--gutter);display:flex;gap:12px;width:max-content}
+.hz-card{scroll-snap-align:start;width:72vw;flex:none}
+.hz-img{aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--card)}
+.hz-img img{width:100%;height:100%;object-fit:cover}
+.hz-card p{margin-top:12px;font-size:.9375rem;color:var(--body)}
+.hz-card b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--fg);margin-right:6px}
+@media (min-width:900px){ .hz-card{width:clamp(280px,27vw,420px)} .hz-row{gap:16px} }
+/* ==========================================================================
+   Brand layer (handover files, 2026-10-16): XPresence wordmark and X symbol, PP Cirka + DM Sans,
+   and the handover palette: Power #243D5C, Focus #1F8977, Warmth #BF692C, neutrals #A09084,
+   #B7A595 and #F3F3F0. PP Cirka loads from assets/fonts, which is kept out of the public repo
+   (licence); without it the page falls back to Cormorant Garamond.
+   ========================================================================== */
+@font-face{font-family:"PP Cirka";src:url(assets/fonts/PPCirka-Light.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Cirka";src:url(assets/fonts/PPCirka-Semibold.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+:root{--display:"PP Cirka","Cormorant Garamond",Garamond,"Times New Roman",serif;--serif:var(--display)}
+/* Cirka has no italic: emphasis is the taupe accent in roman, never a faux slant */
+.hero h1 em,.sec-head h2 em,.together-head h2 em,.disc-head h2 em,.house-head h2 em,.cast-intro h2 em,.focus-head h2 em,.manifesto em,#manifesto em{font-style:normal;color:var(--champagne)}
+/* Wordmark */
+.logo{display:inline-flex;align-items:center;letter-spacing:0;line-height:0;color:var(--fg)}
+.logo-svg{display:block;height:20px;width:auto}
+@media (min-width:900px){ .logo-svg{height:22px} }
+.foot-brand .logo-svg{height:34px}
+.foot-wordmark .logo-svg{height:18px}
+/* X symbol: a large, faint pattern behind each product chapter, as on the handover's product pages */
+.focus,.warmth,.power{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22362.1 387.2 113.7 125.6%22 fill=%22rgba%28255,255,255,0.06%29%22%3E%3Cpath d=%22M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00%22/%3E%3Cpath d=%22M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00%22/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:auto 120vh;background-position:right -28vh top 10vh}
+.warmth{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22362.1 387.2 113.7 125.6%22 fill=%22rgba%2822,13,8,0.07%29%22%3E%3Cpath d=%22M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00%22/%3E%3Cpath d=%22M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00%22/%3E%3C/svg%3E")}
+@media (max-width:899px){ .focus,.warmth,.power{background-size:auto 80vh;background-position:right -40vw top 6vh} }
+/* X symbol as the divider in the claims marquee */
+.claims .claims-row li::after{width:12px;height:14px;border:0;transform:none;background:var(--champagne);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22362.1 387.2 113.7 125.6%22 fill=%22%23000%22%3E%3Cpath d=%22M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00%22/%3E%3Cpath d=%22M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00%22/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22362.1 387.2 113.7 125.6%22 fill=%22%23000%22%3E%3Cpath d=%22M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00%22/%3E%3Cpath d=%22M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00%22/%3E%3C/svg%3E") center/contain no-repeat}
+/* Him and her: three slides, one per fragrance; the fragrance name sits under the time in its own tint */
+.cast-scent{height:1.4em;overflow:hidden;font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;font-size:.875rem;line-height:1.4}
+.cast-scent .word-list span{height:1.4em;display:block;text-align:center}
+.cs-focus{color:#B1D6D0}.cs-warmth{color:#E4C0A6}.cs-power{color:#BEC5CF}
+/* Hero film: client campaign creative (Indian model, Power). Black and white, so the type stays light;
+   on phones the crop holds the face and the bottle, which sit right of centre. */
+.hero-media video{object-position:60% 40%}
+@media (max-width:899px){ .hero-media video{object-position:64% 50%} }
+.hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 42%,rgba(0,0,0,.72) 78%,rgba(0,0,0,.85) 100%)}
+/* Black canvas (2026-10-19): true black tiles with neutral, not warm, greys for cards and hairlines.
+   Accents: brand taupe #B7A595 for emphasis, and the lightest handover tints for each fragrance. */
+:root{--hair:rgba(255,255,255,.12);--hair-strong:rgba(255,255,255,.26);--tint:rgba(255,255,255,.06)}
+.footer,.theme-dark,.film-dialog,.toast,.hero.theme-dark{--hair:rgba(255,255,255,.12);--hair-strong:rgba(255,255,255,.26)}
+/* ==========================================================================
+   Palette system (2026-10-19). One set of roles so everything outside the product chapters agrees:
+   - Canvas: black #000000, alternate tile #0B0B0B, card #141414, raised #1C1C1C.
+   - Ink: off-white #F3F3F0 (handover neutral) at 100 / 80 / 60%; hairlines in the same off-white at 12 / 26%.
+   - Accent: taupe #B7A595 (handover neutral), the only non-product colour, used for emphasis,
+     icons, hover and selection. Fragrance colours appear only where a fragrance is the subject.
+   - Actions: off-white pill with black text (primary), off-white outline (secondary).
+   Product colours (#1F8977, #BF692C, #243D5C) are unchanged.
+   ========================================================================== */
+:root{--tile-a:#000000;--tile-b:#0B0B0B;--paper:#141414;--card:#141414;--surface-soft:#1C1C1C;--espresso:#000000;
+  --fg:#F3F3F0;--body:rgba(243,243,240,.8);--body-strong:#F3F3F0;--muted:rgba(243,243,240,.6);--muted-soft:rgba(243,243,240,.45);
+  --hair:rgba(243,243,240,.12);--hair-strong:rgba(243,243,240,.26);--tint:rgba(243,243,240,.06);
+  --accent:#B7A595;--champagne:var(--accent);--gold:var(--accent);--link:var(--fg)}
+.footer,.theme-dark,.film-dialog,.toast,.hero.theme-dark{--bg:#000000;--fg:#F3F3F0;--body:rgba(243,243,240,.8);--body-strong:#F3F3F0;--muted:rgba(243,243,240,.6);
+  --muted-soft:rgba(243,243,240,.45);--hair:rgba(243,243,240,.12);--hair-strong:rgba(243,243,240,.26);--card:#141414;--tint:rgba(243,243,240,.06);--link:#F3F3F0}
+::selection{background:var(--accent);color:#000}
+/* Emphasis is always the taupe accent, in roman */
+h1 em,h2 em,h3 em,.mobile-menu a em,#manifesto em{font-style:normal;color:var(--accent)}
+/* Links and small icons pick up the accent on hover, nowhere else */
+.text-link:hover{color:var(--accent)}
+.col-usp svg,.pb-answer .pb-logo + .sr + .pb-is::before{color:var(--accent)}
+.nav-side a:hover{opacity:1;color:var(--accent)}
+/* Text colours (2026-10-19): a warm hierarchy drawn from the handover neutrals instead of one white at
+   three opacities. Ivory headings (#F3F3F0), sand body (#D6CCC2, ivory blended with taupe #B7A595),
+   taupe captions (#A09084). Solid colours, so text never turns grey over cards or photos. */
+:root,.footer,.theme-dark,.film-dialog,.toast,.hero.theme-dark{--fg:#F3F3F0;--body-strong:#F3F3F0;--body:#D6CCC2;--muted:#A09084;--muted-soft:#8E7F73}
+body{color:var(--body)}
+/* ==========================================================================
+   Light palette (2026-10-19), from the handover neutrals. Supersedes the black canvas.
+   - Canvas: off-white #F3F3F0 (handover), alternate tile #EAE7E1 (off-white with a touch of taupe),
+     cards #FBFAF8, raised #E4E0D9.
+   - Ink: near-black #1C1A17 (headings), warm grey-brown #4A433D (body), taupe-brown #6E6258 (captions).
+   - Accent: deep taupe #8C7A6B, for large emphasis words, icons and dividers only.
+   - Hero film, film dialog and toasts stay dark; product chapters keep their own colours.
+   ========================================================================== */
+:root,.footer{--tile-a:#F3F3F0;--tile-b:#EAE7E1;--paper:#FBFAF8;--card:#FBFAF8;--surface-soft:#E4E0D9;--espresso:#F3F3F0;
+  --bg:var(--tile-a);--fg:#1C1A17;--body-strong:#1C1A17;--body:#4A433D;--muted:#6E6258;--muted-soft:#8A7D72;
+  --hair:rgba(28,26,23,.12);--hair-strong:rgba(28,26,23,.28);--tint:rgba(28,26,23,.05);
+  --accent:#8C7A6B;--champagne:var(--accent);--gold:var(--accent);--link:#1C1A17;--ink:var(--bg);--cream:var(--fg)}
+:root{color-scheme:light}
+.theme-dark,.film-dialog,.toast,.hero.theme-dark{--bg:#000000;--fg:#F3F3F0;--body-strong:#F3F3F0;--body:#D6CCC2;--muted:#A09084;--muted-soft:#8E7F73;
+  --hair:rgba(243,243,240,.12);--hair-strong:rgba(243,243,240,.26);--tint:rgba(243,243,240,.06);--card:#141414;--link:#F3F3F0;--accent:#B7A595}
+body{background:var(--tile-a);color:var(--body)}
+.footer{background:var(--tile-b);color:var(--body);border-top:1px solid var(--hair)}
+/* Navigation: light glass once scrolled; light type only while it floats over the dark hero film */
+.nav.is-solid{background:rgba(243,243,240,.86)}
+.nav.is-solid,body.menu-open .nav{--fg:#1C1A17;--cream:#1C1A17;--hair-strong:rgba(28,26,23,.28)}
+::selection{background:#1C1A17;color:#F3F3F0}
+/* Discovery Set on phones: square crop and a tighter stack, so the heading and Add to bag share one screen */
+@media (max-width:899px){
+  .discovery .sec-head{margin-bottom:20px}
+  .discovery .sec-head h2{font-size:clamp(1.9rem,8vw,2.4rem)}
+  .ds-specs li{height:28px;padding:0 12px;font-size:.8125rem}
+  .ds-actions{gap:10px 20px}
+}
+/* Notes on phones: Add to bag sits beside the fragrance name, so it shares the first screen with the heading */
+@media (max-width:899px){
+  .np-media{aspect-ratio:16/10}
+  .np-info{display:grid;grid-template-columns:1fr auto;column-gap:12px;row-gap:14px;align-items:center}
+  .np-info > .cap{grid-column:1 / -1}
+  .np-info > h3{grid-column:1;grid-row:2;margin:0}
+  .np-info > div:last-child{grid-column:2;grid-row:2}
+  .np-info > .np-pyramid,.np-info > .np-stats{grid-column:1 / -1}
+  .np-pyramid div{padding:12px 0}
+}
+/* Notes on phones: the whole section (heading to stats) fits one screen */
+@media (max-width:899px){
+  .notes .sec-head{margin-bottom:14px}
+  .notes .sec-head p{font-size:.9375rem;margin-top:8px}
+  .notes-tabs{margin-bottom:14px}
+  .np-media{aspect-ratio:2/1}
+  .np-info{padding:16px 18px 18px;row-gap:10px}
+  .np-pyramid div{padding:9px 0}
+  .np-pyramid dd{font-size:1.15rem}
+  .np-stats{gap:12px}
+  .np-stats b{font-size:1.25rem;line-height:1.2}
+  .np-stats span{font-size:.75rem}
+}
+/* Mood and occasion finder on phones: heading, tags, the match and Add to bag fit one screen */
+@media (max-width:899px){
+  .occasion .sec-head{margin-bottom:14px}
+  .occasion .sec-head p{font-size:.9375rem;margin-top:8px}
+  .occ-mode{margin-bottom:12px}
+  #occTags{margin-bottom:14px}
+  .occ-media{aspect-ratio:2/1}
+  .occ-info{gap:8px;padding-top:14px}
+  .occ-title{gap:12px}
+  .occ-thumb{width:40px;height:40px}
+  .occ-why{font-size:.9375rem;line-height:1.4}
+  .occ-actions{margin-top:4px}
+}
+/* Collection on phones: heading and a whole product card, Add to bag included, fit one screen */
+@media (max-width:899px){
+  .collection .sec-head{margin-bottom:16px}
+  .collection .sec-head p{font-size:.9375rem;margin-top:8px}
+  .col-card{padding:10px}
+  .col-media{aspect-ratio:1/1}
+  .col-meta{padding:14px 6px 6px;gap:6px}
+  .col-meta h3{font-size:1.35rem}
+  .col-line{font-size:.9375rem;line-height:1.4}
+  .col-actions{padding-top:10px;gap:16px}
+}
+/* Warmth buy row: thumbnail, name, badges and Add to bag on a fixed grid that reflows instead of breaking.
+   Wide enough: [thumb | name / badges | button]. Narrow phones: badges drop to their own row under the name. */
+.wt-buy{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"img name btn" "img pills btn";column-gap:14px;row-gap:6px;align-items:center}
+.wt-buy-img{grid-area:img;width:52px;height:52px;align-self:center}
+.wt-buy-txt{display:contents}
+.wt-buy-txt h3{grid-area:name;align-self:end;margin:0;line-height:1.1}
+.wt-buy .ch-pills{align-self:start}
+.wt-buy .ch-pills{grid-area:pills;align-self:start;margin:0;gap:5px;flex-wrap:wrap}
+.wt-buy .ch-pills span{height:24px;padding:0 10px;font-size:.75rem;white-space:nowrap}
+.wt-buy .btn{grid-area:btn;white-space:nowrap;height:44px;padding:0 20px}
+@media (max-width:899px){
+  .wt-buy{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"img name" "img pills" "btn btn";row-gap:6px;align-items:center}
+  .wt-buy-img{align-self:center;width:52px;height:52px}
+  .wt-buy .btn{width:100%;margin-top:6px;justify-content:center}
+}
+@media (min-width:900px){
+  .wt-buy{column-gap:18px;row-gap:8px}
+  .wt-buy-img{width:64px;height:64px}
+  .wt-buy .ch-pills span{height:26px;font-size:.8125rem}
+}
+@media (max-width:359px){ .wt-buy .ch-pills{gap:4px} .wt-buy .ch-pills span{padding:0 7px;font-size:.6875rem} .wt-buy{column-gap:10px} }
+/* Warmth on phones: no dead space. The photo takes whatever height is left, the four moments share one
+   fixed-height slot (stacked in a single grid cell, so nothing jumps between slides), and the Warmth
+   Add to bag row is always shown, which also replaces the sticky bar here. */
+@media (max-width:899px){
+  .wt-stage{grid-template-rows:auto minmax(0,1fr) auto auto;align-content:stretch;row-gap:12px}
+  .wt-media{min-height:0;height:auto}
+  .wt-steps{display:grid}
+  .wt-step,.wt-step.is-on{position:relative;grid-area:1 / 1}
+  .wt-buy{opacity:1;transform:none;pointer-events:auto}
+}
+/* Short phones (under ~700px tall): trim type so the photo keeps a usable height */
+@media (max-width:899px) and (max-height:700px){
+  .wt-stage{row-gap:8px;padding-bottom:12px}
+  .wt-eyebrow{display:none}
+  .wt-head h2{font-size:1.5rem}
+  .wt-media{min-height:150px}
+  .wt-rail{margin-bottom:8px}
+  .wt-step h3{font-size:1.25rem;margin-top:2px}
+  .wt-notes{margin-top:6px;font-size:.8125rem}
+  .wt-thumbs img{width:26px;height:26px}
+  .wt-body{margin-top:6px;font-size:.875rem;line-height:1.4}
+  .wt-buy{padding-top:10px}
+  .wt-buy .btn{height:40px;margin-top:2px}
+}
+/* Section rhythm: neutral sections strictly alternate the two tiles, so every section is its own band and
+   no two same-colour sections stack their padding into a double gap (Discovery, Notes and the finder
+   were all the same tile, which read as 128px of space between them instead of 64). */
+#problem{--bg:var(--tile-b)}
+#collection,.claims{--bg:var(--tile-a)}
+.manifesto{--bg:var(--tile-b)}
+#discovery{--bg:var(--tile-a)}
+#notes{--bg:var(--tile-b)}
+#occasions{--bg:var(--tile-a)}
+#quiz{--bg:var(--tile-b)}
+#reviews{--bg:var(--tile-a)}
+#worn{--bg:var(--tile-b)}
+#faq{--bg:var(--tile-a)}
+#house{--bg:var(--tile-b)}
+#problem,#collection,.claims,.manifesto,#discovery,#notes,#occasions,#quiz,#reviews,#worn,#faq,#house{background:var(--bg)}
+.footer{--bg:var(--tile-a);background:var(--tile-a)}
+/* The notes panel sits on the tile; keep its own card surface */
+#notes .notes-panel:not([class*="theme-"]){background:var(--paper)}
+/* Focus and Power product blocks: one rhythm for name, badges, line and Add to bag.
+   Name, then badges 12px below, the line 16px below that, the button 24px below. Centred on phones,
+   left-aligned on desktop. Badges and line never run wider than the block. */
+#focusInfo,.p-product .info{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+#focusInfo h3,.p-product .info h3{margin:0;line-height:1.1}
+#focusInfo .ch-pills,.p-product .ch-pills{margin:12px 0 0;gap:6px;flex-wrap:wrap}
+#focusInfo .ch-pills span,.p-product .ch-pills span{height:28px;padding:0 12px;font-size:.8125rem;white-space:nowrap}
+#focusInfo p,.p-product .info p{margin:16px 0 0;max-width:36ch;font-family:var(--text);font-style:normal;font-size:1rem;line-height:1.5}
+#focusInfo .btn,.p-product .info .btn{margin-top:24px}
+@media (max-width:899px){
+  #focusInfo,.p-product .info{align-items:center;text-align:center}
+  #focusInfo .ch-pills,.p-product .ch-pills{justify-content:center}
+  #focusInfo p,.p-product .info p{max-width:32ch;margin-left:auto;margin-right:auto}
+  .p-product{width:calc(100vw - 2 * var(--gutter))}
+}
 </style>
 </head>
 <body>
@@ -1258,7 +1530,7 @@ body{background:var(--tile-a);color:var(--body)}
     <a class="nav-link-d" href="#collection">Shop</a>
     <a class="nav-link-d" href="#notes">Notes</a>
   </div>
-  <a href="#top" class="logo" aria-label="XPresence home"><sup>x</sup>PRESENCE</a>
+  <a href="#top" class="logo" aria-label="XPresence home"><svg class="logo-svg" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="537.8 392.8 524.4 114.5" fill="currentColor"><path d="M544.86 397.34C546.54 398.85 548.25 400.65 549.98 402.74C551.70 404.83 553.13 406.89 554.26 408.94L565.84 429.03L565.59 430.45L540.01 441.27L540.37 439.26C544.67 436.86 553.39 432.13 554.00 431.65C556.68 429.51 555.28 425.95 555.09 425.40C554.89 424.85 554.45 423.83 554.02 422.72L538.78 393.75L544.86 397.34"/><path d="M584.13 447.05C582.44 445.54 580.74 443.74 579.01 441.66C577.29 439.56 575.86 437.50 574.73 435.46L563.14 415.37L563.40 413.95L588.98 403.13L588.62 405.13C584.31 407.54 575.59 412.26 574.98 412.75C572.31 414.89 573.70 418.44 573.90 418.99C574.09 419.54 574.54 420.56 574.97 421.68L590.21 450.64L584.13 447.05"/><path d="M634.09 455.33C636.73 452.00 638.05 448.13 638.05 443.72C638.05 438.79 636.56 434.86 633.57 431.92C630.59 428.98 625.60 427.51 618.59 427.51L606.53 427.51L606.53 444.63C606.53 448.95 607.70 452.65 610.03 455.72C612.37 458.79 616.21 460.33 621.57 460.33C627.28 460.33 631.45 458.66 634.09 455.33M639.54 428.15C643.91 431.79 646.09 436.72 646.09 442.94C646.09 446.66 645.18 450.17 643.37 453.45C641.55 456.74 638.91 459.37 635.46 461.36C632.00 463.35 627.93 464.35 623.26 464.35C619.80 464.35 616.86 463.74 614.44 462.53C612.02 461.32 610.18 459.92 608.93 458.32C607.67 456.72 606.92 455.31 606.66 454.10L606.53 454.10L606.53 494.83C606.53 498.20 607.44 500.56 609.25 501.90C611.07 503.24 613.23 503.91 615.74 503.91L615.74 505.34L589.54 505.34L589.54 503.91C592.04 503.91 594.22 503.24 596.09 501.90C597.94 500.56 598.87 498.20 598.87 494.83L598.87 433.21C598.87 429.84 597.94 427.49 596.09 426.15C594.22 424.81 592.04 424.13 589.54 424.13L589.54 422.71L621.57 422.71C629.18 422.71 635.17 424.52 639.54 428.15"/><path d="M660.99 443.33C660.99 448.00 662.35 451.57 665.08 454.04C667.80 456.50 671.24 457.73 675.39 457.73C680.92 457.73 685.16 456.22 688.10 453.19C691.04 450.17 692.51 446.58 692.51 442.43C692.51 437.58 691.04 433.89 688.10 431.33C685.16 428.78 680.14 427.51 673.05 427.51L660.99 427.51L660.99 443.33M710.93 503.91L710.93 505.34L688.62 505.34L688.62 503.91C694.59 503.91 697.57 502.83 697.57 500.67C697.57 499.72 697.01 498.55 695.88 497.17L660.99 454.62L660.99 494.83C660.99 498.20 661.90 500.56 663.71 501.90C665.53 503.24 667.69 503.91 670.20 503.91L670.20 505.34L644.00 505.34L644.00 503.91C646.50 503.91 648.69 503.24 650.55 501.90C652.41 500.56 653.34 498.20 653.34 494.83L653.34 433.21C653.34 429.84 652.41 427.49 650.55 426.15C648.69 424.81 646.50 424.14 644.00 424.14L644.00 422.71L676.04 422.71C683.73 422.71 689.74 424.39 694.07 427.77C698.39 431.14 700.55 435.90 700.55 442.04C700.55 447.83 698.54 452.54 694.52 456.18C690.50 459.81 684.73 461.62 677.21 461.62C674.95 461.62 672.79 461.23 670.72 460.46L670.59 460.71C676.99 464.78 682.61 469.75 687.45 475.63L710.93 503.91"/><path d="M869.65 493.75L869.65 433.21C869.65 429.84 868.72 427.49 866.86 426.15C865.00 424.81 862.82 424.13 860.31 424.13L860.31 422.71L879.77 422.71L923.61 499.89L923.61 433.21C923.61 429.84 922.53 427.49 920.37 426.15C918.21 424.81 915.65 424.13 912.72 424.13L912.72 422.71L938.27 422.71L938.27 424.13C935.76 424.13 933.58 424.81 931.72 426.15C929.86 427.49 928.93 429.84 928.93 433.21L928.93 494.83C928.93 498.20 929.86 500.56 931.72 501.90C933.58 503.24 935.76 503.91 938.27 503.91L938.27 505.34L918.30 505.34L874.97 429.06L874.97 493.75L869.65 493.75"/><path d="M989.52 494.83C993.89 490.85 996.64 485.92 997.76 480.04L999.71 480.43C998.32 487.61 995.43 493.71 991.01 498.72C986.60 503.74 979.47 506.25 969.61 506.25C958.20 506.25 949.33 502.53 943.02 495.09C936.71 487.65 933.55 477.19 933.55 463.70C933.55 455.40 935.04 448.05 938.03 441.65C941.01 435.25 945.20 430.28 950.61 426.73C956.01 423.18 962.30 421.41 969.48 421.41C979.69 421.41 987.17 424.55 991.92 430.82C996.68 437.09 999.06 444.80 999.06 453.97L999.06 456.56L987.38 455.14C988.51 451.51 989.07 448.00 989.07 444.63C989.07 438.75 987.32 434.01 983.82 430.43C980.31 426.84 975.62 425.04 969.74 425.04C961.18 425.04 954.37 428.29 949.31 434.77C944.25 441.26 941.72 450.90 941.72 463.70C941.72 471.74 943.02 478.55 945.61 484.13C948.21 489.71 951.80 493.88 956.38 496.65C960.96 499.42 966.28 500.80 972.34 500.80C979.43 500.80 985.16 498.81 989.52 494.83"/><path d="M1059.69 492.14C1058.91 494.02 1057.87 495.56 1056.56 497.10C1054.61 499.39 1051.95 500.54 1048.58 500.54L1013.56 500.54L1013.56 463.05L1032.13 463.05C1035.50 463.05 1037.86 463.76 1039.20 465.19C1040.54 466.62 1041.21 468.24 1041.21 470.05L1042.64 470.05L1042.64 451.51L1041.21 451.51C1041.21 453.32 1040.54 454.94 1039.20 456.37C1037.86 457.80 1035.50 458.51 1032.13 458.51L1013.56 458.51L1013.56 427.51L1049.36 427.51C1052.47 427.51 1054.72 428.59 1056.10 430.75C1057.04 432.21 1057.66 433.65 1058.08 435.43L1059.62 435.19L1058.83 425.69L1058.57 422.71L997.62 422.71L997.62 424.21C999.68 424.37 1001.52 425.00 1003.11 426.15C1004.97 427.49 1005.90 429.84 1005.90 433.21L1005.90 494.83C1005.90 498.20 1004.97 500.56 1003.11 501.90C1001.52 503.05 999.68 503.67 997.62 503.84L997.62 505.34L1057.79 505.34L1058.57 502.35L1061.22 492.61L1059.69 492.14"/><path d="M770.79 492.14C770.01 494.02 768.97 495.56 767.66 497.10C765.71 499.39 763.05 500.54 759.68 500.54L724.66 500.54L724.66 463.05L743.23 463.05C746.60 463.05 748.96 463.76 750.30 465.19C751.64 466.62 752.31 468.24 752.31 470.05L753.74 470.05L753.74 451.51L752.31 451.51C752.31 453.32 751.64 454.94 750.30 456.37C748.96 457.80 746.60 458.51 743.23 458.51L724.66 458.51L724.66 427.51L764.69 427.51L771.07 422.71L708.77 422.71L708.77 424.21C710.81 424.38 712.63 425.01 714.21 426.15C716.07 427.49 717.00 429.84 717.00 433.21L717.00 494.83C717.00 498.20 716.07 500.56 714.21 501.90C712.63 503.04 710.81 503.66 708.77 503.83L708.77 505.34L768.89 505.34L769.67 502.35L772.32 492.61L770.79 492.14"/><path d="M809.76 467.49C806.32 464.09 801.25 461.16 794.54 458.68L776.27 452.06C772.83 450.83 770.34 449.11 768.80 446.90C767.25 444.70 766.48 442.23 766.48 439.49C766.48 434.64 768.18 430.73 771.58 427.78C774.97 424.82 779.76 423.34 785.94 423.34C793.52 423.34 799.28 425.66 803.21 430.29C807.14 434.92 809.76 441.92 811.09 451.27L812.41 451.27L811.48 428.50C804.87 422.59 796.48 419.63 786.33 419.63C780.07 419.63 774.82 420.65 770.58 422.68C766.35 424.71 763.23 427.31 761.25 430.49C759.26 433.67 758.27 437.06 758.27 440.68C758.27 445.89 759.55 449.95 762.11 452.86C764.67 455.77 768.33 458.07 773.10 459.74L792.29 466.63C801.82 469.89 806.59 475.80 806.59 484.36C806.59 489.57 804.78 493.85 801.16 497.20C797.54 500.56 792.47 502.23 785.94 502.23C782.74 502.23 779.80 501.79 777.10 500.94L775.86 505.48C778.58 505.95 782.75 506.20 785.94 506.20C794.41 506.20 801.36 504.53 806.78 501.17C812.21 497.82 814.92 491.38 814.92 481.85C814.92 475.67 813.20 470.88 809.76 467.49"/><path d="M883.85 492.14C883.07 494.02 882.03 495.56 880.72 497.10C878.77 499.39 876.11 500.54 872.74 500.54L827.78 500.54L827.78 463.05L846.35 463.05C849.72 463.05 852.08 463.76 853.42 465.19C854.76 466.62 855.43 468.24 855.43 470.05L856.86 470.05L856.86 451.51L855.43 451.51C855.43 453.32 854.76 454.94 853.42 456.37C852.08 457.80 849.72 458.51 846.35 458.51L827.78 458.51L827.78 427.51L847.05 427.51C850.16 427.51 852.41 428.59 853.79 430.75C854.73 432.21 855.35 433.65 855.77 435.43L857.31 435.19L856.52 425.69L856.26 422.71L812.01 422.71L812.01 424.22C814.01 424.41 815.79 425.03 817.34 426.15C819.20 427.49 820.12 429.84 820.12 433.21L820.12 494.83C820.12 498.20 819.20 500.56 817.34 501.90C815.79 503.02 814.01 503.64 812.01 503.83L812.01 505.34L881.95 505.34L882.73 502.35L885.39 492.61L883.85 492.14"/></svg></a>
   <div class="nav-side right">
     <a class="nav-link-d" href="#quiz">Find yours</a>
     <a class="nav-link-d" href="#discovery">Discovery Set</a>
@@ -1267,7 +1539,7 @@ body{background:var(--tile-a);color:var(--body)}
 </header>
 
 <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <a href="#cast">The story</a>
+  <a href="#problem">The story</a>
   <a href="#collection">Shop all</a>
   <a href="#notes">Notes</a>
   <a href="#occasions">Shop by mood</a>
@@ -1282,7 +1554,7 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="hero-panel" aria-hidden="true">
     </div>
     <div class="hero-media">
-      <video id="heroVideo" src="assets/ritual.mp4" poster="assets/ritual-poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+      <video id="heroVideo" src="assets/hero-model.mp4" poster="assets/hero-model-poster.jpg" aria-label="An Indian model with XPresence Power" autoplay muted loop playsinline preload="auto"></video>
     </div>
     <div class="hero-content">
       <h1>
@@ -1291,7 +1563,7 @@ body{background:var(--tile-a);color:var(--body)}
       </h1>
       <p class="hero-sub">Three signatures for people who are already expected, before they've said a word.</p>
       <div class="hero-ctas">
-        <a href="#cast" class="btn">Begin the story</a>
+        <a href="#problem" class="btn">Begin the story</a>
         <button class="film-trigger" id="filmOpen" aria-haspopup="dialog">
           <span class="ft-icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.8v12.4L13.6 8z"/></svg></span>
           <span class="ft-text">Watch the film</span>
@@ -1300,44 +1572,27 @@ body{background:var(--tile-a);color:var(--body)}
     </div>
   </section>
 
-  <!-- INTEREST: the two characters, revealed visually -->
-  <section class="cast" id="cast">
-    <div class="cast-intro">
-      <h2 data-reveal>He closes the deal. She sets the terms.</h2>
-    </div>
-
-    <div class="cast-stage" id="castStage">
-      <div class="cast-grid">
-
-        <div class="cast-col him">
-          <div class="cast-name">Him. <small>Wears Power</small></div>
-          <div class="frame">
-            <div class="layer"><div class="pan"><video src="assets/him-power.mp4" poster="assets/him-power-poster.jpg" autoplay muted loop playsinline preload="metadata" style="--op:38% 40%"></video></div></div>
-            <div class="layer"><div class="pan"><img src="assets/him-desk.webp" alt="His desk, jacket over the chair, a bottle of Power on the glass" style="--op:50% 70%" loading="lazy"></div></div>
-            <div class="layer"><div class="pan"><img src="assets/him-car.webp" alt="Cufflinks being fastened in the back of a car, Power on the seat" style="--op:55% 50%" loading="lazy"></div></div>
-            <div class="layer"><div class="pan"><img src="assets/him-spray.webp" alt="Silhouette of him spraying Power before leaving" style="--op:40% 40%" loading="lazy"></div></div>
-          </div>
-          <div class="word-mask"><div class="word-list"><span>Ready.</span><span>Decisive.</span><span>In motion.</span><span>Unmistakable.</span></div></div>
-        </div>
-
-        <div class="cast-time" aria-hidden="true">
-          <span class="amp">&amp;</span>
-          <div class="clock"><div class="word-list"><span>06:40</span><span>09:15</span><span>14:30</span><span>21:00</span></div></div>
-          <div class="cast-progress"><b class="on"></b><b></b><b></b><b></b></div>
-        </div>
-
-        <div class="cast-col her">
-          <div class="cast-name">Her. <small>Wears Focus</small></div>
-          <div class="frame">
-            <div class="layer"><div class="pan"><img src="assets/her-lobby.webp" alt="Her in a hotel lobby, holding Focus" style="--op:42% 30%"></div></div>
-            <div class="layer"><div class="pan"><img src="assets/together-concrete.webp" alt="Her standing in a concrete atrium" style="--z:1.6;--o:64% 45%;--op:64% 50%" loading="lazy"></div></div>
-            <div class="layer"><div class="pan"><img src="assets/together-rome.webp" alt="Her walking past the Colosseum" style="--z:1.35;--o:24% 38%;--op:18% 40%" loading="lazy"></div></div>
-            <div class="layer"><div class="pan"><img src="assets/her-evening.webp" alt="Her in evening light with Warmth" style="--op:62% 35%" loading="lazy"></div></div>
-          </div>
-          <div class="word-mask"><div class="word-list"><span>Composed.</span><span>Exacting.</span><span>In command.</span><span>Remembered.</span></div></div>
-        </div>
-
+  <!-- PROBLEM: the dilemma first, then XPresence in one line, then the three moments it answers -->
+  <section class="problem" id="problem" aria-labelledby="pbTitle">
+    <div class="pb-wrap">
+      <div class="pb-head">
+      <h2 id="pbTitle" class="pb-q">Ever walked into a room and left it <em>unremembered?</em></h2>
+      <p class="pb-answer"><svg class="pb-logo" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="537.8 392.8 524.4 114.5" fill="currentColor"><path d="M544.86 397.34C546.54 398.85 548.25 400.65 549.98 402.74C551.70 404.83 553.13 406.89 554.26 408.94L565.84 429.03L565.59 430.45L540.01 441.27L540.37 439.26C544.67 436.86 553.39 432.13 554.00 431.65C556.68 429.51 555.28 425.95 555.09 425.40C554.89 424.85 554.45 423.83 554.02 422.72L538.78 393.75L544.86 397.34"/><path d="M584.13 447.05C582.44 445.54 580.74 443.74 579.01 441.66C577.29 439.56 575.86 437.50 574.73 435.46L563.14 415.37L563.40 413.95L588.98 403.13L588.62 405.13C584.31 407.54 575.59 412.26 574.98 412.75C572.31 414.89 573.70 418.44 573.90 418.99C574.09 419.54 574.54 420.56 574.97 421.68L590.21 450.64L584.13 447.05"/><path d="M634.09 455.33C636.73 452.00 638.05 448.13 638.05 443.72C638.05 438.79 636.56 434.86 633.57 431.92C630.59 428.98 625.60 427.51 618.59 427.51L606.53 427.51L606.53 444.63C606.53 448.95 607.70 452.65 610.03 455.72C612.37 458.79 616.21 460.33 621.57 460.33C627.28 460.33 631.45 458.66 634.09 455.33M639.54 428.15C643.91 431.79 646.09 436.72 646.09 442.94C646.09 446.66 645.18 450.17 643.37 453.45C641.55 456.74 638.91 459.37 635.46 461.36C632.00 463.35 627.93 464.35 623.26 464.35C619.80 464.35 616.86 463.74 614.44 462.53C612.02 461.32 610.18 459.92 608.93 458.32C607.67 456.72 606.92 455.31 606.66 454.10L606.53 454.10L606.53 494.83C606.53 498.20 607.44 500.56 609.25 501.90C611.07 503.24 613.23 503.91 615.74 503.91L615.74 505.34L589.54 505.34L589.54 503.91C592.04 503.91 594.22 503.24 596.09 501.90C597.94 500.56 598.87 498.20 598.87 494.83L598.87 433.21C598.87 429.84 597.94 427.49 596.09 426.15C594.22 424.81 592.04 424.13 589.54 424.13L589.54 422.71L621.57 422.71C629.18 422.71 635.17 424.52 639.54 428.15"/><path d="M660.99 443.33C660.99 448.00 662.35 451.57 665.08 454.04C667.80 456.50 671.24 457.73 675.39 457.73C680.92 457.73 685.16 456.22 688.10 453.19C691.04 450.17 692.51 446.58 692.51 442.43C692.51 437.58 691.04 433.89 688.10 431.33C685.16 428.78 680.14 427.51 673.05 427.51L660.99 427.51L660.99 443.33M710.93 503.91L710.93 505.34L688.62 505.34L688.62 503.91C694.59 503.91 697.57 502.83 697.57 500.67C697.57 499.72 697.01 498.55 695.88 497.17L660.99 454.62L660.99 494.83C660.99 498.20 661.90 500.56 663.71 501.90C665.53 503.24 667.69 503.91 670.20 503.91L670.20 505.34L644.00 505.34L644.00 503.91C646.50 503.91 648.69 503.24 650.55 501.90C652.41 500.56 653.34 498.20 653.34 494.83L653.34 433.21C653.34 429.84 652.41 427.49 650.55 426.15C648.69 424.81 646.50 424.14 644.00 424.14L644.00 422.71L676.04 422.71C683.73 422.71 689.74 424.39 694.07 427.77C698.39 431.14 700.55 435.90 700.55 442.04C700.55 447.83 698.54 452.54 694.52 456.18C690.50 459.81 684.73 461.62 677.21 461.62C674.95 461.62 672.79 461.23 670.72 460.46L670.59 460.71C676.99 464.78 682.61 469.75 687.45 475.63L710.93 503.91"/><path d="M869.65 493.75L869.65 433.21C869.65 429.84 868.72 427.49 866.86 426.15C865.00 424.81 862.82 424.13 860.31 424.13L860.31 422.71L879.77 422.71L923.61 499.89L923.61 433.21C923.61 429.84 922.53 427.49 920.37 426.15C918.21 424.81 915.65 424.13 912.72 424.13L912.72 422.71L938.27 422.71L938.27 424.13C935.76 424.13 933.58 424.81 931.72 426.15C929.86 427.49 928.93 429.84 928.93 433.21L928.93 494.83C928.93 498.20 929.86 500.56 931.72 501.90C933.58 503.24 935.76 503.91 938.27 503.91L938.27 505.34L918.30 505.34L874.97 429.06L874.97 493.75L869.65 493.75"/><path d="M989.52 494.83C993.89 490.85 996.64 485.92 997.76 480.04L999.71 480.43C998.32 487.61 995.43 493.71 991.01 498.72C986.60 503.74 979.47 506.25 969.61 506.25C958.20 506.25 949.33 502.53 943.02 495.09C936.71 487.65 933.55 477.19 933.55 463.70C933.55 455.40 935.04 448.05 938.03 441.65C941.01 435.25 945.20 430.28 950.61 426.73C956.01 423.18 962.30 421.41 969.48 421.41C979.69 421.41 987.17 424.55 991.92 430.82C996.68 437.09 999.06 444.80 999.06 453.97L999.06 456.56L987.38 455.14C988.51 451.51 989.07 448.00 989.07 444.63C989.07 438.75 987.32 434.01 983.82 430.43C980.31 426.84 975.62 425.04 969.74 425.04C961.18 425.04 954.37 428.29 949.31 434.77C944.25 441.26 941.72 450.90 941.72 463.70C941.72 471.74 943.02 478.55 945.61 484.13C948.21 489.71 951.80 493.88 956.38 496.65C960.96 499.42 966.28 500.80 972.34 500.80C979.43 500.80 985.16 498.81 989.52 494.83"/><path d="M1059.69 492.14C1058.91 494.02 1057.87 495.56 1056.56 497.10C1054.61 499.39 1051.95 500.54 1048.58 500.54L1013.56 500.54L1013.56 463.05L1032.13 463.05C1035.50 463.05 1037.86 463.76 1039.20 465.19C1040.54 466.62 1041.21 468.24 1041.21 470.05L1042.64 470.05L1042.64 451.51L1041.21 451.51C1041.21 453.32 1040.54 454.94 1039.20 456.37C1037.86 457.80 1035.50 458.51 1032.13 458.51L1013.56 458.51L1013.56 427.51L1049.36 427.51C1052.47 427.51 1054.72 428.59 1056.10 430.75C1057.04 432.21 1057.66 433.65 1058.08 435.43L1059.62 435.19L1058.83 425.69L1058.57 422.71L997.62 422.71L997.62 424.21C999.68 424.37 1001.52 425.00 1003.11 426.15C1004.97 427.49 1005.90 429.84 1005.90 433.21L1005.90 494.83C1005.90 498.20 1004.97 500.56 1003.11 501.90C1001.52 503.05 999.68 503.67 997.62 503.84L997.62 505.34L1057.79 505.34L1058.57 502.35L1061.22 492.61L1059.69 492.14"/><path d="M770.79 492.14C770.01 494.02 768.97 495.56 767.66 497.10C765.71 499.39 763.05 500.54 759.68 500.54L724.66 500.54L724.66 463.05L743.23 463.05C746.60 463.05 748.96 463.76 750.30 465.19C751.64 466.62 752.31 468.24 752.31 470.05L753.74 470.05L753.74 451.51L752.31 451.51C752.31 453.32 751.64 454.94 750.30 456.37C748.96 457.80 746.60 458.51 743.23 458.51L724.66 458.51L724.66 427.51L764.69 427.51L771.07 422.71L708.77 422.71L708.77 424.21C710.81 424.38 712.63 425.01 714.21 426.15C716.07 427.49 717.00 429.84 717.00 433.21L717.00 494.83C717.00 498.20 716.07 500.56 714.21 501.90C712.63 503.04 710.81 503.66 708.77 503.83L708.77 505.34L768.89 505.34L769.67 502.35L772.32 492.61L770.79 492.14"/><path d="M809.76 467.49C806.32 464.09 801.25 461.16 794.54 458.68L776.27 452.06C772.83 450.83 770.34 449.11 768.80 446.90C767.25 444.70 766.48 442.23 766.48 439.49C766.48 434.64 768.18 430.73 771.58 427.78C774.97 424.82 779.76 423.34 785.94 423.34C793.52 423.34 799.28 425.66 803.21 430.29C807.14 434.92 809.76 441.92 811.09 451.27L812.41 451.27L811.48 428.50C804.87 422.59 796.48 419.63 786.33 419.63C780.07 419.63 774.82 420.65 770.58 422.68C766.35 424.71 763.23 427.31 761.25 430.49C759.26 433.67 758.27 437.06 758.27 440.68C758.27 445.89 759.55 449.95 762.11 452.86C764.67 455.77 768.33 458.07 773.10 459.74L792.29 466.63C801.82 469.89 806.59 475.80 806.59 484.36C806.59 489.57 804.78 493.85 801.16 497.20C797.54 500.56 792.47 502.23 785.94 502.23C782.74 502.23 779.80 501.79 777.10 500.94L775.86 505.48C778.58 505.95 782.75 506.20 785.94 506.20C794.41 506.20 801.36 504.53 806.78 501.17C812.21 497.82 814.92 491.38 814.92 481.85C814.92 475.67 813.20 470.88 809.76 467.49"/><path d="M883.85 492.14C883.07 494.02 882.03 495.56 880.72 497.10C878.77 499.39 876.11 500.54 872.74 500.54L827.78 500.54L827.78 463.05L846.35 463.05C849.72 463.05 852.08 463.76 853.42 465.19C854.76 466.62 855.43 468.24 855.43 470.05L856.86 470.05L856.86 451.51L855.43 451.51C855.43 453.32 854.76 454.94 853.42 456.37C852.08 457.80 849.72 458.51 846.35 458.51L827.78 458.51L827.78 427.51L847.05 427.51C850.16 427.51 852.41 428.59 853.79 430.75C854.73 432.21 855.35 433.65 855.77 435.43L857.31 435.19L856.52 425.69L856.26 422.71L812.01 422.71L812.01 424.22C814.01 424.41 815.79 425.03 817.34 426.15C819.20 427.49 820.12 429.84 820.12 433.21L820.12 494.83C820.12 498.20 819.20 500.56 817.34 501.90C815.79 503.02 814.01 503.64 812.01 503.83L812.01 505.34L881.95 505.34L882.73 502.35L885.39 492.61L883.85 492.14"/></svg><span class="sr">XPresence</span><span class="pb-is">Eau de Parfum for being remembered, without trying.</span></p>
       </div>
+      <ol class="pb-tri" aria-label="Three ways to be remembered">
+        <li class="pb-p pb-focus"><a href="#focus">
+          <img src="assets/focus-tailoring.webp" alt="Focus on a tailored jacket" loading="lazy" style="object-position:50% 45%">
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You refuse to dilute who you are.</span><span class="pb-name">Focus</span></span>
+        </a></li>
+        <li class="pb-p pb-warmth"><a href="#warmth">
+          <img src="assets/warmth-pack.webp" alt="Warmth with its terracotta case" loading="lazy" style="object-position:40% 60%">
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You make people feel at home.</span><span class="pb-name">Warmth</span></span>
+        </a></li>
+        <li class="pb-p pb-power"><a href="#power">
+          <img src="assets/him-dressing.webp" alt="Power on a dressing table before a black-tie evening" loading="lazy" style="object-position:50% 45%">
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You lead without raising your voice.</span><span class="pb-name">Power</span></span>
+        </a></li>
+      </ol>
     </div>
   </section>
 
@@ -1346,7 +1601,7 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="shop-wrap">
       <div class="sec-head">
         <h2 id="collectionTitle" data-reveal>The collection</h2>
-        <p data-reveal>One for the workday, one for the big moment, one for the evening. And a set with all three.</p>
+        <p data-reveal>One for the workday, one for the evening, one for the big moment. And a set with all three.</p>
       </div>
       <div class="col-grid">
         <article class="col-card">
@@ -1360,16 +1615,6 @@ body{background:var(--tile-a);color:var(--body)}
           </div>
         </article>
         <article class="col-card">
-          <a href="#power" class="col-media" aria-label="Read the Power chapter"><img src="assets/power-pack.webp" alt="Power, 30 ml, with its navy case" loading="lazy" style="object-position:55% 60%"><span class="col-usps" aria-hidden="true"><span class="col-usp">30 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span></a>
-          <div class="col-meta">
-            <p class="cap">Woody, spicy, amber</p>
-            <h3>Power</h3>
-            <p class="col-line">Smoky rum, tobacco and a defiant tuberose, for those who would rather set the tone than follow it.</p>
-            <p class="cap"><span class="sr">30 ml </span>Eau de Parfum<span class="sr">. Lasts 8+ hours</span></p>
-            <div class="col-actions"><button class="btn" data-add="Power" data-img="assets/power-bottle.webp">Add to bag</button><a href="#power" class="text-link">Its chapter</a></div>
-          </div>
-        </article>
-        <article class="col-card">
           <a href="#warmth" class="col-media" aria-label="Read the Warmth chapter"><img src="assets/warmth-pack.webp" alt="Warmth, 30 ml, with its terracotta case" loading="lazy" style="object-position:40% 60%"><span class="col-usps" aria-hidden="true"><span class="col-usp">30 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span></a>
           <div class="col-meta">
             <p class="cap">Gourmand, floral, vanilla</p>
@@ -1380,15 +1625,25 @@ body{background:var(--tile-a);color:var(--body)}
           </div>
         </article>
         <article class="col-card">
+          <a href="#power" class="col-media" aria-label="Read the Power chapter"><img src="assets/power-pack.webp" alt="Power, 30 ml, with its navy case" loading="lazy" style="object-position:55% 60%"><span class="col-usps" aria-hidden="true"><span class="col-usp">30 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span></a>
+          <div class="col-meta">
+            <p class="cap">Woody, spicy, amber</p>
+            <h3>Power</h3>
+            <p class="col-line">Smoky rum, tobacco and a defiant tuberose, for those who would rather set the tone than follow it.</p>
+            <p class="cap"><span class="sr">30 ml </span>Eau de Parfum<span class="sr">. Lasts 8+ hours</span></p>
+            <div class="col-actions"><button class="btn" data-add="Power" data-img="assets/power-bottle.webp">Add to bag</button><a href="#power" class="text-link">Its chapter</a></div>
+          </div>
+        </article>
+        <article class="col-card">
           <a href="#discovery" class="col-media" aria-label="See the Discovery Set">
-            <div class="trio"><img src="assets/focus-bottle.webp" alt="Focus" loading="lazy"><img src="assets/power-bottle.webp" alt="Power" loading="lazy"><img src="assets/warmth-bottle.webp" alt="Warmth" loading="lazy"></div>
+            <img src="assets/discovery-creative-9x16.webp" alt="The Discovery Set: Power, Focus and Warmth, 10 ml each, in a gold-lined box" loading="lazy" style="object-position:50% 70%">
             <span class="col-usps" aria-hidden="true"><span class="col-usp">3 × 10 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span>
           </a>
           <div class="col-meta">
             <p class="cap">The whole day</p>
             <h3>Discovery Set</h3>
             <p class="col-line">Focus, Power and Warmth together. Try each, then choose.</p>
-            <p class="cap">All three fragrances<span class="sr">, three 10 ml bottles. Lasts 8+ hours</span></p>
+            <p class="cap">₹999 for all three<span class="sr">, three 10 ml bottles. Lasts 8+ hours</span></p>
             <div class="col-actions"><button class="btn" data-add="Discovery Set" data-img="assets/focus-pack.webp">Add to bag</button><a href="#discovery" class="text-link">See the set</a></div>
           </div>
         </article>
@@ -1429,50 +1684,14 @@ body{background:var(--tile-a);color:var(--body)}
       <div class="focus-bottle"><div class="arch" data-lens><img src="assets/focus-bottle.webp" alt="XPresence Focus, 30 ml Eau de Parfum"></div></div>
       <div class="product-info" id="focusInfo">
         <h3>Focus</h3>
-        <div class="spec">30 ml Eau de Parfum, unisex</div>
+        <div class="ch-pills"><span>30 ml</span><span>Lasts 8+ hours</span><span>Unisex</span></div>
         <p>A clean, luminous aura that makes you the most composed, clear-headed person in any room.</p>
         <button class="btn btn-focus" data-add="Focus" data-img="assets/focus-bottle.webp">Add to bag</button>
       </div>
     </div>
   </section>
 
-  <!-- DESIRE II: Power, horizontal film strip -->
-  <section class="power" id="power">
-    <div class="power-track" id="powerTrack">
-      <div class="p-intro">
-        <h2 class="vt-h2"><span class="sr-only">Power</span><span class="vtext" aria-hidden="true"><canvas id="vtCanvas"></canvas><video id="vtVideo" src="assets/him-power.mp4" muted loop playsinline preload="metadata"></video></span>never raises its voice.</h2>
-        <p><span class="t">14:30.</span> The car is waiting. The decision was made hours ago.</p>
-      </div>
-      <figure class="p-panel tall">
-        <div class="ph"><video src="assets/him-power.mp4" poster="assets/him-power-poster.jpg" autoplay muted loop playsinline preload="metadata" style="object-position:40% 50%"></video></div>
-        <figcaption><b>The arrival</b><span>14:30</span></figcaption>
-      </figure>
-      <figure class="p-panel short">
-        <div class="ph"><img src="assets/him-desk.webp" alt="Power on a glass desk beside a fountain pen" loading="lazy" style="object-position:50% 72%"></div>
-        <figcaption><b>The desk</b><span>15:10</span></figcaption>
-      </figure>
-      <figure class="p-panel high">
-        <div class="ph"><img src="assets/him-car.webp" alt="Fastening cufflinks in the back seat with Power" loading="lazy"></div>
-        <figcaption><b>The details</b><span>17:45</span></figcaption>
-      </figure>
-      <figure class="p-panel tall">
-        <div class="ph"><img src="assets/him-spray.webp" alt="Spraying Power, a silhouette in mist" loading="lazy"></div>
-        <figcaption><b>The last word</b><span>18:20</span></figcaption>
-      </figure>
-      <div class="p-product">
-        <div class="ph" data-lens><img src="assets/power-bottle.webp" alt="XPresence Power, 30 ml Eau de Parfum" loading="lazy"></div>
-        <div class="info">
-          <h3>Power</h3>
-          <div class="spec">30 ml Eau de Parfum, unisex</div>
-          <p>Dark, smoky and unhurried. It sets the tone before you speak and holds the room after you leave.</p>
-          <button class="btn btn-power" data-add="Power" data-img="assets/power-bottle.webp">Add to bag</button>
-        </div>
-      </div>
-    </div>
-    <div class="power-bar" aria-hidden="true"><i id="powerBar"></i></div>
-  </section>
-
-  <!-- DESIRE III: Warmth, card stacking -->
+  <!-- DESIRE II: Warmth, pinned evening timeline -->
   <section class="warmth" id="warmth">
     <!-- Warmth: pinned evening timeline. Pinterest images are third-party references (not licensed): replace before launch. See CREATIVE-BRIEF.md. -->
     <div class="wt-stage" id="wtStage">
@@ -1517,13 +1736,75 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
       <div class="wt-buy">
           <i class="wt-buy-img" style="background-image:url(assets/warmth-bottle.webp)" aria-hidden="true"></i>
-          <div class="wt-buy-txt"><h3>Warmth</h3><p class="cap">30 ml Eau de Parfum, unisex</p></div>
+          <div class="wt-buy-txt"><h3>Warmth</h3><div class="ch-pills"><span>30 ml</span><span>Lasts 8+ hours</span><span>Unisex</span></div></div>
           <button class="btn" data-add="Warmth" data-img="assets/warmth-bottle.webp">Add to bag</button>
       </div>
     </div>
   </section>
 
-  <!-- INTEREST: gapless bento -->
+  <!-- DESIRE III: Power, horizontal film strip (ends the story on its strongest note) -->
+  <section class="power" id="power">
+    <div class="power-track" id="powerTrack">
+      <div class="p-intro">
+        <h2 class="vt-h2"><span class="sr-only">Power</span><span class="vtext" aria-hidden="true"><canvas id="vtCanvas"></canvas><video id="vtVideo" src="assets/him-power.mp4" muted loop playsinline preload="metadata"></video></span>never raises its voice.</h2>
+        <p><span class="t">14:30.</span> The car is waiting. The decision was made hours ago.</p>
+      </div>
+      <figure class="p-panel tall">
+        <div class="ph"><video src="assets/him-power.mp4" poster="assets/him-power-poster.jpg" autoplay muted loop playsinline preload="metadata" style="object-position:40% 50%"></video></div>
+        <figcaption><b>The arrival</b><span>14:30</span></figcaption>
+      </figure>
+      <figure class="p-panel short">
+        <div class="ph"><img src="assets/him-desk.webp" alt="Power on a glass desk beside a fountain pen" loading="lazy" style="object-position:50% 72%"></div>
+        <figcaption><b>The desk</b><span>15:10</span></figcaption>
+      </figure>
+      <figure class="p-panel high">
+        <div class="ph"><img src="assets/him-car.webp" alt="Fastening cufflinks in the back seat with Power" loading="lazy"></div>
+        <figcaption><b>The details</b><span>17:45</span></figcaption>
+      </figure>
+      <figure class="p-panel tall">
+        <div class="ph"><img src="assets/him-spray.webp" alt="Spraying Power, a silhouette in mist" loading="lazy"></div>
+        <figcaption><b>The last word</b><span>18:20</span></figcaption>
+      </figure>
+      <div class="p-product">
+        <div class="ph" data-lens><img src="assets/power-bottle.webp" alt="XPresence Power, 30 ml Eau de Parfum" loading="lazy"></div>
+        <div class="info">
+          <h3>Power</h3>
+          <div class="ch-pills"><span>30 ml</span><span>Lasts 8+ hours</span><span>Unisex</span></div>
+          <p>Dark, smoky and unhurried. It sets the tone before you speak and holds the room after you leave.</p>
+          <button class="btn btn-power" data-add="Power" data-img="assets/power-bottle.webp">Add to bag</button>
+        </div>
+      </div>
+    </div>
+    <div class="power-bar" aria-hidden="true"><i id="powerBar"></i></div>
+  </section>
+
+  <!-- ACTION: Discovery Set, right after the three stories, before scroll fatigue -->
+  <section class="discovery" id="discovery" aria-labelledby="dsTitle">
+    <div class="shop-wrap">
+      <div class="sec-head">
+        <h2 id="dsTitle" data-reveal>Try all three before you commit.</h2>
+        <p data-reveal>Three 10 ml bottles for ₹999. Wear each for a day, then choose your 30 ml.</p>
+      </div>
+      <figure class="ds-figure">
+        <picture>
+          <source media="(min-width:900px)" srcset="assets/discovery-creative-16x9.webp" width="1672" height="941">
+          <img src="assets/discovery-creative-9x16.webp" width="941" height="1672" loading="lazy"
+            alt="The Discovery Set: Power, Focus and Warmth, 10 ml each, in a gold-lined box on a houndstooth jacket">
+        </picture>
+      </figure>
+      <div class="ds-foot">
+        <ul class="ds-specs" aria-label="Discovery Set details">
+          <li>3 × 10 ml</li><li>Unisex</li><li>Eau de Parfum</li>
+        </ul>
+        <div class="ds-actions">
+          <button class="btn" id="dsAdd" data-add="Discovery Set" data-img="assets/discovery-creative-9x16.webp">Add the Discovery Set · ₹999</button>
+          <a href="#collection" class="text-link">Already sure? Shop 30 ml</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- NOTES: notes and ingredients explainer (client brief) -->
   <section class="notes" id="notes" aria-labelledby="notesTitle">
     <div class="shop-wrap">
@@ -1533,8 +1814,8 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
       <div class="notes-tabs" role="tablist" aria-label="Fragrance notes">
         <button class="notes-tab is-active" role="tab" aria-selected="true" aria-controls="notesPanel" data-n="focus">Focus</button>
-        <button class="notes-tab" role="tab" aria-selected="false" aria-controls="notesPanel" data-n="power" tabindex="-1">Power</button>
         <button class="notes-tab" role="tab" aria-selected="false" aria-controls="notesPanel" data-n="warmth" tabindex="-1">Warmth</button>
+        <button class="notes-tab" role="tab" aria-selected="false" aria-controls="notesPanel" data-n="power" tabindex="-1">Power</button>
       </div>
       <div class="notes-panel theme-focus" id="notesPanel" role="tabpanel">
         <div class="np-media"><img id="npImg" src="assets/focus-bottle.webp" alt="Focus, 30 ml Eau de Parfum" loading="lazy"></div>
@@ -1552,19 +1833,6 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
     </div>
   </section>
-
-  <section class="together" aria-label="Together">
-    <div class="together-head">
-      <h2 data-reveal>Two signatures, one city.</h2>
-    </div>
-    <div class="bento">
-      <figure class="cell c-rome"><img src="assets/together-rome.webp" alt="Him and her in Rome, Focus on a pedestal" loading="lazy" style="object-position:50% 40%"></figure>
-      <figure class="cell c-concrete"><img src="assets/together-concrete.webp" alt="Him and her in a concrete atrium" loading="lazy"></figure>
-      <div class="cell c-type"><p>Different rooms all day. The same table by evening.</p></div>
-      <figure class="cell c-case"><img src="assets/power-case.webp" alt="Power presented in a velvet case" loading="lazy" style="object-position:50% 60%"></figure>
-    </div>
-  </section>
-
 
   <!-- SHOP: by occasion -->
   <section class="occasion" id="occasions" aria-labelledby="occTitle">
@@ -1618,42 +1886,6 @@ body{background:var(--tile-a);color:var(--body)}
     </div>
   </section>
 
-  <!-- ACTION: Discovery Set, horizontal accordion -->
-  <section class="vapour" aria-label="Focus, Power, Warmth">
-    <canvas id="vapourCanvas" aria-hidden="true"></canvas>
-    <p class="vapour-line" id="vapourLine" aria-live="polite">Fresh, citrus, aquatic</p>
-    <div class="vapour-foot">
-      <ol class="vapour-steps" aria-label="The three fragrances"><li class="is-on">Focus</li><li>Power</li><li>Warmth</li></ol>
-      <a class="text-link" href="#discovery">All three, in one case</a>
-    </div>
-  </section>
-
-  <section class="discovery" id="discovery" aria-labelledby="dsTitle">
-    <div class="shop-wrap">
-      <div class="sec-head">
-        <h2 id="dsTitle" data-reveal>Try all three before you commit.</h2>
-        <p data-reveal>Three 10 ml bottles. Wear each for a day, then choose your 30 ml.</p>
-      </div>
-      <figure class="ds-figure">
-        <picture>
-          <source media="(min-width:900px)" srcset="assets/discovery-creative-16x9.webp" width="1672" height="941">
-          <img src="assets/discovery-creative-9x16.webp" width="941" height="1672" loading="lazy"
-            alt="The Discovery Set: Power, Focus and Warmth, 10 ml each, in a gold-lined box on a houndstooth jacket">
-        </picture>
-      </figure>
-      <div class="ds-foot">
-        <ul class="ds-specs" aria-label="Discovery Set details">
-          <li>3 × 10 ml</li><li>Unisex</li><li>Eau de Parfum</li>
-        </ul>
-        <div class="ds-actions">
-          <button class="btn" id="dsAdd" data-add="Discovery Set" data-img="assets/discovery-creative-9x16.webp">Add the Discovery Set</button>
-          <a href="#collection" class="text-link">Already sure? Shop 30 ml</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- REVIEWS: sample cards for layout; the Shopify reviews app feeds this at launch -->
   <section class="reviews" id="reviews" aria-labelledby="revTitle">
     <div class="shop-wrap">
@@ -1695,7 +1927,7 @@ body{background:var(--tile-a);color:var(--body)}
       <div class="sec-head"><h2 id="faqTitle" data-reveal>Questions</h2></div>
       <div class="faq-list">
         <details class="faq-item"><summary>How long does it last?</summary><div class="faq-a"><p>All three last 8+ hours on skin, with moderate projection: noticed within arm's length, never overpowering.</p></div></details>
-        <details class="faq-item"><summary>Can I try before buying a full bottle?</summary><div class="faq-a"><p>Yes. The Discovery Set has Focus, Power and Warmth, so you can wear each one before choosing.</p></div></details>
+        <details class="faq-item"><summary>Can I try before buying a full bottle?</summary><div class="faq-a"><p>Yes. The Discovery Set (₹999) holds three 10 ml bottles of Focus, Warmth and Power. Wear each for a day, then choose your 30 ml.</p></div></details>
         <details class="faq-item"><summary>Which one is right for me?</summary><div class="faq-a"><p>Focus is fresh and citrus, for the workday. Power is smoky and woody, for the big moment. Warmth is soft vanilla and rose, for the evening. Not sure? Take the 30-second quiz.</p></div></details>
         <details class="faq-item"><summary>Is it unisex?</summary><div class="faq-a"><p>Yes. All three are 30 ml unisex Eau de Parfum.</p></div></details>
         <details class="faq-item"><summary>What's in it?</summary><div class="faq-a"><p>More than half of every formula is natural ingredients. Every fragrance is IFRA compliant, cruelty-free, vegan and made in India.</p></div></details>
@@ -1724,7 +1956,7 @@ body{background:var(--tile-a);color:var(--body)}
   <footer class="footer">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#top" class="logo"><sup>x</sup>PRESENCE</a>
+        <a href="#top" class="logo" aria-label="XPresence, back to top"><svg class="logo-svg" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="537.8 392.8 524.4 114.5" fill="currentColor"><path d="M544.86 397.34C546.54 398.85 548.25 400.65 549.98 402.74C551.70 404.83 553.13 406.89 554.26 408.94L565.84 429.03L565.59 430.45L540.01 441.27L540.37 439.26C544.67 436.86 553.39 432.13 554.00 431.65C556.68 429.51 555.28 425.95 555.09 425.40C554.89 424.85 554.45 423.83 554.02 422.72L538.78 393.75L544.86 397.34"/><path d="M584.13 447.05C582.44 445.54 580.74 443.74 579.01 441.66C577.29 439.56 575.86 437.50 574.73 435.46L563.14 415.37L563.40 413.95L588.98 403.13L588.62 405.13C584.31 407.54 575.59 412.26 574.98 412.75C572.31 414.89 573.70 418.44 573.90 418.99C574.09 419.54 574.54 420.56 574.97 421.68L590.21 450.64L584.13 447.05"/><path d="M634.09 455.33C636.73 452.00 638.05 448.13 638.05 443.72C638.05 438.79 636.56 434.86 633.57 431.92C630.59 428.98 625.60 427.51 618.59 427.51L606.53 427.51L606.53 444.63C606.53 448.95 607.70 452.65 610.03 455.72C612.37 458.79 616.21 460.33 621.57 460.33C627.28 460.33 631.45 458.66 634.09 455.33M639.54 428.15C643.91 431.79 646.09 436.72 646.09 442.94C646.09 446.66 645.18 450.17 643.37 453.45C641.55 456.74 638.91 459.37 635.46 461.36C632.00 463.35 627.93 464.35 623.26 464.35C619.80 464.35 616.86 463.74 614.44 462.53C612.02 461.32 610.18 459.92 608.93 458.32C607.67 456.72 606.92 455.31 606.66 454.10L606.53 454.10L606.53 494.83C606.53 498.20 607.44 500.56 609.25 501.90C611.07 503.24 613.23 503.91 615.74 503.91L615.74 505.34L589.54 505.34L589.54 503.91C592.04 503.91 594.22 503.24 596.09 501.90C597.94 500.56 598.87 498.20 598.87 494.83L598.87 433.21C598.87 429.84 597.94 427.49 596.09 426.15C594.22 424.81 592.04 424.13 589.54 424.13L589.54 422.71L621.57 422.71C629.18 422.71 635.17 424.52 639.54 428.15"/><path d="M660.99 443.33C660.99 448.00 662.35 451.57 665.08 454.04C667.80 456.50 671.24 457.73 675.39 457.73C680.92 457.73 685.16 456.22 688.10 453.19C691.04 450.17 692.51 446.58 692.51 442.43C692.51 437.58 691.04 433.89 688.10 431.33C685.16 428.78 680.14 427.51 673.05 427.51L660.99 427.51L660.99 443.33M710.93 503.91L710.93 505.34L688.62 505.34L688.62 503.91C694.59 503.91 697.57 502.83 697.57 500.67C697.57 499.72 697.01 498.55 695.88 497.17L660.99 454.62L660.99 494.83C660.99 498.20 661.90 500.56 663.71 501.90C665.53 503.24 667.69 503.91 670.20 503.91L670.20 505.34L644.00 505.34L644.00 503.91C646.50 503.91 648.69 503.24 650.55 501.90C652.41 500.56 653.34 498.20 653.34 494.83L653.34 433.21C653.34 429.84 652.41 427.49 650.55 426.15C648.69 424.81 646.50 424.14 644.00 424.14L644.00 422.71L676.04 422.71C683.73 422.71 689.74 424.39 694.07 427.77C698.39 431.14 700.55 435.90 700.55 442.04C700.55 447.83 698.54 452.54 694.52 456.18C690.50 459.81 684.73 461.62 677.21 461.62C674.95 461.62 672.79 461.23 670.72 460.46L670.59 460.71C676.99 464.78 682.61 469.75 687.45 475.63L710.93 503.91"/><path d="M869.65 493.75L869.65 433.21C869.65 429.84 868.72 427.49 866.86 426.15C865.00 424.81 862.82 424.13 860.31 424.13L860.31 422.71L879.77 422.71L923.61 499.89L923.61 433.21C923.61 429.84 922.53 427.49 920.37 426.15C918.21 424.81 915.65 424.13 912.72 424.13L912.72 422.71L938.27 422.71L938.27 424.13C935.76 424.13 933.58 424.81 931.72 426.15C929.86 427.49 928.93 429.84 928.93 433.21L928.93 494.83C928.93 498.20 929.86 500.56 931.72 501.90C933.58 503.24 935.76 503.91 938.27 503.91L938.27 505.34L918.30 505.34L874.97 429.06L874.97 493.75L869.65 493.75"/><path d="M989.52 494.83C993.89 490.85 996.64 485.92 997.76 480.04L999.71 480.43C998.32 487.61 995.43 493.71 991.01 498.72C986.60 503.74 979.47 506.25 969.61 506.25C958.20 506.25 949.33 502.53 943.02 495.09C936.71 487.65 933.55 477.19 933.55 463.70C933.55 455.40 935.04 448.05 938.03 441.65C941.01 435.25 945.20 430.28 950.61 426.73C956.01 423.18 962.30 421.41 969.48 421.41C979.69 421.41 987.17 424.55 991.92 430.82C996.68 437.09 999.06 444.80 999.06 453.97L999.06 456.56L987.38 455.14C988.51 451.51 989.07 448.00 989.07 444.63C989.07 438.75 987.32 434.01 983.82 430.43C980.31 426.84 975.62 425.04 969.74 425.04C961.18 425.04 954.37 428.29 949.31 434.77C944.25 441.26 941.72 450.90 941.72 463.70C941.72 471.74 943.02 478.55 945.61 484.13C948.21 489.71 951.80 493.88 956.38 496.65C960.96 499.42 966.28 500.80 972.34 500.80C979.43 500.80 985.16 498.81 989.52 494.83"/><path d="M1059.69 492.14C1058.91 494.02 1057.87 495.56 1056.56 497.10C1054.61 499.39 1051.95 500.54 1048.58 500.54L1013.56 500.54L1013.56 463.05L1032.13 463.05C1035.50 463.05 1037.86 463.76 1039.20 465.19C1040.54 466.62 1041.21 468.24 1041.21 470.05L1042.64 470.05L1042.64 451.51L1041.21 451.51C1041.21 453.32 1040.54 454.94 1039.20 456.37C1037.86 457.80 1035.50 458.51 1032.13 458.51L1013.56 458.51L1013.56 427.51L1049.36 427.51C1052.47 427.51 1054.72 428.59 1056.10 430.75C1057.04 432.21 1057.66 433.65 1058.08 435.43L1059.62 435.19L1058.83 425.69L1058.57 422.71L997.62 422.71L997.62 424.21C999.68 424.37 1001.52 425.00 1003.11 426.15C1004.97 427.49 1005.90 429.84 1005.90 433.21L1005.90 494.83C1005.90 498.20 1004.97 500.56 1003.11 501.90C1001.52 503.05 999.68 503.67 997.62 503.84L997.62 505.34L1057.79 505.34L1058.57 502.35L1061.22 492.61L1059.69 492.14"/><path d="M770.79 492.14C770.01 494.02 768.97 495.56 767.66 497.10C765.71 499.39 763.05 500.54 759.68 500.54L724.66 500.54L724.66 463.05L743.23 463.05C746.60 463.05 748.96 463.76 750.30 465.19C751.64 466.62 752.31 468.24 752.31 470.05L753.74 470.05L753.74 451.51L752.31 451.51C752.31 453.32 751.64 454.94 750.30 456.37C748.96 457.80 746.60 458.51 743.23 458.51L724.66 458.51L724.66 427.51L764.69 427.51L771.07 422.71L708.77 422.71L708.77 424.21C710.81 424.38 712.63 425.01 714.21 426.15C716.07 427.49 717.00 429.84 717.00 433.21L717.00 494.83C717.00 498.20 716.07 500.56 714.21 501.90C712.63 503.04 710.81 503.66 708.77 503.83L708.77 505.34L768.89 505.34L769.67 502.35L772.32 492.61L770.79 492.14"/><path d="M809.76 467.49C806.32 464.09 801.25 461.16 794.54 458.68L776.27 452.06C772.83 450.83 770.34 449.11 768.80 446.90C767.25 444.70 766.48 442.23 766.48 439.49C766.48 434.64 768.18 430.73 771.58 427.78C774.97 424.82 779.76 423.34 785.94 423.34C793.52 423.34 799.28 425.66 803.21 430.29C807.14 434.92 809.76 441.92 811.09 451.27L812.41 451.27L811.48 428.50C804.87 422.59 796.48 419.63 786.33 419.63C780.07 419.63 774.82 420.65 770.58 422.68C766.35 424.71 763.23 427.31 761.25 430.49C759.26 433.67 758.27 437.06 758.27 440.68C758.27 445.89 759.55 449.95 762.11 452.86C764.67 455.77 768.33 458.07 773.10 459.74L792.29 466.63C801.82 469.89 806.59 475.80 806.59 484.36C806.59 489.57 804.78 493.85 801.16 497.20C797.54 500.56 792.47 502.23 785.94 502.23C782.74 502.23 779.80 501.79 777.10 500.94L775.86 505.48C778.58 505.95 782.75 506.20 785.94 506.20C794.41 506.20 801.36 504.53 806.78 501.17C812.21 497.82 814.92 491.38 814.92 481.85C814.92 475.67 813.20 470.88 809.76 467.49"/><path d="M883.85 492.14C883.07 494.02 882.03 495.56 880.72 497.10C878.77 499.39 876.11 500.54 872.74 500.54L827.78 500.54L827.78 463.05L846.35 463.05C849.72 463.05 852.08 463.76 853.42 465.19C854.76 466.62 855.43 468.24 855.43 470.05L856.86 470.05L856.86 451.51L855.43 451.51C855.43 453.32 854.76 454.94 853.42 456.37C852.08 457.80 849.72 458.51 846.35 458.51L827.78 458.51L827.78 427.51L847.05 427.51C850.16 427.51 852.41 428.59 853.79 430.75C854.73 432.21 855.35 433.65 855.77 435.43L857.31 435.19L856.52 425.69L856.26 422.71L812.01 422.71L812.01 424.22C814.01 424.41 815.79 425.03 817.34 426.15C819.20 427.49 820.12 429.84 820.12 433.21L820.12 494.83C820.12 498.20 819.20 500.56 817.34 501.90C815.79 503.02 814.01 503.64 812.01 503.83L812.01 505.34L881.95 505.34L882.73 502.35L885.39 492.61L883.85 492.14"/></svg></a>
         <p>Eau de Parfum for the ones the room waits for.</p>
       </div>
       <div class="foot-col">
@@ -1733,7 +1965,7 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
       <div class="foot-col">
         <h4>House</h4>
-        <a href="#cast">Our story</a><a href="#">Journal</a><a href="#">Stockists</a>
+        <a href="#problem">Our story</a><a href="#">Journal</a><a href="#">Stockists</a>
       </div>
       <div class="foot-col">
         <h4>Care</h4>
@@ -1749,7 +1981,7 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
     </div>
     <div class="foot-base"><span class="foot-copy">© 2026 XPresence. All rights reserved.</span><span class="foot-links"><a href="#">Instagram</a><a href="#">Privacy</a><a href="#">Terms</a></span></div>
-    <div class="foot-wordmark"><a href="#top" class="logo" aria-label="XPresence, back to top"><sup>x</sup>PRESENCE</a></div>
+    <div class="foot-wordmark"><a href="#top" class="logo" aria-label="XPresence, back to top"><svg class="logo-svg" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="537.8 392.8 524.4 114.5" fill="currentColor"><path d="M544.86 397.34C546.54 398.85 548.25 400.65 549.98 402.74C551.70 404.83 553.13 406.89 554.26 408.94L565.84 429.03L565.59 430.45L540.01 441.27L540.37 439.26C544.67 436.86 553.39 432.13 554.00 431.65C556.68 429.51 555.28 425.95 555.09 425.40C554.89 424.85 554.45 423.83 554.02 422.72L538.78 393.75L544.86 397.34"/><path d="M584.13 447.05C582.44 445.54 580.74 443.74 579.01 441.66C577.29 439.56 575.86 437.50 574.73 435.46L563.14 415.37L563.40 413.95L588.98 403.13L588.62 405.13C584.31 407.54 575.59 412.26 574.98 412.75C572.31 414.89 573.70 418.44 573.90 418.99C574.09 419.54 574.54 420.56 574.97 421.68L590.21 450.64L584.13 447.05"/><path d="M634.09 455.33C636.73 452.00 638.05 448.13 638.05 443.72C638.05 438.79 636.56 434.86 633.57 431.92C630.59 428.98 625.60 427.51 618.59 427.51L606.53 427.51L606.53 444.63C606.53 448.95 607.70 452.65 610.03 455.72C612.37 458.79 616.21 460.33 621.57 460.33C627.28 460.33 631.45 458.66 634.09 455.33M639.54 428.15C643.91 431.79 646.09 436.72 646.09 442.94C646.09 446.66 645.18 450.17 643.37 453.45C641.55 456.74 638.91 459.37 635.46 461.36C632.00 463.35 627.93 464.35 623.26 464.35C619.80 464.35 616.86 463.74 614.44 462.53C612.02 461.32 610.18 459.92 608.93 458.32C607.67 456.72 606.92 455.31 606.66 454.10L606.53 454.10L606.53 494.83C606.53 498.20 607.44 500.56 609.25 501.90C611.07 503.24 613.23 503.91 615.74 503.91L615.74 505.34L589.54 505.34L589.54 503.91C592.04 503.91 594.22 503.24 596.09 501.90C597.94 500.56 598.87 498.20 598.87 494.83L598.87 433.21C598.87 429.84 597.94 427.49 596.09 426.15C594.22 424.81 592.04 424.13 589.54 424.13L589.54 422.71L621.57 422.71C629.18 422.71 635.17 424.52 639.54 428.15"/><path d="M660.99 443.33C660.99 448.00 662.35 451.57 665.08 454.04C667.80 456.50 671.24 457.73 675.39 457.73C680.92 457.73 685.16 456.22 688.10 453.19C691.04 450.17 692.51 446.58 692.51 442.43C692.51 437.58 691.04 433.89 688.10 431.33C685.16 428.78 680.14 427.51 673.05 427.51L660.99 427.51L660.99 443.33M710.93 503.91L710.93 505.34L688.62 505.34L688.62 503.91C694.59 503.91 697.57 502.83 697.57 500.67C697.57 499.72 697.01 498.55 695.88 497.17L660.99 454.62L660.99 494.83C660.99 498.20 661.90 500.56 663.71 501.90C665.53 503.24 667.69 503.91 670.20 503.91L670.20 505.34L644.00 505.34L644.00 503.91C646.50 503.91 648.69 503.24 650.55 501.90C652.41 500.56 653.34 498.20 653.34 494.83L653.34 433.21C653.34 429.84 652.41 427.49 650.55 426.15C648.69 424.81 646.50 424.14 644.00 424.14L644.00 422.71L676.04 422.71C683.73 422.71 689.74 424.39 694.07 427.77C698.39 431.14 700.55 435.90 700.55 442.04C700.55 447.83 698.54 452.54 694.52 456.18C690.50 459.81 684.73 461.62 677.21 461.62C674.95 461.62 672.79 461.23 670.72 460.46L670.59 460.71C676.99 464.78 682.61 469.75 687.45 475.63L710.93 503.91"/><path d="M869.65 493.75L869.65 433.21C869.65 429.84 868.72 427.49 866.86 426.15C865.00 424.81 862.82 424.13 860.31 424.13L860.31 422.71L879.77 422.71L923.61 499.89L923.61 433.21C923.61 429.84 922.53 427.49 920.37 426.15C918.21 424.81 915.65 424.13 912.72 424.13L912.72 422.71L938.27 422.71L938.27 424.13C935.76 424.13 933.58 424.81 931.72 426.15C929.86 427.49 928.93 429.84 928.93 433.21L928.93 494.83C928.93 498.20 929.86 500.56 931.72 501.90C933.58 503.24 935.76 503.91 938.27 503.91L938.27 505.34L918.30 505.34L874.97 429.06L874.97 493.75L869.65 493.75"/><path d="M989.52 494.83C993.89 490.85 996.64 485.92 997.76 480.04L999.71 480.43C998.32 487.61 995.43 493.71 991.01 498.72C986.60 503.74 979.47 506.25 969.61 506.25C958.20 506.25 949.33 502.53 943.02 495.09C936.71 487.65 933.55 477.19 933.55 463.70C933.55 455.40 935.04 448.05 938.03 441.65C941.01 435.25 945.20 430.28 950.61 426.73C956.01 423.18 962.30 421.41 969.48 421.41C979.69 421.41 987.17 424.55 991.92 430.82C996.68 437.09 999.06 444.80 999.06 453.97L999.06 456.56L987.38 455.14C988.51 451.51 989.07 448.00 989.07 444.63C989.07 438.75 987.32 434.01 983.82 430.43C980.31 426.84 975.62 425.04 969.74 425.04C961.18 425.04 954.37 428.29 949.31 434.77C944.25 441.26 941.72 450.90 941.72 463.70C941.72 471.74 943.02 478.55 945.61 484.13C948.21 489.71 951.80 493.88 956.38 496.65C960.96 499.42 966.28 500.80 972.34 500.80C979.43 500.80 985.16 498.81 989.52 494.83"/><path d="M1059.69 492.14C1058.91 494.02 1057.87 495.56 1056.56 497.10C1054.61 499.39 1051.95 500.54 1048.58 500.54L1013.56 500.54L1013.56 463.05L1032.13 463.05C1035.50 463.05 1037.86 463.76 1039.20 465.19C1040.54 466.62 1041.21 468.24 1041.21 470.05L1042.64 470.05L1042.64 451.51L1041.21 451.51C1041.21 453.32 1040.54 454.94 1039.20 456.37C1037.86 457.80 1035.50 458.51 1032.13 458.51L1013.56 458.51L1013.56 427.51L1049.36 427.51C1052.47 427.51 1054.72 428.59 1056.10 430.75C1057.04 432.21 1057.66 433.65 1058.08 435.43L1059.62 435.19L1058.83 425.69L1058.57 422.71L997.62 422.71L997.62 424.21C999.68 424.37 1001.52 425.00 1003.11 426.15C1004.97 427.49 1005.90 429.84 1005.90 433.21L1005.90 494.83C1005.90 498.20 1004.97 500.56 1003.11 501.90C1001.52 503.05 999.68 503.67 997.62 503.84L997.62 505.34L1057.79 505.34L1058.57 502.35L1061.22 492.61L1059.69 492.14"/><path d="M770.79 492.14C770.01 494.02 768.97 495.56 767.66 497.10C765.71 499.39 763.05 500.54 759.68 500.54L724.66 500.54L724.66 463.05L743.23 463.05C746.60 463.05 748.96 463.76 750.30 465.19C751.64 466.62 752.31 468.24 752.31 470.05L753.74 470.05L753.74 451.51L752.31 451.51C752.31 453.32 751.64 454.94 750.30 456.37C748.96 457.80 746.60 458.51 743.23 458.51L724.66 458.51L724.66 427.51L764.69 427.51L771.07 422.71L708.77 422.71L708.77 424.21C710.81 424.38 712.63 425.01 714.21 426.15C716.07 427.49 717.00 429.84 717.00 433.21L717.00 494.83C717.00 498.20 716.07 500.56 714.21 501.90C712.63 503.04 710.81 503.66 708.77 503.83L708.77 505.34L768.89 505.34L769.67 502.35L772.32 492.61L770.79 492.14"/><path d="M809.76 467.49C806.32 464.09 801.25 461.16 794.54 458.68L776.27 452.06C772.83 450.83 770.34 449.11 768.80 446.90C767.25 444.70 766.48 442.23 766.48 439.49C766.48 434.64 768.18 430.73 771.58 427.78C774.97 424.82 779.76 423.34 785.94 423.34C793.52 423.34 799.28 425.66 803.21 430.29C807.14 434.92 809.76 441.92 811.09 451.27L812.41 451.27L811.48 428.50C804.87 422.59 796.48 419.63 786.33 419.63C780.07 419.63 774.82 420.65 770.58 422.68C766.35 424.71 763.23 427.31 761.25 430.49C759.26 433.67 758.27 437.06 758.27 440.68C758.27 445.89 759.55 449.95 762.11 452.86C764.67 455.77 768.33 458.07 773.10 459.74L792.29 466.63C801.82 469.89 806.59 475.80 806.59 484.36C806.59 489.57 804.78 493.85 801.16 497.20C797.54 500.56 792.47 502.23 785.94 502.23C782.74 502.23 779.80 501.79 777.10 500.94L775.86 505.48C778.58 505.95 782.75 506.20 785.94 506.20C794.41 506.20 801.36 504.53 806.78 501.17C812.21 497.82 814.92 491.38 814.92 481.85C814.92 475.67 813.20 470.88 809.76 467.49"/><path d="M883.85 492.14C883.07 494.02 882.03 495.56 880.72 497.10C878.77 499.39 876.11 500.54 872.74 500.54L827.78 500.54L827.78 463.05L846.35 463.05C849.72 463.05 852.08 463.76 853.42 465.19C854.76 466.62 855.43 468.24 855.43 470.05L856.86 470.05L856.86 451.51L855.43 451.51C855.43 453.32 854.76 454.94 853.42 456.37C852.08 457.80 849.72 458.51 846.35 458.51L827.78 458.51L827.78 427.51L847.05 427.51C850.16 427.51 852.41 428.59 853.79 430.75C854.73 432.21 855.35 433.65 855.77 435.43L857.31 435.19L856.52 425.69L856.26 422.71L812.01 422.71L812.01 424.22C814.01 424.41 815.79 425.03 817.34 426.15C819.20 427.49 820.12 429.84 820.12 433.21L820.12 494.83C820.12 498.20 819.20 500.56 817.34 501.90C815.79 503.02 814.01 503.64 812.01 503.83L812.01 505.34L881.95 505.34L882.73 502.35L885.39 492.61L883.85 492.14"/></svg></a></div>
   </footer>
 </main>
 
@@ -1852,36 +2084,6 @@ body{background:var(--tile-a);color:var(--body)}
     gsap.fromTo(el, { y: 28, autoAlpha: 0, filter: 'blur(12px)' }, { y: 0, autoAlpha: 1, filter: 'blur(0px)', duration: 1.3, ease: 'expo.out', clearProps: 'filter', scrollTrigger: { trigger: el, start: 'top 88%' } });
   });
 
-  /* CAST: pinned dual reveal */
-  const castWords = document.querySelectorAll('.cast-stage .word-list');
-  const ticks = document.querySelectorAll('.cast-progress b');
-  let castStep = -1;
-  const setCastStep = (s) => {
-    if (s === castStep) return;
-    castStep = s;
-    castWords.forEach(l => l.style.transform = 'translateY(' + (-s * 100 / 4) + '%)');
-    ticks.forEach((t, i) => t.classList.toggle('on', i <= s));
-  };
-  setCastStep(0);
-
-  const himLayers = gsap.utils.toArray('.him .layer');
-  const herLayers = gsap.utils.toArray('.her .layer');
-  const castTl = gsap.timeline({
-    defaults: { ease: 'none' },
-    onUpdate() { setCastStep(Math.max(0, Math.min(3, Math.floor(castTl.time() + 0.45)))); },
-    scrollTrigger: { trigger: '#castStage', start: 'top top', end: () => '+=' + window.innerHeight * 3.4, pin: true, scrub: 0.8, anticipatePin: 1 }
-  });
-  for (let i = 1; i < 4; i++) {
-    const at = i - 1;
-    castTl.to(himLayers[i], { clipPath: 'inset(0% 0 0 0)', duration: 1 }, at)
-          .fromTo(himLayers[i].querySelector('.pan'), { scale: 1.3, yPercent: 8 }, { scale: 1, yPercent: 0, duration: 1 }, at)
-          .to(himLayers[i - 1].querySelector('.pan'), { scale: 1.12, filter: 'brightness(.35)', duration: 1 }, at)
-          .to(herLayers[i], { clipPath: 'inset(0 0 0% 0)', duration: 1 }, at + 0.12)
-          .fromTo(herLayers[i].querySelector('.pan'), { scale: 1.3, yPercent: -8 }, { scale: 1, yPercent: 0, duration: 1 }, at + 0.12)
-          .to(herLayers[i - 1].querySelector('.pan'), { scale: 1.12, filter: 'brightness(.35)', duration: 1 }, at + 0.12);
-  }
-  castTl.to({}, { duration: 0.6 });
-
   /* MANIFESTO: word scrub */
   const man = document.getElementById('manifesto');
   man.innerHTML = man.textContent.trim().split(/\s+/).map(w => {
@@ -1904,19 +2106,6 @@ body{background:var(--tile-a);color:var(--body)}
      .to('#focusInfo', { autoAlpha: 1, y: 0, duration: 0.35 }, 0.95)
      .fromTo('#focusInfo', { y: 30 }, { y: 0, duration: 0.35 }, 0.95)
      .to({}, { duration: 0.3 });
-
-  /* POWER: horizontal film strip */
-  const track = document.getElementById('powerTrack');
-  const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
-  const hTween = gsap.to(track, {
-    x: () => -dist(), ease: 'none',
-    scrollTrigger: { trigger: '#power', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1,
-      onUpdate: self => gsap.set('#powerBar', { scaleX: self.progress }) }
-  });
-  gsap.utils.toArray('.p-panel .ph, .p-product .ph').forEach(ph => {
-    gsap.fromTo(ph, { scale: 0.8 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: ph, containerAnimation: hTween, start: 'left right', end: 'center center', scrub: true } });
-    gsap.to(ph, { opacity: 0.2, filter: 'brightness(.5)', ease: 'none', scrollTrigger: { trigger: ph, containerAnimation: hTween, start: 'center 30%', end: 'right left', scrub: true } });
-  });
 
   /* WARMTH: pinned evening timeline. Scroll moves through four moments; the last reveals the bottle */
   (function warmthTimeline() {
@@ -1947,251 +2136,32 @@ body{background:var(--tile-a);color:var(--body)}
       scrollTrigger: { trigger: stage, start: 'top top', end: len, scrub: true, invalidateOnRefresh: true } });
   })();
 
-  /* TOGETHER: bento image scale and fade */
-  gsap.utils.toArray('.bento .cell').forEach((cell, i) => {
-    gsap.fromTo(cell, { scale: 0.86, opacity: 0.3 }, { scale: 1, opacity: 1, ease: 'none', scrollTrigger: { trigger: cell, start: 'top bottom', end: 'top 55%', scrub: true } });
-    gsap.to(cell, { opacity: 0.2, ease: 'none', scrollTrigger: { trigger: cell, start: 'bottom 30%', end: 'bottom top', scrub: true } });
+  /* POWER: horizontal film strip */
+  const track = document.getElementById('powerTrack');
+  const dist = () => Math.max(0, track.scrollWidth - document.documentElement.clientWidth);
+  const hTween = gsap.to(track, {
+    x: () => -dist(), ease: 'none',
+    scrollTrigger: { trigger: '#power', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1,
+      onUpdate: self => gsap.set('#powerBar', { scaleX: self.progress }) }
+  });
+  gsap.utils.toArray('.p-panel .ph, .p-product .ph').forEach(ph => {
+    gsap.fromTo(ph, { scale: 0.8 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: ph, containerAnimation: hTween, start: 'left right', end: 'center center', scrub: true } });
+    gsap.to(ph, { opacity: 0.2, filter: 'brightness(.5)', ease: 'none', scrollTrigger: { trigger: ph, containerAnimation: hTween, start: 'center 30%', end: 'right left', scrub: true } });
   });
 
-  /* 21st-inspired: Vapour Text Effect, scroll-driven, rendered as a perfume spray.
-     At rest the word is crisp type. On each change the word atomises into a fine mist of glassy
-     droplets, a quick atomiser spray of tiny droplets crosses the line (left to right, then right to
-     left), and the next word blooms outward from the centre and settles back into type. Every frame is a pure function
-     of scroll progress, so scrolling back reverses it. The canvas redraws whenever its own box changes
-     (pinning, mobile toolbars, rotation), so it never stretches. */
-  (function vapourText() {
-    const canvas = document.getElementById('vapourCanvas');
-    const section = canvas && canvas.closest('.vapour');
-    if (!canvas || !section) return;
-    const ctx = canvas.getContext('2d');
-    const words = ['FOCUS', 'POWER', 'WARMTH'];
-    const last = words.length - 1;
-    const state = { t: 0 };
-    let W = 0, H = 0, DPR = 1, sets = [], spray = [], ready = false;
-    const clamp = v => Math.max(0, Math.min(1, v));
-    const easeOut = k => 1 - Math.pow(1 - k, 3);
-    const easeIn = k => k * k * k;
-    const BANDS = [['#12514A', '#F4F1EA'], ['#1C2439', '#F1EFEB'], ['#D2614F', '#1A1110']];
-    const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
-    const mix = (a, b, k) => { const A = hex(a), B = hex(b); return 'rgb(' + A.map((v, i) => Math.round(v + (B[i] - v) * k)).join(',') + ')'; };
-    let INK = '#F4F1EA';
-    const TAU = Math.PI * 2;
-    const TY = () => H / 2 - 18;                       // word sits just above the caption
-
-    // Glassy droplet sprites, one per ink colour, drawn once and reused for every particle.
-    const sprites = {};
-    function sprite(ink) {
-      if (sprites[ink]) return sprites[ink];
-      const S = 64, c = document.createElement('canvas'); c.width = c.height = S;
-      const g = c.getContext('2d'), [r, gr, b] = hex(ink);
-      const body = g.createRadialGradient(S * 0.5, S * 0.55, 0, S * 0.5, S * 0.5, S * 0.5);
-      body.addColorStop(0, 'rgba(' + r + ',' + gr + ',' + b + ',.95)');
-      body.addColorStop(0.55, 'rgba(' + r + ',' + gr + ',' + b + ',.55)');
-      body.addColorStop(1, 'rgba(' + r + ',' + gr + ',' + b + ',0)');
-      g.fillStyle = body; g.beginPath(); g.arc(S / 2, S / 2, S / 2, 0, TAU); g.fill();
-      g.fillStyle = 'rgba(255,255,255,.85)'; g.beginPath(); g.arc(S * 0.38, S * 0.36, S * 0.09, 0, TAU); g.fill();
-      return (sprites[ink] = c);
-    }
-
-    function applyFont(c, fs) {
-      c.font = '300 ' + fs + 'px "Cormorant Garamond", serif';
-      c.letterSpacing = Math.round(fs * 0.04) + 'px';
-      c.textAlign = 'center';
-      c.textBaseline = 'middle';
-    }
-
-    // One size for all three words, set by the widest, so they read as a set.
-    function commonFs() {
-      const c = document.createElement('canvas').getContext('2d');
-      let fs = Math.max(120, Math.min(H * 0.34, W * 0.24)) * 0.9;
-      applyFont(c, fs);
-      const widest = Math.max(...words.map(w => c.measureText(w).width));
-      const max = Math.min(W, 1200) * 0.86;
-      return widest > max ? fs * max / widest : fs;
-    }
-
-    function sample(word, fs) {
-      const off = document.createElement('canvas');
-      off.width = Math.max(1, Math.ceil(W)); off.height = Math.max(1, Math.ceil(H));
-      const o = off.getContext('2d');
-      applyFont(o, fs);
-      o.fillStyle = '#fff';
-      o.fillText(word, W / 2, TY());
-      const data = o.getImageData(0, 0, off.width, off.height).data;
-      const step = W < 700 ? 2 : 3;
-      const parts = []; let minX = W, maxX = 0, maxY = 0;
-      for (let y = 0; y < off.height; y += step) {
-        for (let x = 0; x < off.width; x += step) {
-          if (data[(y * off.width + x) * 4 + 3] < 120 || Math.random() > 0.5) continue;
-          const hx = x + Math.random() * step, hy = y + Math.random() * step;
-          const haze = Math.random() < 0.05;
-          const ang = -Math.PI / 2 + (Math.random() - 0.5) * 2.2;     // mist lifts up and outward
-          const dist = 50 + Math.pow(Math.random(), 0.7) * 260;
-          parts.push({
-            hx, hy,
-            r: haze ? 3 + Math.random() * 4 : 0.7 + Math.pow(Math.random(), 3) * 2,
-            a: haze ? 0.06 + Math.random() * 0.06 : 0.3 + Math.random() * 0.5,
-            dx: Math.cos(ang) * dist, dy: Math.sin(ang) * dist,
-            jx: (Math.random() - 0.5) * 24, jy: (Math.random() - 0.5) * 16, // tight cluster at the drop's landing point
-            w: Math.random() * TAU
-          });
-          if (hx < minX) minX = hx;
-          if (hx > maxX) maxX = hx;
-          if (hy > maxY) maxY = hy;
-        }
-      }
-      return { word, fs, parts, minX, spanX: Math.max(1, maxX - minX), base: maxY };
-    }
-
-    const LINES = ['Fresh, citrus, aquatic', 'Woody, spicy, amber', 'Gourmand, floral, vanilla'];
-    const lineEl = document.getElementById('vapourLine');
-    const stepEls = [...section.querySelectorAll('.vapour-steps li')];
-    let metaIdx = 0, metaTimer;
-    function syncMeta(i) {
-      if (i === metaIdx) return;
-      metaIdx = i;
-      stepEls.forEach((li, k) => { li.classList.toggle('is-on', k === i); li.setAttribute('aria-current', k === i ? 'true' : 'false'); });
-      lineEl.style.opacity = 0;
-      clearTimeout(metaTimer);
-      metaTimer = setTimeout(() => { lineEl.textContent = LINES[i]; lineEl.style.opacity = 1; }, 180);
-    }
-
-    function drawText(set, alpha, fromX) {
-      if (alpha <= 0.001) return;
-      ctx.save();
-      if (fromX > 0) { ctx.beginPath(); ctx.rect(fromX, 0, W - fromX, H); ctx.clip(); }
-      applyFont(ctx, set.fs);
-      ctx.globalAlpha = alpha;
-      ctx.fillStyle = INK;
-      ctx.fillText(set.word, W / 2, TY());
-      ctx.restore();
-    }
-
-    function droplet(img, x, y, r, a) {
-      if (a <= 0.004 || r <= 0.1) return;
-      ctx.globalAlpha = a;
-      ctx.drawImage(img, x - r, y - r, r * 2, r * 2);
-    }
-
-    // Spray: a fine atomiser burst of tiny droplets across the word at each change.
-    function drawSpray(k, dir, spr) {
-      if (k <= 0 || k >= 1) return;
-      const sx = dir > 0 ? W * 0.05 : W * 0.95, sy = TY();
-      for (let i = 0; i < spray.length; i++) {
-        const p = spray[i];
-        const local = clamp((k - p.delay) / 0.62);
-        if (local <= 0 || local >= 1) continue;
-        const e = easeOut(local);
-        const x = sx + dir * Math.cos(p.ang) * p.dist * e;
-        const y = sy + Math.sin(p.ang) * p.dist * e + Math.sin(p.w + local * 6) * 4 * local - local * 14;
-        const a = p.a * Math.min(1, local / 0.12) * Math.pow(1 - local, 1.2);
-        droplet(spr, x, y, p.r * (1 + 0.5 * local), a);
-      }
-    }
-    function makeSpray() {
-      const n = W < 700 ? 260 : 460;
-      spray = [];
-      for (let i = 0; i < n; i++) {
-        spray.push({
-          ang: (Math.random() - 0.5) * 0.34 + (Math.random() - 0.5) * 0.14, // narrow cone, slightly feathered
-          dist: W * (0.3 + Math.pow(Math.random(), 0.8) * 0.6),
-          r: 0.5 + Math.pow(Math.random(), 3) * 1.4,
-          a: 0.5 + Math.random() * 0.45,
-          delay: Math.random() * 0.38,
-          w: Math.random() * TAU
-        });
-      }
-    }
-
-    function drawDissolve(set, k, spr) {
-      const frontNorm = clamp(k / 0.45);
-      drawText(set, 1, frontNorm >= 1 ? W : set.minX + set.spanX * frontNorm);
-      for (let i = 0; i < set.parts.length; i++) {
-        const p = set.parts[i];
-        const local = clamp((k - ((p.hx - set.minX) / set.spanX) * 0.45) / 0.55);
-        if (local <= 0) continue;
-        const e = easeOut(local);
-        const x = p.hx + p.dx * e + Math.sin(p.w + local * 5) * 8 * local;
-        const y = p.hy + p.dy * e;
-        droplet(spr, x, y, p.r * (1 + 0.6 * local), p.a * Math.pow(1 - local, 1.5));
-      }
-    }
-
-    function drawForm(set, f, spr, ix, iy) {
-      // Bloom outward from where the drop landed, then settle into crisp type.
-      const textA = clamp((f - 0.72) / 0.28);
-      for (let i = 0; i < set.parts.length; i++) {
-        const p = set.parts[i];
-        // Particles nearest the landing point arrive first, the word's ends last.
-        const lk = clamp((f - (Math.abs(p.hx - ix) / set.spanX) * 0.35) / 0.65);
-        if (lk <= 0) continue;
-        const e = easeOut(lk);
-        const sx = ix + p.jx, sy = iy + p.jy;
-        const x = sx + (p.hx - sx) * e;
-        const y = sy + (p.hy - sy) * e;
-        droplet(spr, x, y, p.r * (1.3 - 0.3 * e), p.a * Math.min(1, lk * 2.2) * (1 - textA));
-      }
-      drawText(set, textA, 0);
-    }
-
-    function draw() {
-      if (!ready || !W) return;
-      ctx.clearRect(0, 0, W, H);
-      const t = Math.max(0, Math.min(last, state.t));
-      const kk = Math.min(Math.floor(t), last - 1), uu = clamp((t - kk - 0.3) / 0.4);
-      const bg = mix(BANDS[kk][0], BANDS[kk + 1][0], uu);
-      INK = uu < 0.5 ? BANDS[kk][1] : BANDS[kk + 1][1];
-      section.style.setProperty('--bg', bg);
-      section.style.setProperty('--fg', INK);
-      syncMeta(Math.round(t));
-      if (reduce) { drawText(sets[Math.round(t)], 1, 0); return; }
-      const u = t - kk;
-      const spr = sprite(INK);
-      const next = sets[kk + 1];
-      const ix = W / 2, iy = TY();                           // the next word blooms from the centre of the line
-      // 0 to 0.6: current word atomises. 0.26 to 0.72: a fine spray crosses the word. 0.46 to 1: next word blooms.
-      if (u < 0.6) drawDissolve(sets[kk], u / 0.6, spr);
-      drawSpray(clamp((u - 0.26) / 0.46), kk % 2 === 0 ? 1 : -1, spr);
-      if (u > 0.46) drawForm(next, (u - 0.46) / 0.54, spr, ix, iy);
-      ctx.globalAlpha = 1;
-    }
-
-    function size() {
-      if (!ready) return;                                   // never sample glyphs before the web font is in
-      const r = canvas.getBoundingClientRect();
-      if (!r.width || !r.height) return;
-      if (Math.abs(r.width - W) < 1 && Math.abs(r.height - H) < 1 && sets.length) { draw(); return; }
-      DPR = Math.min(window.devicePixelRatio || 1, 2);
-      W = r.width; H = r.height;
-      canvas.width = Math.round(W * DPR); canvas.height = Math.round(H * DPR);
-      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      const fs = commonFs();
-      sets = words.map(w => sample(w, fs));
-      section.style.setProperty('--cap-top', Math.round(TY() + fs * 0.42 + 22) + 'px');
-      makeSpray();
-      draw();
-    }
-
-    const tl = gsap.timeline({
-      defaults: { ease: 'none' },
-      scrollTrigger: { trigger: section, start: 'top top', end: () => '+=' + window.innerHeight * 2.4,
-        pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true, onRefresh: () => size() }
-    });
-    tl.to({}, { duration: 0.15 })
-      .to(state, { t: last, duration: 1, onUpdate: draw })
-      .to({}, { duration: 0.15 });
-
-    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
-      ready = true;
-      size();
-      // Redraw whenever the canvas box itself changes, not just on window resize.
-      if ('ResizeObserver' in window) {
-        let rt;
-        new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(size, 60); }).observe(canvas);
-      } else {
-        window.addEventListener('resize', () => setTimeout(size, 150));
-      }
-    });
+  /* PROBLEM: the question rises word by word; the wordmark answers; the three moments follow */
+  (function problemIntro() {
+    const q = document.getElementById('pbTitle');
+    if (!q || reduce) return;
+    q.innerHTML = q.innerHTML.split(/(<em>.*?<\/em>|\s+)/).filter(t => t && t.trim()).map(t => {
+      if (t.startsWith('<em>')) return '<em>' + t.slice(4, -5).split(/\s+/).map(w => '<span class="w">' + w + '</span>').join(' ') + '</em>';
+      return '<span class="w">' + t + '</span>';
+    }).join(' ');
+    const tl = gsap.timeline({ scrollTrigger: { trigger: '#problem', start: 'top 70%' } });
+    tl.from('#pbTitle .w', { yPercent: 60, autoAlpha: 0, duration: 1, stagger: 0.06, ease: 'expo.out' })
+      .from('.pb-answer > *', { y: 16, autoAlpha: 0, duration: 0.9, stagger: 0.12, ease: 'expo.out' }, '-=0.5')
+      .from('.pb-p', { clipPath: 'inset(100% 0 0 0)', duration: 1.2, stagger: 0.12, ease: 'expo.out', clearProps: 'clipPath' }, '-=0.5')
+      .from('.pb-p img', { scale: 1.2, duration: 1.6, stagger: 0.12, ease: 'expo.out', clearProps: 'transform' }, '<');
   })();
 
   /* CLAIMS: clone the list once so the marquee loops seamlessly */
@@ -2397,7 +2367,7 @@ body{background:var(--tile-a);color:var(--body)}
     if (!cv || !v) return;
     const ctx = cv.getContext('2d');
     let W = 0, H = 0, fs = 0, raf = 0, on = false;
-    const font = () => '300 ' + fs + 'px "Cormorant Garamond", serif';
+    const font = () => '300 ' + fs + 'px "PP Cirka", "Cormorant Garamond", serif';
     function size() {
       const r = cv.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
       W = r.width; H = r.height;
@@ -2484,9 +2454,9 @@ body{background:var(--tile-a);color:var(--body)}
     focus:  { name: 'Focus',  img: 'assets/focus-bottle.webp',  href: '#focus',  spec: '30 ml Eau de Parfum' },
     power:  { name: 'Power',  img: 'assets/power-bottle.webp',  href: '#power',  spec: '30 ml Eau de Parfum' },
     warmth: { name: 'Warmth', img: 'assets/warmth-bottle.webp', href: '#warmth', spec: '30 ml Eau de Parfum' },
-    set:    { name: 'Discovery Set', img: 'assets/focus-pack.webp', href: '#discovery', spec: 'Focus, Power and Warmth' }
+    set:    { name: 'Discovery Set', img: 'assets/discovery-creative-9x16.webp', href: '#discovery', spec: '₹999 for all three' }
   };
-  const trioHTML = () => '<div class="trio">' + ['focus', 'power', 'warmth']
+  const trioHTML = () => '<div class="trio">' + ['focus', 'warmth', 'power']
     .map(k => '<img src="' + PRODUCTS[k].img + '" alt="' + PRODUCTS[k].name + '">').join('') + '</div>';
   const armAdd = (btn, key) => {
     btn.dataset.add = PRODUCTS[key].name;
@@ -2506,17 +2476,15 @@ body{background:var(--tile-a);color:var(--body)}
       mood: [
         { k: 'clarity',    t: 'Clarity',    p: 'focus',  img: 'assets/focus-tailoring.webp',   alt: 'Focus on a tailored jacket', why: 'Sparkling citrus and sea breeze, for a clear head and a composed room.' },
         { k: 'calm',       t: 'Calm',       p: 'focus',  img: 'assets/her-lobby.webp',         alt: 'Holding Focus in a hotel lobby', why: 'Jasmine, peony and sweet cedarwood keep it calm, even on deadline day.' },
-        { k: 'authority',  t: 'Authority',  p: 'power',  img: 'assets/him-desk.webp',          alt: 'Power on a glass desk', why: 'Spiced rum and tobacco set the tone before you speak.' },
-        { k: 'magnetism',  t: 'Magnetism',  p: 'power',  img: 'assets/him-spray.webp',         alt: 'Spraying Power', why: 'A defiant tuberose over guaiacwood holds the room after you leave.' },
         { k: 'comfort',    t: 'Comfort',    p: 'warmth', img: 'assets/warmth-pack.webp',       alt: 'Warmth with its terracotta case', why: 'Creamy vanilla and sandalwood, worn close.' },
-        { k: 'sensuality', t: 'Sensuality', p: 'warmth', img: 'assets/her-evening.webp',       alt: 'Warmth in evening light', why: 'Leather, raspberry and spiced rose, for evenings that linger.' }
+        { k: 'sensuality', t: 'Sensuality', p: 'warmth', img: 'assets/her-evening.webp',       alt: 'Warmth in evening light', why: 'Leather, raspberry and spiced rose, for evenings that linger.' },
+        { k: 'authority',  t: 'Authority',  p: 'power',  img: 'assets/him-desk.webp',          alt: 'Power on a glass desk', why: 'Spiced rum and tobacco set the tone before you speak.' },
+        { k: 'magnetism',  t: 'Magnetism',  p: 'power',  img: 'assets/him-spray.webp',         alt: 'Spraying Power', why: 'A defiant tuberose over guaiacwood holds the room after you leave.' }
       ],
       moment: [
-        { k: 'deadline',  t: 'Deadline day',    p: 'focus',  img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket', why: 'Fresh at the 9 AM stand-up, still crisp at the 7 PM rooftop catch-up.' },
-        { k: 'everyday',  t: 'Every workday',   p: 'focus',  img: 'assets/together-concrete.webp', alt: 'Two people in a concrete atrium with Focus', why: 'Bright, clear and quietly confident, for every working day.' },
-        { k: 'pitch',     t: 'The big pitch',   p: 'power',  img: 'assets/him-desk.webp',        alt: 'Power on a glass desk', why: 'Made for the big pitch and the appraisal.' },
-        { k: 'client',    t: 'Client dinner',   p: 'power',  img: 'assets/him-dressing.webp',    alt: 'Power on a dressing table before a black-tie evening', why: 'For the client dinner, and the late-night bar where the deal actually closes.' },
-        { k: 'friday',    t: 'Friday drinks',   p: 'warmth', img: 'assets/warmth-pack.webp',     alt: 'Warmth with its terracotta case', why: 'Swap the blazer for something softer.' }
+        { k: 'workday', t: 'Workday',    p: 'focus',  img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket', why: 'Fresh at the 9 AM stand-up, still crisp at the 7 PM catch-up.' },
+        { k: 'evening', t: 'Evening',    p: 'warmth', img: 'assets/her-evening.webp',     alt: 'Warmth in evening light', why: 'Friday drinks, team dinners and nights where you want to linger.' },
+        { k: 'big',     t: 'Big moment', p: 'power',  img: 'assets/him-desk.webp',        alt: 'Power on a glass desk', why: 'The pitch, the appraisal, the deal. It sets the tone before you speak.' }
       ]
     };
     let mode = 'mood', tags = [];
@@ -2727,10 +2695,8 @@ body{background:var(--tile-a);color:var(--body)}
       { el: () => $('#focus'),     own: () => $('#focusInfo .btn') },
       { el: () => (powerEl && powerEl.parentElement.classList.contains('pin-spacer') ? powerEl.parentElement : powerEl), own: () => $('.p-product .btn') },
       { el: () => $('#warmth'),    own: () => $('.wt-buy .btn') },
-      { el: () => $('#notes'),     own: () => $('#npAdd') },
       { el: () => $('#occasions'), own: () => $('#occAdd') },
-      { el: () => $('#quiz'),      own: () => { const r = $('#quizResult'); return r && !r.hidden ? $('#qrAdd') : null; } },
-      { el: () => $('#discovery'), own: () => $('#dsAdd') }
+      { el: () => $('#quiz'),      own: () => { const r = $('#quizResult'); return r && !r.hidden ? $('#qrAdd') : null; } }
     ];
     let shown = '';
     const hide = () => {
@@ -2749,7 +2715,7 @@ body{background:var(--tile-a);color:var(--body)}
       bar.classList.remove('theme-focus', 'theme-power', 'theme-warmth');
       if (key !== 'set') bar.classList.add('theme-' + key);
       name.textContent = label;
-      spec.textContent = key === 'set' ? 'All three' : '30 ml';
+      spec.textContent = key === 'set' ? '₹999, all three' : '30 ml';
       armAdd(btn, key);
       bar.classList.add('show');
       document.body.classList.add('bar-on');
@@ -2757,7 +2723,7 @@ body{background:var(--tile-a);color:var(--body)}
     // Visible means on screen, clear of the bar's own strip, and not faded or hidden by an ancestor.
     const onScreen = b => {
       const r = b.getBoundingClientRect();
-      if (!r.width || r.bottom <= 0 || r.top >= window.innerHeight - 72 || r.right <= 0 || r.left >= window.innerWidth) return false;
+      if (!r.width || r.top < 0 || r.bottom > window.innerHeight || r.right <= 0 || r.left >= window.innerWidth) return false;
       for (let n = b; n && n !== document.body; n = n.parentElement) {
         const cs = getComputedStyle(n);
         if (cs.display === 'none' || cs.visibility === 'hidden' || parseFloat(cs.opacity) < 0.3) return false;

@@ -587,3 +587,39 @@ This file is the Apple design analysis, used here as design language only. Nothi
 - The chapter bar takes the product colour rather than frosted neutral, to keep the product colours strict.
 
 **Implementation:** the "Client brief layer" and the "Refinement layer" at the end of the stylesheet in `index.html`. Section themes are set by `.theme-focus`, `.theme-power`, `.theme-warmth` and the tile rules, which redefine `--bg`, `--fg`, `--body` and related variables.
+
+**Page narrative (client feedback, 2026-10-16):** film hero → problem statement, the one-line answer ("XPresence is Eau de Parfum for being remembered, without trying") and the three triggers → cast → collection → claims → manifesto → Focus (09:15) → Warmth (21:00) → Power (14:30, ends the story) → Discovery Set (₹999) → notes → finder (moods; occasions Workday, Evening, Big moment) → quiz → reviews → UGC → FAQ → house. The spray band was removed as a second Discovery block. No on-site social "status" widgets; that engagement stays on social channels. Every chapter shows 30 ml, 8+ hours and Unisex pills.
+
+**Brand handover (2026-10-16, Drive "XPresence - Handover Files"):** these supersede the questionnaire colours.
+- Product colours: Power `#243D5C` (tints `#D3D8DE`, `#BEC5CF`, `#8795A6`), Focus `#1F8977` (tints `#D2E7E4`, `#B1D6D0`, `#84BEB4`), Warmth `#BF692C` (tints `#ECD2C0`, `#E4C0A6`, `#D8A580`). Neutrals `#A09084`, `#B7A595`, `#F3F3F0`.
+- On the site: bands use the exact product colours; tints are the accents on dark tiles; `#F3F3F0` is the type colour and `#B7A595` the single accent (it replaced champagne). The dark tiles remain a deliberate choice (the user asked for a darker premium base); the handover's light neutral `#F3F3F0` is available if a light version is wanted.
+- Type: PP Cirka (Light 300, Semibold 600) for display, DM Sans for text. Cirka has no italic, so emphasis is taupe roman. Cirka is loaded from `assets/fonts/`, which is git-ignored until a web licence is confirmed; the public site falls back to Cormorant Garamond.
+- Logo: `assets/logo-xpresence.svg` (wordmark) and `assets/logo-x-symbol.svg` (X symbol), traced from the handover PDF vectors. The wordmark is inlined in the nav and footer; the symbol is a faint pattern behind each product chapter and the claims marquee divider.
+- Contrast: white on Focus `#1F8977` is 4.3:1, just under AA for small text; dark on Warmth `#BF692C` is 4.7:1.
+
+- 2026-10-16: the "Two signatures, one city" horizontal breaker between Focus and Warmth was removed at the user's request.
+
+- 2026-10-19: canvas switched to true black (`#000000` tiles, `#0A0A0A` alternate, `#141414` cards, neutral white-alpha hairlines). Accents on black: brand taupe `#B7A595` for emphasis; fragrance accents use the lightest handover tints (Focus `#B1D6D0`, Warmth `#E4C0A6`, Power `#BEC5CF`).
+
+**Palette system (2026-10-19, supersedes earlier palette notes):**
+| Role | Value |
+|---|---|
+| Canvas / alternate tile / card / raised | `#000000` / `#0B0B0B` / `#141414` / `#1C1C1C` |
+| Ink (text) | ivory `#F3F3F0` (headings, product names), sand `#D6CCC2` (body), taupe `#A09084` (captions); all solid, no opacity |
+| Hairlines | `#F3F3F0` at 12% and 26% |
+| Accent (the only non-product colour) | taupe `#B7A595`: emphasis words, icons, hover, selection |
+| Actions | off-white pill with black text; off-white outline for secondary |
+| Product colours (unchanged) | Focus `#1F8977`, Warmth `#BF692C`, Power `#243D5C`, used only where that fragrance is the subject |
+Legacy warm blacks, the old ivory `rgba(236,235,231)` and the retired `--gold` were folded into these roles.
+
+**Light palette (2026-10-19, supersedes the black canvas and the palette table above):**
+| Role | Value |
+|---|---|
+| Canvas / alternate tile / card / raised | `#F3F3F0` (handover off-white) / `#EAE7E1` / `#FBFAF8` / `#E4E0D9` |
+| Text | headings `#1C1A17`, body `#4A433D`, captions `#6E6258` (4.7:1 or better on every surface) |
+| Hairlines | `#1C1A17` at 12% and 28% |
+| Accent | deep taupe `#8C7A6B` for large emphasis words, icons and dividers only (3.7:1, so never small text) |
+| Actions | near-black pill with off-white text; near-black outline for secondary |
+| Stays dark | hero film, film dialog, toasts (black with ivory/sand/taupe text) |
+| Product colours (unchanged) | Focus `#1F8977`, Warmth `#BF692C`, Power `#243D5C` |
+The nav floats in light type over the hero film, then turns light glass (`#F3F3F0` at 86%) with dark type once scrolled.

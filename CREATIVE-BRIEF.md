@@ -33,8 +33,8 @@ The current images are generated placeholders. The client said they are "not qui
 
 ## Still needed from the client
 
-- Brand guideline files: logo files, the geometric emblem (to use subtly as a pattern or divider), fonts, colour codes.
-- Font licence: the typography reference (coachvikram.com) uses Cirka, a commercial font from Pangram Pangram. The preview uses Cormorant Garamond Light in its place.
+- ~~Brand guideline files~~ Received 2026-10-16 (logo, X symbol, PP Cirka, DM Sans, palette); applied, see DESIGN.md.
+- Font licence: PP Cirka files were handed over, but a **web** licence is needed before they go on the public site. Until then they are used locally only (git-ignored) and the live preview shows Cormorant Garamond.
 - Launch offer details, the free-shipping threshold, bundle pricing, the shipping timeline and the return policy.
 - Prices for each product and the Discovery Set.
 
