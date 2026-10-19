@@ -2135,10 +2135,13 @@ body{background:var(--tile-a);color:var(--body)}
     const mq = matchMedia('(max-width: 899px)');
     const fit = () => {
       if (!mq.matches) { stage.style.removeProperty('--fb-w'); stage.style.removeProperty('--fb-top'); stage.style.removeProperty('--fi-top'); return; }
-      const vh = stage.clientHeight, nav = (document.querySelector('.nav') || {}).offsetHeight || 56, gap = 24, pad = 16;
+      // Measure the screen, not the pinned stage: while pinned, the stage keeps a fixed width/height from the
+      // last refresh, which is stale right after the window or device size changes.
+      const vw = document.documentElement.clientWidth, vh = window.innerHeight;
+      const nav = (document.querySelector('.nav') || {}).offsetHeight || 56, gap = 24, pad = 16;
       const infoH = info.offsetHeight;
       const room = vh - nav - pad * 2 - gap - infoH;                    // height left for the bottle
-      const w = Math.max(140, Math.min(stage.clientWidth * 0.72, room * 0.8)); // bottle is 4:5
+      const w = Math.max(96, Math.min(vw * 0.72, room * 0.8));          // bottle is 4:5; shrink before overflowing
       const h = w * 1.25, top = nav + pad + Math.max(0, (vh - nav - pad * 2 - (h + gap + infoH)) / 2);
       stage.style.setProperty('--fb-w', w + 'px');
       stage.style.setProperty('--fb-top', (top + h / 2) + 'px');
@@ -2146,7 +2149,10 @@ body{background:var(--tile-a);color:var(--body)}
     };
     fit();
     addEventListener('resize', fit);
+    addEventListener('orientationchange', fit);
+    mq.addEventListener ? mq.addEventListener('change', fit) : mq.addListener(fit);
     ScrollTrigger.addEventListener('refreshInit', fit);
+    ScrollTrigger.addEventListener('refresh', fit);
     if (document.fonts) document.fonts.ready.then(fit);
   })();
 
