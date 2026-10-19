@@ -1564,6 +1564,22 @@ body{background:var(--tile-a);color:var(--body)}
 @media (hover:hover){ .ds-box:hover::after{animation:ds-sweep 1.4s cubic-bezier(.6,0,.2,1)} }
 @keyframes ds-sweep{0%{transform:translateX(-120%);opacity:1}100%{transform:translateX(120%);opacity:1}}
 @media (prefers-reduced-motion:reduce){ .ds-box::after{display:none} }
+/* Collection: the Discovery Set card shows both creatives. The box shot opens with a light sweep, then the
+   card crossfades to the 10 ml going into a bag and back while it is on screen; on desktop, hover shows the bag. */
+.col-set{isolation:isolate}
+.col-set img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.col-set .cs-b{opacity:0;transform:scale(1.06);transition:opacity 1.1s ease,transform 3.5s cubic-bezier(.2,.7,.2,1)}
+.col-set .cs-a{transition:transform 3.5s cubic-bezier(.2,.7,.2,1)}
+.col-set.show-b .cs-b{opacity:1;transform:scale(1)}
+.col-set.show-b .cs-a{transform:scale(1.06)}
+.col-set::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,244,214,.4) 48%,rgba(255,255,255,.12) 54%,transparent 66%);transform:translateX(-120%)}
+.col-set.is-lit::after{animation:ds-sweep 1.6s cubic-bezier(.6,0,.2,1) forwards}
+.cs-dots{position:absolute;z-index:2;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:6px}
+.cs-dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);transition:background-color .4s,transform .4s}
+.cs-dots i.on{background:#fff;transform:scale(1.25)}
+.col-set .col-usps{z-index:2}
+@media (prefers-reduced-motion:reduce){ .col-set::after{display:none} .col-set .cs-a,.col-set .cs-b{transition:none} }
 </style>
 </head>
 <body>
@@ -1679,8 +1695,10 @@ body{background:var(--tile-a);color:var(--body)}
           </div>
         </article>
         <article class="col-card">
-          <a href="#discovery" class="col-media" aria-label="See the Discovery Set">
-            <img src="assets/discovery-creative-9x16.webp" alt="The Discovery Set: Power, Focus and Warmth, 10 ml each, in a gold-lined box" loading="lazy" style="object-position:50% 70%">
+          <a href="#discovery" class="col-media col-set" aria-label="See the Discovery Set">
+            <img class="cs-a" src="assets/discovery-creative-9x16.webp" alt="The Discovery Set: Power, Focus and Warmth, 10 ml each, in a gold-lined box" loading="lazy" style="object-position:50% 70%">
+            <img class="cs-b" src="assets/discovery-power-bag.webp" alt="A 10 ml Power bottle slipped into a black handbag" loading="lazy" style="object-position:50% 52%">
+            <span class="cs-dots" aria-hidden="true"><i class="on"></i><i></i></span>
             <span class="col-usps" aria-hidden="true"><span class="col-usp">3 × 10 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span>
           </a>
           <div class="col-meta">
@@ -2389,6 +2407,25 @@ body{background:var(--tile-a);color:var(--body)}
           .to(gal, { scrollLeft: 0, duration: 0.8, ease: 'power2.inOut' }, '+=0.25');
       });
     ScrollTrigger.create({ trigger: sec, start: 'top 72%', once: true, onEnter: () => tl.play() });
+  })();
+
+  /* COLLECTION: Discovery Set card alternates its two creatives while visible (pauses off screen and on hover) */
+  (function collectionSetCard() {
+    const card = document.querySelector('.col-set');
+    if (!card) return;
+    const dots = [...card.querySelectorAll('.cs-dots i')];
+    let timer = null, hovering = false;
+    const show = b => { card.classList.toggle('show-b', b); dots.forEach((d, i) => d.classList.toggle('on', i === (b ? 1 : 0))); };
+    const start = () => { if (reduce || timer) return; timer = setInterval(() => { if (!hovering) show(!card.classList.contains('show-b')); }, 3200); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    if (matchMedia('(hover: hover)').matches) {
+      card.addEventListener('mouseenter', () => { hovering = true; show(true); });
+      card.addEventListener('mouseleave', () => { hovering = false; show(false); });
+    }
+    new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { if (!card.classList.contains('is-lit') && !reduce) card.classList.add('is-lit'); start(); }
+      else { stop(); show(false); }
+    }), { threshold: 0.5 }).observe(card);
   })();
 
   /* HOUSE: word-masked heading, tiles scale in from 0.8 */
