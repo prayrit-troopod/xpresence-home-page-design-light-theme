@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>XPresence | Eau de Parfum</title>
-<meta name="description" content="XPresence Eau de Parfum. Focus, Power and Warmth: three fragrances for people who are already expected.">
+<meta name="description" content="XPresence by CoachVikram. Presence, raised to the power of X: Focus, Warmth and Power, three Eau de Parfums for the three styles of executive presence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -1272,7 +1272,7 @@ body{background:var(--tile-a);color:var(--body)}
 .pb-name::after{content:"\00a0\203A"}
 .pb-warmth a{color:#160D08}.pb-warmth .pb-x{color:#160D08}
 .pb-p a:hover img{transform:scale(1.05)}
-.pb-p a:hover .pb-x,.pb-p a:focus-visible .pb-x{transform:rotate(90deg)}
+.pb-p a:hover .pb-x,.pb-p a:focus-visible .pb-x{transform:scale(1.12)}
 .pb-p a:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 @media (min-width:900px){
   .pb-head{grid-template-columns:1fr auto;align-items:end;gap:6vw}
@@ -1633,6 +1633,10 @@ body{background:var(--tile-a);color:var(--body)}
   .np-media{aspect-ratio:16/9}
   .np-media #npImg{object-position:50% 50%}
 }
+/* Problem panels: each fragrance's own brand icon (Focus circle and line, Warmth rays, Power circle and triangle) */
+.pb-x{width:26px;height:26px;transform-origin:50% 50%}
+.pb-x *{stroke-width:1.6px}
+@media (min-width:900px){ .pb-x{width:34px;height:34px} .pb-x *{stroke-width:1.8px} }
 </style>
 </head>
 <body>
@@ -1674,7 +1678,7 @@ body{background:var(--tile-a);color:var(--body)}
         <span class="line"><span>Some enter a room.</span></span>
         <span class="line"><span>Others <em>arrive.</em></span></span>
       </h1>
-      <p class="hero-sub">Three signatures for people who are already expected, before they've said a word.</p>
+      <p class="hero-sub">Presence, raised to the power of X. Three fragrances for Focus, Warmth and Power.</p>
       <div class="hero-ctas">
         <a href="#problem" class="btn">Begin the story</a>
         <button class="film-trigger" id="filmOpen" aria-haspopup="dialog">
@@ -1690,20 +1694,20 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="pb-wrap">
       <div class="pb-head">
       <h2 id="pbTitle" class="pb-q">Ever walked into a room and left it <em>unremembered?</em></h2>
-      <p class="pb-answer"><svg class="pb-logo" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="537.8 392.8 524.4 114.5" fill="currentColor"><path d="M544.86 397.34C546.54 398.85 548.25 400.65 549.98 402.74C551.70 404.83 553.13 406.89 554.26 408.94L565.84 429.03L565.59 430.45L540.01 441.27L540.37 439.26C544.67 436.86 553.39 432.13 554.00 431.65C556.68 429.51 555.28 425.95 555.09 425.40C554.89 424.85 554.45 423.83 554.02 422.72L538.78 393.75L544.86 397.34"/><path d="M584.13 447.05C582.44 445.54 580.74 443.74 579.01 441.66C577.29 439.56 575.86 437.50 574.73 435.46L563.14 415.37L563.40 413.95L588.98 403.13L588.62 405.13C584.31 407.54 575.59 412.26 574.98 412.75C572.31 414.89 573.70 418.44 573.90 418.99C574.09 419.54 574.54 420.56 574.97 421.68L590.21 450.64L584.13 447.05"/><path d="M634.09 455.33C636.73 452.00 638.05 448.13 638.05 443.72C638.05 438.79 636.56 434.86 633.57 431.92C630.59 428.98 625.60 427.51 618.59 427.51L606.53 427.51L606.53 444.63C606.53 448.95 607.70 452.65 610.03 455.72C612.37 458.79 616.21 460.33 621.57 460.33C627.28 460.33 631.45 458.66 634.09 455.33M639.54 428.15C643.91 431.79 646.09 436.72 646.09 442.94C646.09 446.66 645.18 450.17 643.37 453.45C641.55 456.74 638.91 459.37 635.46 461.36C632.00 463.35 627.93 464.35 623.26 464.35C619.80 464.35 616.86 463.74 614.44 462.53C612.02 461.32 610.18 459.92 608.93 458.32C607.67 456.72 606.92 455.31 606.66 454.10L606.53 454.10L606.53 494.83C606.53 498.20 607.44 500.56 609.25 501.90C611.07 503.24 613.23 503.91 615.74 503.91L615.74 505.34L589.54 505.34L589.54 503.91C592.04 503.91 594.22 503.24 596.09 501.90C597.94 500.56 598.87 498.20 598.87 494.83L598.87 433.21C598.87 429.84 597.94 427.49 596.09 426.15C594.22 424.81 592.04 424.13 589.54 424.13L589.54 422.71L621.57 422.71C629.18 422.71 635.17 424.52 639.54 428.15"/><path d="M660.99 443.33C660.99 448.00 662.35 451.57 665.08 454.04C667.80 456.50 671.24 457.73 675.39 457.73C680.92 457.73 685.16 456.22 688.10 453.19C691.04 450.17 692.51 446.58 692.51 442.43C692.51 437.58 691.04 433.89 688.10 431.33C685.16 428.78 680.14 427.51 673.05 427.51L660.99 427.51L660.99 443.33M710.93 503.91L710.93 505.34L688.62 505.34L688.62 503.91C694.59 503.91 697.57 502.83 697.57 500.67C697.57 499.72 697.01 498.55 695.88 497.17L660.99 454.62L660.99 494.83C660.99 498.20 661.90 500.56 663.71 501.90C665.53 503.24 667.69 503.91 670.20 503.91L670.20 505.34L644.00 505.34L644.00 503.91C646.50 503.91 648.69 503.24 650.55 501.90C652.41 500.56 653.34 498.20 653.34 494.83L653.34 433.21C653.34 429.84 652.41 427.49 650.55 426.15C648.69 424.81 646.50 424.14 644.00 424.14L644.00 422.71L676.04 422.71C683.73 422.71 689.74 424.39 694.07 427.77C698.39 431.14 700.55 435.90 700.55 442.04C700.55 447.83 698.54 452.54 694.52 456.18C690.50 459.81 684.73 461.62 677.21 461.62C674.95 461.62 672.79 461.23 670.72 460.46L670.59 460.71C676.99 464.78 682.61 469.75 687.45 475.63L710.93 503.91"/><path d="M869.65 493.75L869.65 433.21C869.65 429.84 868.72 427.49 866.86 426.15C865.00 424.81 862.82 424.13 860.31 424.13L860.31 422.71L879.77 422.71L923.61 499.89L923.61 433.21C923.61 429.84 922.53 427.49 920.37 426.15C918.21 424.81 915.65 424.13 912.72 424.13L912.72 422.71L938.27 422.71L938.27 424.13C935.76 424.13 933.58 424.81 931.72 426.15C929.86 427.49 928.93 429.84 928.93 433.21L928.93 494.83C928.93 498.20 929.86 500.56 931.72 501.90C933.58 503.24 935.76 503.91 938.27 503.91L938.27 505.34L918.30 505.34L874.97 429.06L874.97 493.75L869.65 493.75"/><path d="M989.52 494.83C993.89 490.85 996.64 485.92 997.76 480.04L999.71 480.43C998.32 487.61 995.43 493.71 991.01 498.72C986.60 503.74 979.47 506.25 969.61 506.25C958.20 506.25 949.33 502.53 943.02 495.09C936.71 487.65 933.55 477.19 933.55 463.70C933.55 455.40 935.04 448.05 938.03 441.65C941.01 435.25 945.20 430.28 950.61 426.73C956.01 423.18 962.30 421.41 969.48 421.41C979.69 421.41 987.17 424.55 991.92 430.82C996.68 437.09 999.06 444.80 999.06 453.97L999.06 456.56L987.38 455.14C988.51 451.51 989.07 448.00 989.07 444.63C989.07 438.75 987.32 434.01 983.82 430.43C980.31 426.84 975.62 425.04 969.74 425.04C961.18 425.04 954.37 428.29 949.31 434.77C944.25 441.26 941.72 450.90 941.72 463.70C941.72 471.74 943.02 478.55 945.61 484.13C948.21 489.71 951.80 493.88 956.38 496.65C960.96 499.42 966.28 500.80 972.34 500.80C979.43 500.80 985.16 498.81 989.52 494.83"/><path d="M1059.69 492.14C1058.91 494.02 1057.87 495.56 1056.56 497.10C1054.61 499.39 1051.95 500.54 1048.58 500.54L1013.56 500.54L1013.56 463.05L1032.13 463.05C1035.50 463.05 1037.86 463.76 1039.20 465.19C1040.54 466.62 1041.21 468.24 1041.21 470.05L1042.64 470.05L1042.64 451.51L1041.21 451.51C1041.21 453.32 1040.54 454.94 1039.20 456.37C1037.86 457.80 1035.50 458.51 1032.13 458.51L1013.56 458.51L1013.56 427.51L1049.36 427.51C1052.47 427.51 1054.72 428.59 1056.10 430.75C1057.04 432.21 1057.66 433.65 1058.08 435.43L1059.62 435.19L1058.83 425.69L1058.57 422.71L997.62 422.71L997.62 424.21C999.68 424.37 1001.52 425.00 1003.11 426.15C1004.97 427.49 1005.90 429.84 1005.90 433.21L1005.90 494.83C1005.90 498.20 1004.97 500.56 1003.11 501.90C1001.52 503.05 999.68 503.67 997.62 503.84L997.62 505.34L1057.79 505.34L1058.57 502.35L1061.22 492.61L1059.69 492.14"/><path d="M770.79 492.14C770.01 494.02 768.97 495.56 767.66 497.10C765.71 499.39 763.05 500.54 759.68 500.54L724.66 500.54L724.66 463.05L743.23 463.05C746.60 463.05 748.96 463.76 750.30 465.19C751.64 466.62 752.31 468.24 752.31 470.05L753.74 470.05L753.74 451.51L752.31 451.51C752.31 453.32 751.64 454.94 750.30 456.37C748.96 457.80 746.60 458.51 743.23 458.51L724.66 458.51L724.66 427.51L764.69 427.51L771.07 422.71L708.77 422.71L708.77 424.21C710.81 424.38 712.63 425.01 714.21 426.15C716.07 427.49 717.00 429.84 717.00 433.21L717.00 494.83C717.00 498.20 716.07 500.56 714.21 501.90C712.63 503.04 710.81 503.66 708.77 503.83L708.77 505.34L768.89 505.34L769.67 502.35L772.32 492.61L770.79 492.14"/><path d="M809.76 467.49C806.32 464.09 801.25 461.16 794.54 458.68L776.27 452.06C772.83 450.83 770.34 449.11 768.80 446.90C767.25 444.70 766.48 442.23 766.48 439.49C766.48 434.64 768.18 430.73 771.58 427.78C774.97 424.82 779.76 423.34 785.94 423.34C793.52 423.34 799.28 425.66 803.21 430.29C807.14 434.92 809.76 441.92 811.09 451.27L812.41 451.27L811.48 428.50C804.87 422.59 796.48 419.63 786.33 419.63C780.07 419.63 774.82 420.65 770.58 422.68C766.35 424.71 763.23 427.31 761.25 430.49C759.26 433.67 758.27 437.06 758.27 440.68C758.27 445.89 759.55 449.95 762.11 452.86C764.67 455.77 768.33 458.07 773.10 459.74L792.29 466.63C801.82 469.89 806.59 475.80 806.59 484.36C806.59 489.57 804.78 493.85 801.16 497.20C797.54 500.56 792.47 502.23 785.94 502.23C782.74 502.23 779.80 501.79 777.10 500.94L775.86 505.48C778.58 505.95 782.75 506.20 785.94 506.20C794.41 506.20 801.36 504.53 806.78 501.17C812.21 497.82 814.92 491.38 814.92 481.85C814.92 475.67 813.20 470.88 809.76 467.49"/><path d="M883.85 492.14C883.07 494.02 882.03 495.56 880.72 497.10C878.77 499.39 876.11 500.54 872.74 500.54L827.78 500.54L827.78 463.05L846.35 463.05C849.72 463.05 852.08 463.76 853.42 465.19C854.76 466.62 855.43 468.24 855.43 470.05L856.86 470.05L856.86 451.51L855.43 451.51C855.43 453.32 854.76 454.94 853.42 456.37C852.08 457.80 849.72 458.51 846.35 458.51L827.78 458.51L827.78 427.51L847.05 427.51C850.16 427.51 852.41 428.59 853.79 430.75C854.73 432.21 855.35 433.65 855.77 435.43L857.31 435.19L856.52 425.69L856.26 422.71L812.01 422.71L812.01 424.22C814.01 424.41 815.79 425.03 817.34 426.15C819.20 427.49 820.12 429.84 820.12 433.21L820.12 494.83C820.12 498.20 819.20 500.56 817.34 501.90C815.79 503.02 814.01 503.64 812.01 503.83L812.01 505.34L881.95 505.34L882.73 502.35L885.39 492.61L883.85 492.14"/></svg><span class="sr">XPresence</span><span class="pb-is">Eau de Parfum for being remembered, without trying.</span></p>
+      <p class="pb-answer"><svg class="pb-logo" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="537.8 392.8 524.4 114.5" fill="currentColor"><path d="M544.86 397.34C546.54 398.85 548.25 400.65 549.98 402.74C551.70 404.83 553.13 406.89 554.26 408.94L565.84 429.03L565.59 430.45L540.01 441.27L540.37 439.26C544.67 436.86 553.39 432.13 554.00 431.65C556.68 429.51 555.28 425.95 555.09 425.40C554.89 424.85 554.45 423.83 554.02 422.72L538.78 393.75L544.86 397.34"/><path d="M584.13 447.05C582.44 445.54 580.74 443.74 579.01 441.66C577.29 439.56 575.86 437.50 574.73 435.46L563.14 415.37L563.40 413.95L588.98 403.13L588.62 405.13C584.31 407.54 575.59 412.26 574.98 412.75C572.31 414.89 573.70 418.44 573.90 418.99C574.09 419.54 574.54 420.56 574.97 421.68L590.21 450.64L584.13 447.05"/><path d="M634.09 455.33C636.73 452.00 638.05 448.13 638.05 443.72C638.05 438.79 636.56 434.86 633.57 431.92C630.59 428.98 625.60 427.51 618.59 427.51L606.53 427.51L606.53 444.63C606.53 448.95 607.70 452.65 610.03 455.72C612.37 458.79 616.21 460.33 621.57 460.33C627.28 460.33 631.45 458.66 634.09 455.33M639.54 428.15C643.91 431.79 646.09 436.72 646.09 442.94C646.09 446.66 645.18 450.17 643.37 453.45C641.55 456.74 638.91 459.37 635.46 461.36C632.00 463.35 627.93 464.35 623.26 464.35C619.80 464.35 616.86 463.74 614.44 462.53C612.02 461.32 610.18 459.92 608.93 458.32C607.67 456.72 606.92 455.31 606.66 454.10L606.53 454.10L606.53 494.83C606.53 498.20 607.44 500.56 609.25 501.90C611.07 503.24 613.23 503.91 615.74 503.91L615.74 505.34L589.54 505.34L589.54 503.91C592.04 503.91 594.22 503.24 596.09 501.90C597.94 500.56 598.87 498.20 598.87 494.83L598.87 433.21C598.87 429.84 597.94 427.49 596.09 426.15C594.22 424.81 592.04 424.13 589.54 424.13L589.54 422.71L621.57 422.71C629.18 422.71 635.17 424.52 639.54 428.15"/><path d="M660.99 443.33C660.99 448.00 662.35 451.57 665.08 454.04C667.80 456.50 671.24 457.73 675.39 457.73C680.92 457.73 685.16 456.22 688.10 453.19C691.04 450.17 692.51 446.58 692.51 442.43C692.51 437.58 691.04 433.89 688.10 431.33C685.16 428.78 680.14 427.51 673.05 427.51L660.99 427.51L660.99 443.33M710.93 503.91L710.93 505.34L688.62 505.34L688.62 503.91C694.59 503.91 697.57 502.83 697.57 500.67C697.57 499.72 697.01 498.55 695.88 497.17L660.99 454.62L660.99 494.83C660.99 498.20 661.90 500.56 663.71 501.90C665.53 503.24 667.69 503.91 670.20 503.91L670.20 505.34L644.00 505.34L644.00 503.91C646.50 503.91 648.69 503.24 650.55 501.90C652.41 500.56 653.34 498.20 653.34 494.83L653.34 433.21C653.34 429.84 652.41 427.49 650.55 426.15C648.69 424.81 646.50 424.14 644.00 424.14L644.00 422.71L676.04 422.71C683.73 422.71 689.74 424.39 694.07 427.77C698.39 431.14 700.55 435.90 700.55 442.04C700.55 447.83 698.54 452.54 694.52 456.18C690.50 459.81 684.73 461.62 677.21 461.62C674.95 461.62 672.79 461.23 670.72 460.46L670.59 460.71C676.99 464.78 682.61 469.75 687.45 475.63L710.93 503.91"/><path d="M869.65 493.75L869.65 433.21C869.65 429.84 868.72 427.49 866.86 426.15C865.00 424.81 862.82 424.13 860.31 424.13L860.31 422.71L879.77 422.71L923.61 499.89L923.61 433.21C923.61 429.84 922.53 427.49 920.37 426.15C918.21 424.81 915.65 424.13 912.72 424.13L912.72 422.71L938.27 422.71L938.27 424.13C935.76 424.13 933.58 424.81 931.72 426.15C929.86 427.49 928.93 429.84 928.93 433.21L928.93 494.83C928.93 498.20 929.86 500.56 931.72 501.90C933.58 503.24 935.76 503.91 938.27 503.91L938.27 505.34L918.30 505.34L874.97 429.06L874.97 493.75L869.65 493.75"/><path d="M989.52 494.83C993.89 490.85 996.64 485.92 997.76 480.04L999.71 480.43C998.32 487.61 995.43 493.71 991.01 498.72C986.60 503.74 979.47 506.25 969.61 506.25C958.20 506.25 949.33 502.53 943.02 495.09C936.71 487.65 933.55 477.19 933.55 463.70C933.55 455.40 935.04 448.05 938.03 441.65C941.01 435.25 945.20 430.28 950.61 426.73C956.01 423.18 962.30 421.41 969.48 421.41C979.69 421.41 987.17 424.55 991.92 430.82C996.68 437.09 999.06 444.80 999.06 453.97L999.06 456.56L987.38 455.14C988.51 451.51 989.07 448.00 989.07 444.63C989.07 438.75 987.32 434.01 983.82 430.43C980.31 426.84 975.62 425.04 969.74 425.04C961.18 425.04 954.37 428.29 949.31 434.77C944.25 441.26 941.72 450.90 941.72 463.70C941.72 471.74 943.02 478.55 945.61 484.13C948.21 489.71 951.80 493.88 956.38 496.65C960.96 499.42 966.28 500.80 972.34 500.80C979.43 500.80 985.16 498.81 989.52 494.83"/><path d="M1059.69 492.14C1058.91 494.02 1057.87 495.56 1056.56 497.10C1054.61 499.39 1051.95 500.54 1048.58 500.54L1013.56 500.54L1013.56 463.05L1032.13 463.05C1035.50 463.05 1037.86 463.76 1039.20 465.19C1040.54 466.62 1041.21 468.24 1041.21 470.05L1042.64 470.05L1042.64 451.51L1041.21 451.51C1041.21 453.32 1040.54 454.94 1039.20 456.37C1037.86 457.80 1035.50 458.51 1032.13 458.51L1013.56 458.51L1013.56 427.51L1049.36 427.51C1052.47 427.51 1054.72 428.59 1056.10 430.75C1057.04 432.21 1057.66 433.65 1058.08 435.43L1059.62 435.19L1058.83 425.69L1058.57 422.71L997.62 422.71L997.62 424.21C999.68 424.37 1001.52 425.00 1003.11 426.15C1004.97 427.49 1005.90 429.84 1005.90 433.21L1005.90 494.83C1005.90 498.20 1004.97 500.56 1003.11 501.90C1001.52 503.05 999.68 503.67 997.62 503.84L997.62 505.34L1057.79 505.34L1058.57 502.35L1061.22 492.61L1059.69 492.14"/><path d="M770.79 492.14C770.01 494.02 768.97 495.56 767.66 497.10C765.71 499.39 763.05 500.54 759.68 500.54L724.66 500.54L724.66 463.05L743.23 463.05C746.60 463.05 748.96 463.76 750.30 465.19C751.64 466.62 752.31 468.24 752.31 470.05L753.74 470.05L753.74 451.51L752.31 451.51C752.31 453.32 751.64 454.94 750.30 456.37C748.96 457.80 746.60 458.51 743.23 458.51L724.66 458.51L724.66 427.51L764.69 427.51L771.07 422.71L708.77 422.71L708.77 424.21C710.81 424.38 712.63 425.01 714.21 426.15C716.07 427.49 717.00 429.84 717.00 433.21L717.00 494.83C717.00 498.20 716.07 500.56 714.21 501.90C712.63 503.04 710.81 503.66 708.77 503.83L708.77 505.34L768.89 505.34L769.67 502.35L772.32 492.61L770.79 492.14"/><path d="M809.76 467.49C806.32 464.09 801.25 461.16 794.54 458.68L776.27 452.06C772.83 450.83 770.34 449.11 768.80 446.90C767.25 444.70 766.48 442.23 766.48 439.49C766.48 434.64 768.18 430.73 771.58 427.78C774.97 424.82 779.76 423.34 785.94 423.34C793.52 423.34 799.28 425.66 803.21 430.29C807.14 434.92 809.76 441.92 811.09 451.27L812.41 451.27L811.48 428.50C804.87 422.59 796.48 419.63 786.33 419.63C780.07 419.63 774.82 420.65 770.58 422.68C766.35 424.71 763.23 427.31 761.25 430.49C759.26 433.67 758.27 437.06 758.27 440.68C758.27 445.89 759.55 449.95 762.11 452.86C764.67 455.77 768.33 458.07 773.10 459.74L792.29 466.63C801.82 469.89 806.59 475.80 806.59 484.36C806.59 489.57 804.78 493.85 801.16 497.20C797.54 500.56 792.47 502.23 785.94 502.23C782.74 502.23 779.80 501.79 777.10 500.94L775.86 505.48C778.58 505.95 782.75 506.20 785.94 506.20C794.41 506.20 801.36 504.53 806.78 501.17C812.21 497.82 814.92 491.38 814.92 481.85C814.92 475.67 813.20 470.88 809.76 467.49"/><path d="M883.85 492.14C883.07 494.02 882.03 495.56 880.72 497.10C878.77 499.39 876.11 500.54 872.74 500.54L827.78 500.54L827.78 463.05L846.35 463.05C849.72 463.05 852.08 463.76 853.42 465.19C854.76 466.62 855.43 468.24 855.43 470.05L856.86 470.05L856.86 451.51L855.43 451.51C855.43 453.32 854.76 454.94 853.42 456.37C852.08 457.80 849.72 458.51 846.35 458.51L827.78 458.51L827.78 427.51L847.05 427.51C850.16 427.51 852.41 428.59 853.79 430.75C854.73 432.21 855.35 433.65 855.77 435.43L857.31 435.19L856.52 425.69L856.26 422.71L812.01 422.71L812.01 424.22C814.01 424.41 815.79 425.03 817.34 426.15C819.20 427.49 820.12 429.84 820.12 433.21L820.12 494.83C820.12 498.20 819.20 500.56 817.34 501.90C815.79 503.02 814.01 503.64 812.01 503.83L812.01 505.34L881.95 505.34L882.73 502.35L885.39 492.61L883.85 492.14"/></svg><span class="sr">XPresence</span><span class="pb-is">Presence, raised to the power of X.</span></p>
       </div>
-      <ol class="pb-tri" aria-label="Three ways to be remembered">
+      <ol class="pb-tri" aria-label="Three styles of presence">
         <li class="pb-p pb-focus"><a href="#focus">
           <img src="assets/problem-focus.webp" alt="Holding a bottle of Focus against a grey blazer" loading="lazy" style="object-position:50% 58%">
-          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You refuse to dilute who you are.</span><span class="pb-name">Focus</span></span>
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><circle cx="50" cy="50" r="47" vector-effect="non-scaling-stroke"/><path d="M50 3V97" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Likeability that invites collaboration.</span><span class="pb-name">Focus</span></span>
         </a></li>
         <li class="pb-p pb-warmth"><a href="#warmth">
           <img src="assets/problem-warmth-mobile.webp" width="1030" height="1527" alt="Warmth on an office desk" loading="lazy">
-          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You make people feel at home.</span><span class="pb-name">Warmth</span></span>
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><path d="M50 96V4M50 96L25 12M50 96L75 12M50 96L4 42M50 96L96 42" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Trust that builds loyalty.</span><span class="pb-name">Warmth</span></span>
         </a></li>
         <li class="pb-p pb-power"><a href="#power">
           <img src="assets/him-dressing.webp" alt="Power on a dressing table before a black-tie evening" loading="lazy" style="object-position:50% 45%">
-          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="362.1 387.2 113.7 125.6" fill="currentColor"><path d="M376.30 396.00C379.96 399.28 383.66 403.19 387.42 407.73C391.16 412.27 394.26 416.76 396.72 421.19L421.89 464.84L421.33 467.92L365.76 491.43L366.54 487.07C375.90 481.84 394.84 471.58 396.16 470.53C401.98 465.88 398.95 458.16 398.52 456.97C398.10 455.77 397.14 453.56 396.20 451.13L363.09 388.21L376.30 396.00"/><path d="M461.61 504.00C457.95 500.72 454.24 496.81 450.49 492.27C446.75 487.73 443.65 483.24 441.19 478.81L416.02 435.16L416.57 432.08L472.14 408.57L471.37 412.93C462.01 418.16 443.07 428.42 441.74 429.47C435.93 434.12 438.96 441.84 439.38 443.03C439.81 444.23 440.77 446.44 441.71 448.87L474.82 511.79L461.61 504.00"/></svg><span class="pb-line">You lead without raising your voice.</span><span class="pb-name">Power</span></span>
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><circle cx="50" cy="13" r="10" vector-effect="non-scaling-stroke"/><path d="M50 23L3 97H97Z" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Credibility that inspires decision-making.</span><span class="pb-name">Power</span></span>
         </a></li>
       </ol>
     </div>
@@ -1714,15 +1718,15 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="shop-wrap">
       <div class="sec-head">
         <h2 id="collectionTitle" data-reveal>The collection</h2>
-        <p data-reveal>One for the workday, one for the evening, one for the big moment. And a set with all three.</p>
+        <p data-reveal>One fragrance for each style of presence: Focus, Warmth and Power. And a set with all three.</p>
       </div>
       <div class="col-grid">
         <article class="col-card">
           <a href="#focus" class="col-media" aria-label="Read the Focus chapter"><img src="assets/focus-pack.webp" alt="Focus, 30 ml, with its green case" loading="lazy" style="object-position:35% 60%"><span class="col-usps" aria-hidden="true"><span class="col-usp">30 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span></a>
           <div class="col-meta">
-            <p class="cap">Fresh, citrus, aquatic</p>
+            <p class="cap">Pink pepper, cedarwood, sandalwood</p>
             <h3>Focus</h3>
-            <p class="col-line">Bright, clear and quietly confident. For minds that move fast and hearts that stay calm.</p>
+            <p class="col-line">Likeability that invites collaboration. Clean, grounding notes for clarity and attentiveness.</p>
             <p class="cap"><span class="sr">30 ml </span>Eau de Parfum<span class="sr">. Lasts 8+ hours</span></p>
             <div class="col-actions"><button class="btn" data-add="Focus" data-img="assets/focus-bottle.webp">Add to bag</button><a href="#focus" class="text-link">Its chapter</a></div>
           </div>
@@ -1730,9 +1734,9 @@ body{background:var(--tile-a);color:var(--body)}
         <article class="col-card">
           <a href="#warmth" class="col-media" aria-label="Read the Warmth chapter"><img src="assets/warmth-pack.webp" alt="Warmth, 30 ml, with its terracotta case" loading="lazy" style="object-position:40% 60%"><span class="col-usps" aria-hidden="true"><span class="col-usp">30 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span></a>
           <div class="col-meta">
-            <p class="cap">Gourmand, floral, vanilla</p>
+            <p class="cap">Vanilla, florals</p>
             <h3>Warmth</h3>
-            <p class="col-line">Soft leather, spiced rose and creamy vanilla, for those who make people feel at ease.</p>
+            <p class="col-line">Trust that builds loyalty. Soft, comforting notes for approachability and care.</p>
             <p class="cap"><span class="sr">30 ml </span>Eau de Parfum<span class="sr">. Lasts 8+ hours</span></p>
             <div class="col-actions"><button class="btn" data-add="Warmth" data-img="assets/warmth-bottle.webp">Add to bag</button><a href="#warmth" class="text-link">Its chapter</a></div>
           </div>
@@ -1740,9 +1744,9 @@ body{background:var(--tile-a);color:var(--body)}
         <article class="col-card">
           <a href="#power" class="col-media" aria-label="Read the Power chapter"><img src="assets/power-pack.webp" alt="Power, 30 ml, with its navy case" loading="lazy" style="object-position:55% 60%"><span class="col-usps" aria-hidden="true"><span class="col-usp">30 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span></a>
           <div class="col-meta">
-            <p class="cap">Woody, spicy, amber</p>
+            <p class="cap">Saffron, Turkish rose, amber</p>
             <h3>Power</h3>
-            <p class="col-line">Smoky rum, tobacco and a defiant tuberose, for those who would rather set the tone than follow it.</p>
+            <p class="col-line">Credibility that inspires decision-making. Rich, bold notes that carry authority.</p>
             <p class="cap"><span class="sr">30 ml </span>Eau de Parfum<span class="sr">. Lasts 8+ hours</span></p>
             <div class="col-actions"><button class="btn" data-add="Power" data-img="assets/power-bottle.webp">Add to bag</button><a href="#power" class="text-link">Its chapter</a></div>
           </div>
@@ -1757,9 +1761,9 @@ body{background:var(--tile-a);color:var(--body)}
             <span class="col-usps" aria-hidden="true"><span class="col-usp">3 × 10 ml</span><span class="col-usp"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.3 1.5"/></svg>Lasts 8+ hours</span></span>
           </a>
           <div class="col-meta">
-            <p class="cap">The whole day</p>
+            <p class="cap">All three styles</p>
             <h3>Discovery Set</h3>
-            <p class="col-line">Focus, Power and Warmth together. Try each, then choose.</p>
+            <p class="col-line">Focus, Warmth and Power together. Try each style, then choose.</p>
             <p class="cap">₹999 for all three<span class="sr">, three 10 ml bottles. Lasts 8+ hours</span></p>
             <div class="col-actions"><button class="btn" data-add="Discovery Set" data-img="assets/focus-pack.webp">Add to bag</button><a href="#discovery" class="text-link">See the set</a></div>
           </div>
@@ -1772,7 +1776,7 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="claims-marquee"><div class="claims-track">
     <ul class="claims-row">
       <li><b>8+ hours</b><span>On skin</span></li>
-      <li><b>Over half natural</b><span>Ingredients in every formula</span></li>
+      <li><b>Naturally made</b><span>More than half natural ingredients</span></li>
       <li><b>IFRA compliant</b><span>Every fragrance</span></li>
       <li><b>Cruelty-free</b><span>Every fragrance</span></li>
       <li><b>Vegan</b><span>Every fragrance</span></li>
@@ -1788,21 +1792,21 @@ body{background:var(--tile-a);color:var(--body)}
   <!-- DESIRE I: Focus, pinned bottle -->
   <section class="focus" id="focus">
     <div class="focus-head">
-      <h2 data-reveal><span class="t">09:15.</span> Clarity is the loudest thing in the room.</h2>
+      <h2 data-reveal><span class="t">09:15.</span> The room leans in when you listen.</h2>
     </div>
     <div class="focus-stage" id="focusStage">
       <div class="focus-word" aria-hidden="true">Focus</div>
       <!-- Focus notes. Reference images from Pinterest (third-party, not licensed): replace with XPresence note shots before launch. -->
-      <figure class="f-float a"><div class="f-img"><img src="https://i.pinimg.com/736x/b0/c5/e5/b0c5e5c46decc9346c3ab9a102aa8868.jpg" alt="Close-up of a sliced orange" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Sparkling citrus</figcaption></figure>
-      <figure class="f-float b"><div class="f-img"><img src="https://i.pinimg.com/736x/34/a5/95/34a5957b7deed3dc57d019f71fb6a8f1.jpg" alt="A breaking sea wave in soft light" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Sea breeze</figcaption></figure>
-      <figure class="f-float c"><div class="f-img"><img src="https://i.pinimg.com/736x/70/4c/5f/704c5febe9744c94b838295a2e6603a4.jpg" alt="White jasmine blossoms" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Jasmine</figcaption></figure>
-      <figure class="f-float d"><div class="f-img"><img src="https://i.pinimg.com/736x/b9/47/13/b947131c7d245f991be589949ad45ce6.jpg" alt="A single pink peony" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Peony</figcaption></figure>
-      <figure class="f-float e"><div class="f-img"><img src="https://i.pinimg.com/736x/5c/76/d4/5c76d4e8fc9893c9b69cc61b0da208e0.jpg" alt="Cedarwood tree rings" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Sweet cedarwood</figcaption></figure>
+      <figure class="f-float a"><div class="f-img"><img src="https://i.pinimg.com/736x/b0/c5/e5/b0c5e5c46decc9346c3ab9a102aa8868.jpg" alt="Pink pepper" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Pink pepper</figcaption></figure>
+      <figure class="f-float b" hidden><div class="f-img"><img src="https://i.pinimg.com/736x/34/a5/95/34a5957b7deed3dc57d019f71fb6a8f1.jpg" alt="A breaking sea wave in soft light" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Sea breeze</figcaption></figure>
+      <figure class="f-float c"><div class="f-img"><img src="https://i.pinimg.com/736x/70/4c/5f/704c5febe9744c94b838295a2e6603a4.jpg" alt="Sandalwood" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Sandalwood</figcaption></figure>
+      <figure class="f-float d" hidden><div class="f-img"><img src="https://i.pinimg.com/736x/b9/47/13/b947131c7d245f991be589949ad45ce6.jpg" alt="A single pink peony" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Peony</figcaption></figure>
+      <figure class="f-float e"><div class="f-img"><img src="https://i.pinimg.com/736x/5c/76/d4/5c76d4e8fc9893c9b69cc61b0da208e0.jpg" alt="Cedarwood" loading="lazy" referrerpolicy="no-referrer"></div><figcaption>Cedarwood</figcaption></figure>
       <div class="focus-bottle"><div class="arch" data-lens><img src="assets/focus-bottle.webp" alt="XPresence Focus, 30 ml Eau de Parfum"></div></div>
       <div class="product-info" id="focusInfo">
         <h3>Focus</h3>
         <div class="ch-pills"><span>30 ml</span><span>Lasts 8+ hours</span><span>Unisex</span></div>
-        <p>A clean, luminous aura that makes you the most composed, clear-headed person in any room.</p>
+        <p>Likeability that invites collaboration. Pink pepper, cedarwood and sandalwood: clean, grounding notes that evoke clarity and attentiveness.</p>
         <button class="btn btn-focus" data-add="Focus" data-img="assets/focus-bottle.webp">Add to bag</button>
       </div>
     </div>
@@ -1821,33 +1825,33 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
       <header class="wt-head">
         <p class="wt-eyebrow">Warmth, one evening</p>
-        <h2>Where the evening lingers.</h2>
+        <h2>Trust that builds loyalty.</h2>
       </header>
       <div class="wt-mid">
         <ol class="wt-rail" aria-hidden="true"><li class="on is-cur"><b></b>21:00</li><li><b></b>22:30</li><li><b></b>01:00</li><li><b></b>8h+</li></ol>
         <ol class="wt-steps">
           <li class="wt-step is-on">
             <p class="wt-phase"><span class="sr">21:00, </span>First spray</p>
-            <h3>Swap the blazer for something softer.</h3>
-            <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/77/58/cd/7758cd97c21ed13ee4741a6d6ccfe631.jpg" alt="Leather" loading="lazy" referrerpolicy="no-referrer"><img src="https://i.pinimg.com/736x/43/95/6d/43956d50a15bdba94cd55ff3f51b86ce.jpg" alt="Raspberry" loading="lazy" referrerpolicy="no-referrer"></span>Top: leather and raspberry</p>
-            <p class="wt-body">Soft leather with a bright bite of raspberry, for the walk in.</p>
+            <h3>Arrive with good intentions.</h3>
+            <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="Florals" loading="lazy" referrerpolicy="no-referrer"></span>Top: soft florals</p>
+            <p class="wt-body">Soft florals open first: approachable, kind and easy to talk to.</p>
           </li>
           <li class="wt-step">
             <p class="wt-phase"><span class="sr">22:30, </span>The heart opens</p>
-            <h3>Spiced rose, drawn close.</h3>
-            <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="Rose" loading="lazy" referrerpolicy="no-referrer"></span>Heart: pink pepper and rose</p>
-            <p class="wt-body">Made for Friday drinks, team dinners, sangeets and date nights where you want to linger.</p>
+            <h3>Compassion, drawn close.</h3>
+            <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="Florals" loading="lazy" referrerpolicy="no-referrer"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="Vanilla" loading="lazy" referrerpolicy="no-referrer"></span>Heart: florals and vanilla</p>
+            <p class="wt-body">Wear it before a negotiation, to show the people across the table that you care.</p>
           </li>
           <li class="wt-step">
             <p class="wt-phase"><span class="sr">01:00, </span>The base settles</p>
-            <h3>Warm without trying.</h3>
-            <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="Vanilla" loading="lazy" referrerpolicy="no-referrer"></span>Base: vanilla and sandalwood</p>
-            <p class="wt-body">Magnetic without a word. People relax around you and like you, for reasons they can't quite name.</p>
+            <h3>Gratitude, said out loud.</h3>
+            <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="Vanilla" loading="lazy" referrerpolicy="no-referrer"></span>Base: vanilla</p>
+            <p class="wt-body">Soft, comforting vanilla. People relax around you, trust you, and remember why.</p>
           </li>
           <li class="wt-step">
             <p class="wt-phase"><span class="sr">8+ hours, </span>On skin</p>
-            <h3>Remembered long after.</h3>
-            <p class="wt-body">Soft leather, spiced rose and creamy vanilla. For those who make people feel at ease, and drawn in without ever realising it.</p>
+            <h3>Loyalty lasts longer.</h3>
+            <p class="wt-body">Vanilla and florals that communicate approachability and care: compassion, self-care and gratitude, in one bottle.</p>
           </li>
         </ol>
       </div>
@@ -1864,30 +1868,30 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="power-track" id="powerTrack">
       <div class="p-intro">
         <h2 class="vt-h2"><span class="sr-only">Power</span><span class="vtext" aria-hidden="true"><canvas id="vtCanvas"></canvas><video id="vtVideo" src="assets/him-power.mp4" muted loop playsinline preload="metadata"></video></span>never raises its voice.</h2>
-        <p><span class="t">14:30.</span> The car is waiting. The decision was made hours ago.</p>
+        <p><span class="t">14:30.</span> The presentation starts in ten minutes. You already know how it ends.</p>
       </div>
       <figure class="p-panel tall">
         <div class="ph"><video src="assets/him-power.mp4" poster="assets/him-power-poster.jpg" autoplay muted loop playsinline preload="metadata" style="object-position:40% 50%"></video></div>
-        <figcaption><b>The arrival</b><span>14:30</span></figcaption>
+        <figcaption><b>Inner dialogue</b><span>14:30</span></figcaption>
       </figure>
       <figure class="p-panel short fit">
         <div class="ph"><img src="assets/power-office.webp" alt="A woman in a tailored black suit at a desk, Power in front of her" loading="lazy" style="object-position:50% 72%"></div>
-        <figcaption><b>The meeting</b><span>15:10</span></figcaption>
+        <figcaption><b>Composure</b><span>15:10</span></figcaption>
       </figure>
       <figure class="p-panel high">
         <div class="ph"><img src="assets/him-desk.webp" alt="Power on a glass desk beside a fountain pen" loading="lazy" style="object-position:50% 60%"></div>
-        <figcaption><b>The desk</b><span>17:45</span></figcaption>
+        <figcaption><b>Self-advocacy</b><span>17:45</span></figcaption>
       </figure>
       <figure class="p-panel tall">
         <div class="ph"><img src="assets/him-spray.webp" alt="Spraying Power, a silhouette in mist" loading="lazy"></div>
-        <figcaption><b>The last word</b><span>18:20</span></figcaption>
+        <figcaption><b>The decision</b><span>18:20</span></figcaption>
       </figure>
       <div class="p-product">
         <div class="ph" data-lens><img src="assets/power-bottle.webp" alt="XPresence Power, 30 ml Eau de Parfum" loading="lazy"></div>
         <div class="info">
           <h3>Power</h3>
           <div class="ch-pills"><span>30 ml</span><span>Lasts 8+ hours</span><span>Unisex</span></div>
-          <p>Dark, smoky and unhurried. It sets the tone before you speak and holds the room after you leave.</p>
+          <p>Credibility that inspires decision-making. Saffron, Turkish rose and a tobacco-like amber that recalls the rooms where business deals are made.</p>
           <button class="btn btn-power" data-add="Power" data-img="assets/power-bottle.webp">Add to bag</button>
         </div>
       </div>
@@ -1949,12 +1953,12 @@ body{background:var(--tile-a);color:var(--body)}
       <div class="notes-panel theme-focus" id="notesPanel" role="tabpanel">
         <div class="np-media"><picture><source id="npSrc" media="(max-width:899px)" srcset="assets/notes-focus-phone.webp" width="335" height="188"><img id="npImg" src="assets/focus-bottle.webp" alt="Focus, 30 ml Eau de Parfum" loading="lazy"></picture></div>
         <div class="np-info">
-          <p class="cap" id="npFamily">Fresh, citrus, aquatic</p>
+          <p class="cap" id="npFamily">Clean, grounding</p>
           <h3 id="npName">Focus</h3>
           <dl class="np-pyramid">
-            <div><dt>Top</dt><dd id="npTop">Sparkling citrus</dd></div>
-            <div><dt>Heart</dt><dd id="npHeart">Sea breeze, jasmine and peony</dd></div>
-            <div><dt>Base</dt><dd id="npBase">Sweet cedarwood</dd></div>
+            <div><dt>Top</dt><dd id="npTop">Pink pepper</dd></div>
+            <div><dt>Heart</dt><dd id="npHeart">Cedarwood</dd></div>
+            <div><dt>Base</dt><dd id="npBase">Sandalwood</dd></div>
           </dl>
           <div class="np-stats"><div><b>8+ hours</b><span>On skin</span></div><div><b>Moderate</b><span>Noticed within arm's length</span></div></div>
           <div><button class="btn" id="npAdd" data-add="Focus" data-img="assets/focus-bottle.webp">Add to bag</button></div>
@@ -2056,7 +2060,7 @@ body{background:var(--tile-a);color:var(--body)}
       <div class="faq-list">
         <details class="faq-item"><summary>How long does it last?</summary><div class="faq-a"><p>All three last 8+ hours on skin, with moderate projection: noticed within arm's length, never overpowering.</p></div></details>
         <details class="faq-item"><summary>Can I try before buying a full bottle?</summary><div class="faq-a"><p>Yes. The Discovery Set (₹999) holds three 10 ml bottles of Focus, Warmth and Power. Wear each for a day, then choose your 30 ml.</p></div></details>
-        <details class="faq-item"><summary>Which one is right for me?</summary><div class="faq-a"><p>Focus is fresh and citrus, for the workday. Power is smoky and woody, for the big moment. Warmth is soft vanilla and rose, for the evening. Not sure? Take the 30-second quiz.</p></div></details>
+        <details class="faq-item"><summary>Which one is right for me?</summary><div class="faq-a"><p>Focus is likeability that invites collaboration: pink pepper, cedarwood and sandalwood. Warmth is trust that builds loyalty: vanilla and florals. Power is credibility that inspires decision-making: saffron, Turkish rose and amber. Not sure? Take the 30-second quiz.</p></div></details>
         <details class="faq-item"><summary>Is it unisex?</summary><div class="faq-a"><p>Yes. All three are 30 ml unisex Eau de Parfum.</p></div></details>
         <details class="faq-item"><summary>What's in it?</summary><div class="faq-a"><p>More than half of every formula is natural ingredients. Every fragrance is IFRA compliant, cruelty-free, vegan and made in India.</p></div></details>
         <details class="faq-item"><summary>How long does shipping take?</summary><div class="faq-a"><p class="todo">Shipping timelines and the free-shipping threshold are to be confirmed by XPresence.</p></div></details>
@@ -2068,7 +2072,7 @@ body{background:var(--tile-a);color:var(--body)}
   <section class="house" id="house">
     <div class="house-head">
       <h2 id="houseTitle">The House of XPresence</h2>
-      <p data-reveal>XPresence is the quality that makes people remember you: the energy you bring into a room, the confidence in your presence, the impression that stays long after the moment has passed. <a class="hp" href="#focus" data-img="assets/focus-bottle.webp" data-label="Focus, for the workday">Focus</a> for the workday, <a class="hp" href="#power" data-img="assets/power-bottle.webp" data-label="Power, for the big moment">Power</a> for the big moment, <a class="hp" href="#warmth" data-img="assets/warmth-bottle.webp" data-label="Warmth, for the evening">Warmth</a> for the evening.</p>
+      <p data-reveal>Executive presence is a leader's x-factor. XPresence by CoachVikram is presence raised to the power of X, where X is one of three leadership styles: <a class="hp" href="#focus" data-img="assets/focus-bottle.webp" data-label="Focus, likeability that invites collaboration">Focus</a> for likeability, <a class="hp" href="#warmth" data-img="assets/warmth-bottle.webp" data-label="Warmth, trust that builds loyalty">Warmth</a> for trust, <a class="hp" href="#power" data-img="assets/power-bottle.webp" data-label="Power, credibility that inspires decision-making">Power</a> for credibility.</p>
       <a href="#focus" class="btn btn-outline" data-reveal>Shop fragrances</a>
     </div>
     <div class="house-row" id="houseRow">
@@ -2085,7 +2089,7 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="#top" class="logo" aria-label="XPresence, back to top"><svg class="logo-svg" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="537.8 392.8 524.4 114.5" fill="currentColor"><path d="M544.86 397.34C546.54 398.85 548.25 400.65 549.98 402.74C551.70 404.83 553.13 406.89 554.26 408.94L565.84 429.03L565.59 430.45L540.01 441.27L540.37 439.26C544.67 436.86 553.39 432.13 554.00 431.65C556.68 429.51 555.28 425.95 555.09 425.40C554.89 424.85 554.45 423.83 554.02 422.72L538.78 393.75L544.86 397.34"/><path d="M584.13 447.05C582.44 445.54 580.74 443.74 579.01 441.66C577.29 439.56 575.86 437.50 574.73 435.46L563.14 415.37L563.40 413.95L588.98 403.13L588.62 405.13C584.31 407.54 575.59 412.26 574.98 412.75C572.31 414.89 573.70 418.44 573.90 418.99C574.09 419.54 574.54 420.56 574.97 421.68L590.21 450.64L584.13 447.05"/><path d="M634.09 455.33C636.73 452.00 638.05 448.13 638.05 443.72C638.05 438.79 636.56 434.86 633.57 431.92C630.59 428.98 625.60 427.51 618.59 427.51L606.53 427.51L606.53 444.63C606.53 448.95 607.70 452.65 610.03 455.72C612.37 458.79 616.21 460.33 621.57 460.33C627.28 460.33 631.45 458.66 634.09 455.33M639.54 428.15C643.91 431.79 646.09 436.72 646.09 442.94C646.09 446.66 645.18 450.17 643.37 453.45C641.55 456.74 638.91 459.37 635.46 461.36C632.00 463.35 627.93 464.35 623.26 464.35C619.80 464.35 616.86 463.74 614.44 462.53C612.02 461.32 610.18 459.92 608.93 458.32C607.67 456.72 606.92 455.31 606.66 454.10L606.53 454.10L606.53 494.83C606.53 498.20 607.44 500.56 609.25 501.90C611.07 503.24 613.23 503.91 615.74 503.91L615.74 505.34L589.54 505.34L589.54 503.91C592.04 503.91 594.22 503.24 596.09 501.90C597.94 500.56 598.87 498.20 598.87 494.83L598.87 433.21C598.87 429.84 597.94 427.49 596.09 426.15C594.22 424.81 592.04 424.13 589.54 424.13L589.54 422.71L621.57 422.71C629.18 422.71 635.17 424.52 639.54 428.15"/><path d="M660.99 443.33C660.99 448.00 662.35 451.57 665.08 454.04C667.80 456.50 671.24 457.73 675.39 457.73C680.92 457.73 685.16 456.22 688.10 453.19C691.04 450.17 692.51 446.58 692.51 442.43C692.51 437.58 691.04 433.89 688.10 431.33C685.16 428.78 680.14 427.51 673.05 427.51L660.99 427.51L660.99 443.33M710.93 503.91L710.93 505.34L688.62 505.34L688.62 503.91C694.59 503.91 697.57 502.83 697.57 500.67C697.57 499.72 697.01 498.55 695.88 497.17L660.99 454.62L660.99 494.83C660.99 498.20 661.90 500.56 663.71 501.90C665.53 503.24 667.69 503.91 670.20 503.91L670.20 505.34L644.00 505.34L644.00 503.91C646.50 503.91 648.69 503.24 650.55 501.90C652.41 500.56 653.34 498.20 653.34 494.83L653.34 433.21C653.34 429.84 652.41 427.49 650.55 426.15C648.69 424.81 646.50 424.14 644.00 424.14L644.00 422.71L676.04 422.71C683.73 422.71 689.74 424.39 694.07 427.77C698.39 431.14 700.55 435.90 700.55 442.04C700.55 447.83 698.54 452.54 694.52 456.18C690.50 459.81 684.73 461.62 677.21 461.62C674.95 461.62 672.79 461.23 670.72 460.46L670.59 460.71C676.99 464.78 682.61 469.75 687.45 475.63L710.93 503.91"/><path d="M869.65 493.75L869.65 433.21C869.65 429.84 868.72 427.49 866.86 426.15C865.00 424.81 862.82 424.13 860.31 424.13L860.31 422.71L879.77 422.71L923.61 499.89L923.61 433.21C923.61 429.84 922.53 427.49 920.37 426.15C918.21 424.81 915.65 424.13 912.72 424.13L912.72 422.71L938.27 422.71L938.27 424.13C935.76 424.13 933.58 424.81 931.72 426.15C929.86 427.49 928.93 429.84 928.93 433.21L928.93 494.83C928.93 498.20 929.86 500.56 931.72 501.90C933.58 503.24 935.76 503.91 938.27 503.91L938.27 505.34L918.30 505.34L874.97 429.06L874.97 493.75L869.65 493.75"/><path d="M989.52 494.83C993.89 490.85 996.64 485.92 997.76 480.04L999.71 480.43C998.32 487.61 995.43 493.71 991.01 498.72C986.60 503.74 979.47 506.25 969.61 506.25C958.20 506.25 949.33 502.53 943.02 495.09C936.71 487.65 933.55 477.19 933.55 463.70C933.55 455.40 935.04 448.05 938.03 441.65C941.01 435.25 945.20 430.28 950.61 426.73C956.01 423.18 962.30 421.41 969.48 421.41C979.69 421.41 987.17 424.55 991.92 430.82C996.68 437.09 999.06 444.80 999.06 453.97L999.06 456.56L987.38 455.14C988.51 451.51 989.07 448.00 989.07 444.63C989.07 438.75 987.32 434.01 983.82 430.43C980.31 426.84 975.62 425.04 969.74 425.04C961.18 425.04 954.37 428.29 949.31 434.77C944.25 441.26 941.72 450.90 941.72 463.70C941.72 471.74 943.02 478.55 945.61 484.13C948.21 489.71 951.80 493.88 956.38 496.65C960.96 499.42 966.28 500.80 972.34 500.80C979.43 500.80 985.16 498.81 989.52 494.83"/><path d="M1059.69 492.14C1058.91 494.02 1057.87 495.56 1056.56 497.10C1054.61 499.39 1051.95 500.54 1048.58 500.54L1013.56 500.54L1013.56 463.05L1032.13 463.05C1035.50 463.05 1037.86 463.76 1039.20 465.19C1040.54 466.62 1041.21 468.24 1041.21 470.05L1042.64 470.05L1042.64 451.51L1041.21 451.51C1041.21 453.32 1040.54 454.94 1039.20 456.37C1037.86 457.80 1035.50 458.51 1032.13 458.51L1013.56 458.51L1013.56 427.51L1049.36 427.51C1052.47 427.51 1054.72 428.59 1056.10 430.75C1057.04 432.21 1057.66 433.65 1058.08 435.43L1059.62 435.19L1058.83 425.69L1058.57 422.71L997.62 422.71L997.62 424.21C999.68 424.37 1001.52 425.00 1003.11 426.15C1004.97 427.49 1005.90 429.84 1005.90 433.21L1005.90 494.83C1005.90 498.20 1004.97 500.56 1003.11 501.90C1001.52 503.05 999.68 503.67 997.62 503.84L997.62 505.34L1057.79 505.34L1058.57 502.35L1061.22 492.61L1059.69 492.14"/><path d="M770.79 492.14C770.01 494.02 768.97 495.56 767.66 497.10C765.71 499.39 763.05 500.54 759.68 500.54L724.66 500.54L724.66 463.05L743.23 463.05C746.60 463.05 748.96 463.76 750.30 465.19C751.64 466.62 752.31 468.24 752.31 470.05L753.74 470.05L753.74 451.51L752.31 451.51C752.31 453.32 751.64 454.94 750.30 456.37C748.96 457.80 746.60 458.51 743.23 458.51L724.66 458.51L724.66 427.51L764.69 427.51L771.07 422.71L708.77 422.71L708.77 424.21C710.81 424.38 712.63 425.01 714.21 426.15C716.07 427.49 717.00 429.84 717.00 433.21L717.00 494.83C717.00 498.20 716.07 500.56 714.21 501.90C712.63 503.04 710.81 503.66 708.77 503.83L708.77 505.34L768.89 505.34L769.67 502.35L772.32 492.61L770.79 492.14"/><path d="M809.76 467.49C806.32 464.09 801.25 461.16 794.54 458.68L776.27 452.06C772.83 450.83 770.34 449.11 768.80 446.90C767.25 444.70 766.48 442.23 766.48 439.49C766.48 434.64 768.18 430.73 771.58 427.78C774.97 424.82 779.76 423.34 785.94 423.34C793.52 423.34 799.28 425.66 803.21 430.29C807.14 434.92 809.76 441.92 811.09 451.27L812.41 451.27L811.48 428.50C804.87 422.59 796.48 419.63 786.33 419.63C780.07 419.63 774.82 420.65 770.58 422.68C766.35 424.71 763.23 427.31 761.25 430.49C759.26 433.67 758.27 437.06 758.27 440.68C758.27 445.89 759.55 449.95 762.11 452.86C764.67 455.77 768.33 458.07 773.10 459.74L792.29 466.63C801.82 469.89 806.59 475.80 806.59 484.36C806.59 489.57 804.78 493.85 801.16 497.20C797.54 500.56 792.47 502.23 785.94 502.23C782.74 502.23 779.80 501.79 777.10 500.94L775.86 505.48C778.58 505.95 782.75 506.20 785.94 506.20C794.41 506.20 801.36 504.53 806.78 501.17C812.21 497.82 814.92 491.38 814.92 481.85C814.92 475.67 813.20 470.88 809.76 467.49"/><path d="M883.85 492.14C883.07 494.02 882.03 495.56 880.72 497.10C878.77 499.39 876.11 500.54 872.74 500.54L827.78 500.54L827.78 463.05L846.35 463.05C849.72 463.05 852.08 463.76 853.42 465.19C854.76 466.62 855.43 468.24 855.43 470.05L856.86 470.05L856.86 451.51L855.43 451.51C855.43 453.32 854.76 454.94 853.42 456.37C852.08 457.80 849.72 458.51 846.35 458.51L827.78 458.51L827.78 427.51L847.05 427.51C850.16 427.51 852.41 428.59 853.79 430.75C854.73 432.21 855.35 433.65 855.77 435.43L857.31 435.19L856.52 425.69L856.26 422.71L812.01 422.71L812.01 424.22C814.01 424.41 815.79 425.03 817.34 426.15C819.20 427.49 820.12 429.84 820.12 433.21L820.12 494.83C820.12 498.20 819.20 500.56 817.34 501.90C815.79 503.02 814.01 503.64 812.01 503.83L812.01 505.34L881.95 505.34L882.73 502.35L885.39 492.61L883.85 492.14"/></svg></a>
-        <p>Eau de Parfum for the ones the room waits for.</p>
+        <p>XPresence by CoachVikram. Presence, raised to the power of X.</p>
       </div>
       <div class="foot-col">
         <h4>Fragrances</h4>
@@ -2718,17 +2722,17 @@ body{background:var(--tile-a);color:var(--body)}
       thumb = document.getElementById('occThumb'), add = document.getElementById('occAdd'), link = document.getElementById('occLink');
     const SETS = {
       mood: [
-        { k: 'clarity',    t: 'Clarity',    p: 'focus',  img: 'assets/focus-tailoring.webp',   alt: 'Focus on a tailored jacket', why: 'Sparkling citrus and sea breeze, for a clear head and a composed room.' },
-        { k: 'calm',       t: 'Calm',       p: 'focus',  img: 'assets/her-lobby.webp',         alt: 'Holding Focus in a hotel lobby', why: 'Jasmine, peony and sweet cedarwood keep it calm, even on deadline day.' },
-        { k: 'comfort',    t: 'Comfort',    p: 'warmth', img: 'assets/warmth-pack.webp',       alt: 'Warmth with its terracotta case', why: 'Creamy vanilla and sandalwood, worn close.' },
-        { k: 'sensuality', t: 'Sensuality', p: 'warmth', img: 'assets/her-evening.webp',       alt: 'Warmth in evening light', why: 'Leather, raspberry and spiced rose, for evenings that linger.' },
-        { k: 'authority',  t: 'Authority',  p: 'power',  img: 'assets/finder-power-bench.webp', pos: '50% 62%', alt: 'A woman in a black tailored suit seated beside Power on a glass bench', why: 'Spiced rum and tobacco set the tone before you speak.' },
-        { k: 'magnetism',  t: 'Magnetism',  p: 'power',  img: 'assets/him-spray.webp',         alt: 'Spraying Power', why: 'A defiant tuberose over guaiacwood holds the room after you leave.' }
+        { k: 'connection', t: 'Connection', p: 'focus',  img: 'assets/focus-tailoring.webp',   alt: 'Focus on a tailored jacket', why: 'Relationship building. Pink pepper and cedarwood for the meeting where you want everyone on your side.' },
+        { k: 'magnetism',  t: 'Magnetism',  p: 'focus',  img: 'assets/her-lobby.webp',         alt: 'Holding Focus in a hotel lobby', why: 'Personal magnetism. Clean, grounding notes that make people want to work with you.' },
+        { k: 'compassion', t: 'Compassion', p: 'warmth', img: 'assets/warmth-pack.webp',       alt: 'Warmth with its terracotta case', why: 'Soft vanilla and florals that signal care, before the negotiation and after it.' },
+        { k: 'gratitude',  t: 'Gratitude',  p: 'warmth', img: 'assets/her-evening.webp',       alt: 'Warmth in evening light', why: 'Comforting notes for the thank-you dinner and the team that stayed late.' },
+        { k: 'composure',  t: 'Composure',  p: 'power',  img: 'assets/finder-power-bench.webp', pos: '50% 62%', alt: 'A woman in a black tailored suit seated beside Power on a glass bench', why: 'Saffron and Turkish rose keep you steady when the stakes are high.' },
+        { k: 'selfbelief', t: 'Self-belief', p: 'power', img: 'assets/him-spray.webp',         alt: 'Spraying Power', why: 'Amber that recalls the rooms where deals are made, for the moment you make the call.' }
       ],
       moment: [
-        { k: 'workday', t: 'Workday',    p: 'focus',  img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket', why: 'Fresh at the 9 AM stand-up, still crisp at the 7 PM catch-up.' },
-        { k: 'evening', t: 'Evening',    p: 'warmth', img: 'assets/her-evening.webp',     alt: 'Warmth in evening light', why: 'Friday drinks, team dinners and nights where you want to linger.' },
-        { k: 'big',     t: 'Big moment', p: 'power',  img: 'assets/him-desk.webp',        alt: 'Power on a glass desk', why: 'The pitch, the appraisal, the deal. It sets the tone before you speak.' }
+        { k: 'workday', t: 'Collaboration',    p: 'focus',  img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket', why: 'The team meeting, the first coffee, every room where you want collaboration.' },
+        { k: 'evening', t: 'Negotiation',    p: 'warmth', img: 'assets/her-evening.webp',     alt: 'Warmth in evening light', why: 'Wear it before a negotiation to show the other side that you care.' },
+        { k: 'big',     t: 'Presentation', p: 'power',  img: 'assets/him-desk.webp',        alt: 'Power on a glass desk', why: 'The pitch, the board, the high-stakes presentation. Credibility that inspires decisions.' }
       ]
     };
     let mode = 'mood', tags = [];
@@ -2794,27 +2798,27 @@ body{background:var(--tile-a);color:var(--body)}
       qEl = document.getElementById('quizQ'), opts = document.getElementById('quizOpts'), back = document.getElementById('quizBack');
     const Q = [
       { q: 'When are you at your best?', img: true, opts: [
-        { p: 'focus',  label: 'The workday', sub: 'From the 9 AM stand-up onwards.', img: 'assets/quiz-workday.webp', pos: '70% 42%' },
-        { p: 'power',  label: 'The big moment', sub: 'The pitch, the appraisal, the deal.', img: 'assets/him-car.webp' },
-        { p: 'warmth', label: 'The evening', sub: 'Friday drinks, dinners, sangeets.', img: 'assets/her-evening.webp' } ] },
+        { p: 'focus',  label: 'Working together', sub: 'Ideas, people, momentum.', img: 'assets/quiz-workday.webp', pos: '70% 42%' },
+        { p: 'power',  label: 'The big presentation', sub: 'All eyes on you.', img: 'assets/him-car.webp' },
+        { p: 'warmth', label: 'The negotiation', sub: 'Both sides leave better off.', img: 'assets/her-evening.webp' } ] },
       { q: 'How should the room read you?', img: true, opts: [
-        { p: 'focus',  label: 'Clear-headed',   sub: 'Calm, precise, prepared.',        img: 'assets/together-concrete.webp' },
-        { p: 'power',  label: 'In charge',      sub: 'The last word is yours.',         img: 'assets/him-spray.webp' },
-        { p: 'warmth', label: 'Close and warm', sub: 'Easy to talk to, hard to forget.', img: 'assets/warmth-pack.webp' } ] },
+        { p: 'focus',  label: 'Likeable',  sub: 'People want to work with you.', img: 'assets/together-concrete.webp' },
+        { p: 'power',  label: 'Credible',  sub: 'People act on what you say.',   img: 'assets/him-spray.webp' },
+        { p: 'warmth', label: 'Trusted',   sub: 'People stay loyal to you.',     img: 'assets/warmth-pack.webp' } ] },
       { q: 'Which notes pull you in?', img: false, opts: [
-        { p: 'focus',  label: 'Citrus and sea breeze', sub: 'Fresh, bright, clean.' },
-        { p: 'power',  label: 'Rum and tobacco', sub: 'Smoky, woody, warm.' },
-        { p: 'warmth', label: 'Vanilla and rose', sub: 'Soft, sweet, close.' } ] },
+        { p: 'focus',  label: 'Pink pepper and cedarwood', sub: 'Clean, grounding.' },
+        { p: 'power',  label: 'Saffron and amber', sub: 'Rich, bold.' },
+        { p: 'warmth', label: 'Vanilla and florals', sub: 'Soft, comforting.' } ] },
       { q: 'What should people remember?', img: false, opts: [
-        { p: 'focus',  label: 'What you said' },
-        { p: 'power',  label: 'That you were in charge' },
-        { p: 'warmth', label: 'That they wanted to stay longer' } ] }
+        { p: 'focus',  label: 'That you listened' },
+        { p: 'power',  label: 'That you decided' },
+        { p: 'warmth', label: 'That you cared' } ] }
     ];
     const WHY = {
-      focus:  'Bright, clear and quietly confident. Your deadline-day companion: fresh at the 9 AM stand-up, still crisp at the 7 PM catch-up.',
-      power:  'Dark, smoky and unhurried. Made for the big pitch, the appraisal and the client dinner, and the late-night bar where the deal actually closes.',
-      warmth: 'Warm without trying, magnetic without a word. Made for Friday drinks, team dinners, sangeets and date nights where you want to linger.',
-      set:    'Your day moves through more than one mood. Start with the Discovery Set and find the one that stays.'
+      focus:  'Likeability that invites collaboration. Pink pepper, cedarwood and sandalwood for the meetings where you want everyone on your side.',
+      power:  'Credibility that inspires decision-making. Saffron, Turkish rose and amber for the high-stakes presentation and the room where the deal is made.',
+      warmth: 'Trust that builds loyalty. Vanilla and soft florals for the negotiation, the team dinner and every moment you want people to know you care.',
+      set:    'You lead in more than one style. Start with the Discovery Set: Focus, Warmth and Power, 10 ml each.'
     };
     let step = 0, answers = [];
 
@@ -2902,9 +2906,9 @@ body{background:var(--tile-a);color:var(--body)}
     if (!panel) return;
     const tabs = gsap.utils.toArray('.notes-tab');
     const NOTES = {
-      focus:  { family: 'Fresh, citrus, aquatic',      top: 'Sparkling citrus',       heart: 'Sea breeze, jasmine and peony', base: 'Sweet cedarwood' },
-      power:  { family: 'Woody, leathery, spicy, amber', top: 'Spiced rum and tobacco', heart: 'Tuberose',                       base: 'Guaiacwood' },
-      warmth: { family: 'Gourmand, floral, vanilla, musky', top: 'Leather and raspberry', heart: 'Pink pepper and rose',       base: 'Vanilla and sandalwood' }
+      focus:  { family: 'Clean, grounding',  top: 'Pink pepper', heart: 'Cedarwood',           base: 'Sandalwood' },
+      power:  { family: 'Rich, bold',        top: 'Saffron',     heart: 'Turkish rose',        base: 'Tobacco-like amber' },
+      warmth: { family: 'Soft, comforting',  top: 'Florals',     heart: 'Florals and vanilla', base: 'Vanilla' }
     };
     const set = (id, v) => { document.getElementById(id).textContent = v; };
     function apply(k) {

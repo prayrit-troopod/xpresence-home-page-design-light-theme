@@ -21,7 +21,7 @@ The current images are generated placeholders. The client said they are "not qui
 | Slot on the page | Placeholder now | Final creative needed |
 |---|---|---|
 | Hero, three panels | Packaging fronts | All three bottles together, one per panel, on the neutral base with each case colour reading clearly. 3:4 crops that hold on mobile. |
-| What's inside (notes), one per product | Bottle close-ups | 3D bottle render with its notes floating around it, as in the Pinterest reference. Focus: citrus, sea breeze, jasmine, peony, cedarwood. Power: rum, tobacco leaf, tuberose, guaiacwood. Warmth: leather, raspberry, pink pepper, rose, vanilla, sandalwood. Square, about 1600 px. |
+| What's inside (notes), one per product | Bottle close-ups | 3D bottle render with its notes floating around it, as in the Pinterest reference. Focus: pink pepper, cedarwood, sandalwood. Warmth: vanilla, florals. Power: saffron, Turkish rose, amber (tobacco-like). Notes from the x-Presence Design Brief, 2026-10-23. Square, about 1600 px. |
 | Characters (Him / Her), four frames each | Mixed generated models | Indian male and female leads, the same two people across all eight frames, through a working day: 06:40, 09:15, 14:30, 21:00. |
 | Focus chapter | Tailoring, atrium, packshot | Indian model, workday and office, daytime. Clarity, calm, freshness. |
 | Power chapter film strip | Desk, car, spray, case | Indian model. Boardroom, big pitch, client dinner, late-night bar. Authority, polish, magnetism. |
