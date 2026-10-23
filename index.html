@@ -1642,6 +1642,11 @@ body{background:var(--tile-a);color:var(--body)}
   .col-meta h3{white-space:nowrap;font-size:clamp(1.3rem,1.75vw,1.85rem);letter-spacing:.05em}
   .col-meta > .cap:first-child{white-space:nowrap;letter-spacing:0;font-size:clamp(.6875rem,.95vw,.8125rem);overflow:hidden;text-overflow:ellipsis}
 }
+/* Collection on phones: titles and notes captions also stay on one line, so every card's write-up starts level */
+@media (max-width:899px){
+  .col-meta h3{white-space:nowrap}
+  .col-meta > .cap:first-child{white-space:nowrap;letter-spacing:0;font-size:clamp(.75rem,3.6vw,.875rem);overflow:hidden;text-overflow:ellipsis}
+}
 </style>
 </head>
 <body>
