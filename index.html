@@ -1672,6 +1672,9 @@ body{background:var(--tile-a);color:var(--body)}
 /* Finder: a mood can carry its own phone crop (imgM), loaded through <picture> */
 .occ-media > picture{display:block;width:100%;height:100%}
 .occ-media > picture img{width:100%;height:100%;object-fit:cover}
+/* Finder: a photo flagged "whole" (faces and bottles must both show) is fitted in full, with a blurred copy of itself filling the sides */
+.occ-media .occ-blur{position:absolute;inset:-24px;background:center/cover no-repeat;filter:blur(18px) brightness(.8)}
+.occ-media > img.occ-whole{position:relative;z-index:1;object-fit:contain}
 /* Events, not times of day: the Warmth clock shows the stage of the client dinner, so it holds words and stays on one line */
 .wt-clock{white-space:nowrap;font-size:clamp(2rem,3.4vw,3.2rem);letter-spacing:-.01em}
 @media (max-width:899px){ .wt-clock{font-size:clamp(1.6rem,7.4vw,2.2rem)} }
@@ -2764,7 +2767,7 @@ body{background:var(--tile-a);color:var(--body)}
       mood: [
         { k: 'attentive',    t: 'Attentive',    p: 'focus',  img: 'assets/focus-tailoring.webp',      alt: 'Focus on a tailored jacket', why: 'Relationship building. Pink pepper and cedarwood for the meeting where you want everyone on your side.' },
         { k: 'insightful',   t: 'Insightful',   p: 'focus',  img: 'assets/problem-focus-900.webp',    pos: '50% 58%', alt: 'Holding Focus against a grey blazer', why: 'Social awareness. Clean, grounding notes for reading the room and asking the question that changes it.' },
-        { k: 'charismatic',  t: 'Charismatic',  p: 'focus',  img: 'assets/finder-charismatic.webp',  pos: '70% 100%', alt: 'Two colleagues outside a glass office, two bottles of Focus in front of them', why: 'Personal magnetism. Pink pepper, cedarwood and sandalwood that make people want to work with you.' },
+        { k: 'charismatic',  t: 'Charismatic',  p: 'focus',  img: 'assets/finder-charismatic-duo.webp', whole: true, alt: 'Two colleagues outside a glass office, two bottles of Focus in front of them', why: 'Personal magnetism. Pink pepper, cedarwood and sandalwood that make people want to work with you.' },
         { k: 'appreciative', t: 'Appreciative', p: 'warmth', img: 'assets/finder-appreciative.webp', imgM: 'assets/finder-appreciative-mobile.webp', alt: 'Warmth on the table at an evening gathering', why: 'Gratitude. Soft florals and vanilla for the thank-you dinner and the team that stayed late.' },
         { k: 'empathetic',   t: 'Empathetic',   p: 'warmth', img: 'assets/warmth-office-square.webp', pos: '50% 60%', alt: 'Warmth on a desk while colleagues talk', why: 'Compassion. Soft vanilla and florals that signal care, before the negotiation and after it.' },
         { k: 'confident',    t: 'Confident',    p: 'power',  img: 'assets/him-spray.webp',            alt: 'Spraying Power', why: 'Inner dialogue. Saffron and Turkish rose for the minutes before the presentation.' },
@@ -2782,6 +2785,7 @@ body{background:var(--tile-a);color:var(--body)}
     function apply(o) {
       const pr = PRODUCTS[o.p];
       media.innerHTML = !o.img ? trioHTML()
+        : o.whole ? '<span class="occ-blur" style="background-image:url(' + o.img + ')" aria-hidden="true"></span><img class="occ-whole" src="' + o.img + '" alt="' + o.alt + '">'
         : o.imgM ? '<picture><source media="(max-width:899px)" srcset="' + o.imgM + '"><img src="' + o.img + '" alt="' + o.alt + '"></picture>'
         : '<img src="' + o.img + '" alt="' + o.alt + '"' + (o.pos ? ' style="object-position:' + o.pos + '"' : '') + '>';
       cap.textContent = (mode === 'mood' ? 'To feel ' : 'For ') + o.t.toLowerCase();
