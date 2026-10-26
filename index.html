@@ -1669,6 +1669,9 @@ body{background:var(--tile-a);color:var(--body)}
 .wt-office picture{display:block;width:100%;height:100%}
 .wt-office img{object-position:50% 66%}
 @media (max-width:899px){ .wt-office img{object-position:50% 60%} }
+/* Finder: a mood can carry its own phone crop (imgM), loaded through <picture> */
+.occ-media > picture{display:block;width:100%;height:100%}
+.occ-media > picture img{width:100%;height:100%;object-fit:cover}
 </style>
 </head>
 <body>
@@ -1903,7 +1906,7 @@ body{background:var(--tile-a);color:var(--body)}
         <p><span class="t">14:30.</span> The presentation starts in ten minutes. You already know how it ends.</p>
       </div>
       <figure class="p-panel tall">
-        <div class="ph"><video src="assets/him-power.mp4" poster="assets/him-power-poster.jpg" autoplay muted loop playsinline preload="metadata" style="object-position:40% 50%"></video></div>
+        <div class="ph"><video src="assets/power-inner-dialogue.mp4" poster="assets/power-inner-dialogue-poster.jpg" autoplay muted loop playsinline preload="metadata" style="object-position:50% 50%"></video></div>
         <figcaption><b>Inner dialogue</b><span>14:30</span></figcaption>
       </figure>
       <figure class="p-panel short fit">
@@ -2755,12 +2758,14 @@ body{background:var(--tile-a);color:var(--body)}
       thumb = document.getElementById('occThumb'), add = document.getElementById('occAdd'), link = document.getElementById('occLink');
     const SETS = {
       mood: [
-        { k: 'connection', t: 'Connection', p: 'focus',  img: 'assets/focus-tailoring.webp',   alt: 'Focus on a tailored jacket', why: 'Relationship building. Pink pepper and cedarwood for the meeting where you want everyone on your side.' },
-        { k: 'magnetism',  t: 'Magnetism',  p: 'focus',  img: 'assets/her-lobby.webp',         alt: 'Holding Focus in a hotel lobby', why: 'Personal magnetism. Clean, grounding notes that make people want to work with you.' },
-        { k: 'compassion', t: 'Compassion', p: 'warmth', img: 'assets/warmth-pack.webp',       alt: 'Warmth with its terracotta case', why: 'Soft vanilla and florals that signal care, before the negotiation and after it.' },
-        { k: 'gratitude',  t: 'Gratitude',  p: 'warmth', img: 'assets/her-evening.webp',       alt: 'Warmth in evening light', why: 'Comforting notes for the thank-you dinner and the team that stayed late.' },
-        { k: 'composure',  t: 'Composure',  p: 'power',  img: 'assets/finder-power-bench.webp', pos: '50% 62%', alt: 'A woman in a black tailored suit seated beside Power on a glass bench', why: 'Saffron and Turkish rose keep you steady when the stakes are high.' },
-        { k: 'selfbelief', t: 'Self-belief', p: 'power', img: 'assets/him-spray.webp',         alt: 'Spraying Power', why: 'Amber that recalls the rooms where deals are made, for the moment you make the call.' }
+        { k: 'attentive',    t: 'Attentive',    p: 'focus',  img: 'assets/focus-tailoring.webp',      alt: 'Focus on a tailored jacket', why: 'Relationship building. Pink pepper and cedarwood for the meeting where you want everyone on your side.' },
+        { k: 'insightful',   t: 'Insightful',   p: 'focus',  img: 'assets/her-lobby.webp',            alt: 'Holding Focus in a hotel lobby', why: 'Social awareness. Clean, grounding notes for reading the room and asking the question that changes it.' },
+        { k: 'charismatic',  t: 'Charismatic',  p: 'focus',  img: 'assets/problem-focus-900.webp',    pos: '50% 58%', alt: 'Holding Focus against a grey blazer', why: 'Personal magnetism. Pink pepper, cedarwood and sandalwood that make people want to work with you.' },
+        { k: 'appreciative', t: 'Appreciative', p: 'warmth', img: 'assets/finder-appreciative.webp', imgM: 'assets/finder-appreciative-mobile.webp', alt: 'Warmth on the table at an evening gathering', why: 'Gratitude. Soft florals and vanilla for the thank-you dinner and the team that stayed late.' },
+        { k: 'empathetic',   t: 'Empathetic',   p: 'warmth', img: 'assets/warmth-office-square.webp', pos: '50% 60%', alt: 'Warmth on a desk while colleagues talk', why: 'Compassion. Soft vanilla and florals that signal care, before the negotiation and after it.' },
+        { k: 'confident',    t: 'Confident',    p: 'power',  img: 'assets/him-spray.webp',            alt: 'Spraying Power', why: 'Inner dialogue. Saffron and Turkish rose for the minutes before the presentation.' },
+        { k: 'poised',       t: 'Poised',       p: 'power',  img: 'assets/finder-power-bench.webp',   pos: '50% 62%', alt: 'A woman in a black tailored suit seated beside Power on a glass bench', why: 'Composure. Rich, bold notes that keep you steady when the stakes are high.' },
+        { k: 'respected',    t: 'Respected',    p: 'power',  img: 'assets/power-office.webp',         pos: '50% 90%', alt: 'A woman in a tailored black suit at a desk, Power in front of her', why: 'Self-advocacy. Amber that recalls the rooms where deals are made, for the moment you make the call.' }
       ],
       moment: [
         { k: 'workday', t: 'Collaboration',    p: 'focus',  img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket', why: 'The team meeting, the first coffee, every room where you want collaboration.' },
@@ -2772,7 +2777,9 @@ body{background:var(--tile-a);color:var(--body)}
 
     function apply(o) {
       const pr = PRODUCTS[o.p];
-      media.innerHTML = o.img ? '<img src="' + o.img + '" alt="' + o.alt + '"' + (o.pos ? ' style="object-position:' + o.pos + '"' : '') + '>' : trioHTML();
+      media.innerHTML = !o.img ? trioHTML()
+        : o.imgM ? '<picture><source media="(max-width:899px)" srcset="' + o.imgM + '"><img src="' + o.img + '" alt="' + o.alt + '"></picture>'
+        : '<img src="' + o.img + '" alt="' + o.alt + '"' + (o.pos ? ' style="object-position:' + o.pos + '"' : '') + '>';
       cap.textContent = (mode === 'mood' ? 'To feel ' : 'For ') + o.t.toLowerCase();
       name.textContent = pr.name;
       why.textContent = o.why;

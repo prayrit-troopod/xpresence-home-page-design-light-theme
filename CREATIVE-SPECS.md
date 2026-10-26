@@ -48,7 +48,7 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 ## 6. Power chapter (sideways film strip)
 | Slot | Now | Desktop | Phone | Export | Safe area |
 |---|---|---|---|---|---|
-| "The arrival" (video panel) | `him-power.mp4` (640×640) | 374×666 (≈9:16) | 255×536 | **1080×1920 MP4 (9:16)** | Centred |
+| "Inner dialogue" (video panel) | `power-inner-dialogue.mp4` (640×640, client video) | 374×666 (≈9:16) | 255×536 | **1080×1920 MP4 (9:16)** | Centred |
 | "The meeting" | `power-office.webp` (1075×1463, client creative) | 374×558 (2:3) | 255×471 | **1080×1920 (9:16)** | Bottle and model centred |
 | "The desk" | `him-desk.webp` (901×1600) | 374×432 | 255×357 | **1200×1600 (3:4)** | Centred |
 | "The last word" | `him-spray.webp` (1086×1448) | 374×666 (≈9:16) | 255×536 | **1080×1920 (9:16)** | Centred |
