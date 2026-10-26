@@ -1657,6 +1657,18 @@ body{background:var(--tile-a);color:var(--body)}
   .f-float.c{width:15vw;left:auto;right:8vw;top:22%}
   .f-float.e{width:12vw;left:14vw;top:62%}
 }
+/* Warmth timeline: the evening gathering opens (21:00) and the cocktail gathering closes (8+ hours).
+   Crops keep the Warmth bottle on the table in frame; desktop also keeps the faces. */
+.wt-gather img{object-position:50% 62%}
+.wt-cocktail img{object-position:50% 82%}
+@media (max-width:899px){ .wt-gather img{object-position:50% 84%} .wt-cocktail img{object-position:50% 88%} }
+/* The clock moves to the bottom-right so it never covers the Warmth bottle on the table (bottom-left in the gathering shot) */
+.wt-clock{left:auto;right:18px;text-align:right}
+@media (min-width:900px){ .wt-clock{left:auto;right:28px} }
+/* Warmth 8+ hours: the office shot (tall on desktop, a square crop on phones); face and bottle both in frame */
+.wt-office picture{display:block;width:100%;height:100%}
+.wt-office img{object-position:50% 66%}
+@media (max-width:899px){ .wt-office img{object-position:50% 60%} }
 </style>
 </head>
 <body>
@@ -1837,10 +1849,10 @@ body{background:var(--tile-a);color:var(--body)}
     <!-- Warmth: pinned evening timeline. Pinterest images are third-party references (not licensed): replace before launch. See CREATIVE-BRIEF.md. -->
     <div class="wt-stage" id="wtStage">
       <div class="wt-media" aria-hidden="true">
-        <figure class="wt-layer is-on wt-couple"><img src="assets/warmth-couple-both.webp" width="1200" height="1000" alt="" loading="lazy"></figure>
+        <figure class="wt-layer is-on wt-gather"><img src="assets/warmth-evening-gathering.webp" width="1122" height="1402" alt="" loading="lazy"></figure>
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
-        <figure class="wt-layer"><img src="assets/her-evening.webp" alt="" loading="lazy" style="object-position:60% 30%"></figure>
+        <figure class="wt-layer wt-office"><picture><source media="(max-width:899px)" srcset="assets/warmth-office-square.webp" width="1254" height="1254"><img src="assets/warmth-office.webp" width="939" height="1676" alt="" loading="lazy"></picture></figure>
         <p class="wt-clock" id="wtClock">21:00</p>
       </div>
       <header class="wt-head">

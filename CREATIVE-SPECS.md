@@ -38,10 +38,10 @@ General: sRGB, WebP (or high-quality JPG/PNG and I convert), photos ≤ 400 KB a
 ## 5. Warmth chapter (pinned evening timeline)
 | Slot | Now | Desktop | Phone | Export | Safe area |
 |---|---|---|---|---|---|
-| 21:00 First spray | `warmth-couple-both.webp` (1200×1000, both holding Warmth) on desktop and phones | 612×796 (≈3:4) | 335×290 (≈7:6; 216 tall on short phones) | **1500×2000 (3:4)** | Subject in the **middle band**: phones crop to a wide strip. Keep the **bottom-left** quiet (big "21:00" clock overlay) |
+| 21:00 First spray | `warmth-evening-gathering.webp` (1122×1402, client creative) | 612×796 (≈3:4) | 335×290 (≈7:6; 216 tall on short phones) | **1500×2000 (3:4)** | Subject in the **middle band**: phones crop to a wide strip. Keep the **bottom-right** quiet (big "21:00" clock overlay) |
 | 22:30 The heart opens | Pinterest ⚠ (rose) | same | same | **1500×2000** | same |
 | 01:00 The base settles | Pinterest ⚠ (vanilla) | same | same | **1500×2000** | same |
-| 8+ hours On skin | `her-evening.webp` (1024×1536) | same | same | **1500×2000** | same; model wearing Warmth |
+| 8+ hours On skin | desktop `warmth-office.webp` (939×1676), phones `warmth-office-square.webp` (1254×1254), client creatives | same | same | **1500×2000** | same; model wearing Warmth |
 | Note thumbs: leather, raspberry, rose, vanilla | Pinterest ⚠ | 42×42 circle | 34×34 | **400×400 (1:1)** each | Centred; shown as circles |
 | Buy-row thumbnail | `warmth-bottle.webp` | 64×64 | 52×52 | uses the Warmth packshot (see 13) | — |
 
