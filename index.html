@@ -1672,6 +1672,10 @@ body{background:var(--tile-a);color:var(--body)}
 /* Finder: a mood can carry its own phone crop (imgM), loaded through <picture> */
 .occ-media > picture{display:block;width:100%;height:100%}
 .occ-media > picture img{width:100%;height:100%;object-fit:cover}
+/* Events, not times of day: the Warmth clock shows the stage of the client dinner, so it holds words and stays on one line */
+.wt-clock{white-space:nowrap;font-size:clamp(2rem,3.4vw,3.2rem);letter-spacing:-.01em}
+@media (max-width:899px){ .wt-clock{font-size:clamp(1.6rem,7.4vw,2.2rem)} }
+.wt-rail li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style>
 </head>
 <body>
@@ -1827,7 +1831,7 @@ body{background:var(--tile-a);color:var(--body)}
   <!-- DESIRE I: Focus, pinned bottle -->
   <section class="focus" id="focus">
     <div class="focus-head">
-      <h2 data-reveal><span class="t">09:15.</span> The room leans in when you listen.</h2>
+      <h2 data-reveal><span class="t">The team meeting.</span> The room leans in when you listen.</h2>
     </div>
     <div class="focus-stage" id="focusStage">
       <div class="focus-word" aria-hidden="true">Focus</div>
@@ -1847,7 +1851,7 @@ body{background:var(--tile-a);color:var(--body)}
     </div>
   </section>
 
-  <!-- DESIRE II: Warmth, pinned evening timeline -->
+  <!-- DESIRE II: Warmth, the client dinner in four stages (pinned) -->
   <section class="warmth" id="warmth">
     <!-- Warmth: pinned evening timeline. Pinterest images are third-party references (not licensed): replace before launch. See CREATIVE-BRIEF.md. -->
     <div class="wt-stage" id="wtStage">
@@ -1856,35 +1860,35 @@ body{background:var(--tile-a);color:var(--body)}
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
         <figure class="wt-layer"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></figure>
         <figure class="wt-layer wt-office"><picture><source media="(max-width:899px)" srcset="assets/warmth-office-square.webp" width="1254" height="1254"><img src="assets/warmth-office.webp" width="939" height="1676" alt="" loading="lazy"></picture></figure>
-        <p class="wt-clock" id="wtClock">21:00</p>
+        <p class="wt-clock" id="wtClock">Arrival</p>
       </div>
       <header class="wt-head">
-        <p class="wt-eyebrow">Warmth, one evening</p>
+        <p class="wt-eyebrow">Warmth, the client dinner</p>
         <h2>Trust that builds loyalty.</h2>
       </header>
       <div class="wt-mid">
-        <ol class="wt-rail" aria-hidden="true"><li class="on is-cur"><b></b>21:00</li><li><b></b>22:30</li><li><b></b>01:00</li><li><b></b>8h+</li></ol>
+        <ol class="wt-rail" aria-hidden="true"><li class="on is-cur"><b></b>Arrival</li><li><b></b>Conversation</li><li><b></b>The deal</li><li><b></b>Next day</li></ol>
         <ol class="wt-steps">
           <li class="wt-step is-on">
-            <p class="wt-phase"><span class="sr">21:00, </span>First spray</p>
+            <p class="wt-phase"><span class="sr">Arrival, </span>First spray</p>
             <h3>Arrive with good intentions.</h3>
             <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="Florals" loading="lazy" referrerpolicy="no-referrer"></span>Top: soft florals</p>
             <p class="wt-body">Soft florals open first: approachable, kind and easy to talk to.</p>
           </li>
           <li class="wt-step">
-            <p class="wt-phase"><span class="sr">22:30, </span>The heart opens</p>
+            <p class="wt-phase"><span class="sr">Conversation, </span>The heart opens</p>
             <h3>Compassion, drawn close.</h3>
             <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg" alt="Florals" loading="lazy" referrerpolicy="no-referrer"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="Vanilla" loading="lazy" referrerpolicy="no-referrer"></span>Heart: florals and vanilla</p>
             <p class="wt-body">Wear it before a negotiation, to show the people across the table that you care.</p>
           </li>
           <li class="wt-step">
-            <p class="wt-phase"><span class="sr">01:00, </span>The base settles</p>
+            <p class="wt-phase"><span class="sr">The deal, </span>The base settles</p>
             <h3>Gratitude, said out loud.</h3>
             <p class="wt-notes"><span class="wt-thumbs"><img src="https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg" alt="Vanilla" loading="lazy" referrerpolicy="no-referrer"></span>Base: vanilla</p>
             <p class="wt-body">Soft, comforting vanilla. People relax around you, trust you, and remember why.</p>
           </li>
           <li class="wt-step">
-            <p class="wt-phase"><span class="sr">8+ hours, </span>On skin</p>
+            <p class="wt-phase"><span class="sr">Next day, </span>8+ hours on skin</p>
             <h3>Loyalty lasts longer.</h3>
             <p class="wt-body">Vanilla and florals that communicate approachability and care: compassion, self-care and gratitude, in one bottle.</p>
           </li>
@@ -1903,23 +1907,23 @@ body{background:var(--tile-a);color:var(--body)}
     <div class="power-track" id="powerTrack">
       <div class="p-intro">
         <h2 class="vt-h2"><span class="sr-only">Power</span><span class="vtext" aria-hidden="true"><canvas id="vtCanvas"></canvas><video id="vtVideo" src="assets/him-power.mp4" muted loop playsinline preload="metadata"></video></span>never raises its voice.</h2>
-        <p><span class="t">14:30.</span> The presentation starts in ten minutes. You already know how it ends.</p>
+        <p><span class="t">The presentation.</span> It starts in ten minutes. You already know how it ends.</p>
       </div>
       <figure class="p-panel tall">
         <div class="ph"><video src="assets/power-inner-dialogue.mp4" poster="assets/power-inner-dialogue-poster.jpg" autoplay muted loop playsinline preload="metadata" style="object-position:50% 50%"></video></div>
-        <figcaption><b>Inner dialogue</b><span>14:30</span></figcaption>
+        <figcaption><b>Optimistic</b><span>Before</span></figcaption>
       </figure>
       <figure class="p-panel short fit">
         <div class="ph"><img src="assets/power-office.webp" alt="A woman in a tailored black suit at a desk, Power in front of her" loading="lazy" style="object-position:50% 72%"></div>
-        <figcaption><b>Composure</b><span>15:10</span></figcaption>
+        <figcaption><b>Composure</b><span>The room</span></figcaption>
       </figure>
       <figure class="p-panel high">
         <div class="ph"><img src="assets/him-desk.webp" alt="Power on a glass desk beside a fountain pen" loading="lazy" style="object-position:50% 60%"></div>
-        <figcaption><b>Self-advocacy</b><span>17:45</span></figcaption>
+        <figcaption><b>Confident</b><span>The meeting</span></figcaption>
       </figure>
       <figure class="p-panel tall">
         <div class="ph"><img src="assets/him-spray.webp" alt="Spraying Power, a silhouette in mist" loading="lazy"></div>
-        <figcaption><b>The decision</b><span>18:20</span></figcaption>
+        <figcaption><b>Decisive</b><span>After</span></figcaption>
       </figure>
       <div class="p-product">
         <div class="ph" data-lens><img src="assets/power-bottle.webp" alt="XPresence Power, 30 ml Eau de Parfum" loading="lazy"></div>
@@ -2010,7 +2014,7 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
       <div class="occ-mode" role="group" aria-label="Browse by">
         <button class="occ-m is-on" type="button" data-mode="mood" aria-pressed="true">By mood</button>
-        <button class="occ-m" type="button" data-mode="moment" aria-pressed="false">By occasion</button>
+        <button class="occ-m" type="button" data-mode="moment" aria-pressed="false">By event</button>
       </div>
       <div class="occ-tags" id="occTags" role="tablist" aria-label="Moods"></div>
       <div class="occ-panel" id="occPanel" role="tabpanel" aria-live="polite">
@@ -2309,7 +2313,7 @@ body{background:var(--tile-a);color:var(--body)}
     if (!stage) return;
     const layers = [...stage.querySelectorAll('.wt-layer')], steps = [...stage.querySelectorAll('.wt-step')],
       ticks = [...stage.querySelectorAll('.wt-rail li')], buy = stage.querySelector('.wt-buy'),
-      clock = document.getElementById('wtClock'), TIMES = ['21:00', '22:30', '01:00', '8h+'];
+      clock = document.getElementById('wtClock'), TIMES = ['Arrival', 'Conversation', 'The deal', 'Next day'];
     let clockT;
     let cur = -1;
     const go = i => {
@@ -2768,8 +2772,8 @@ body{background:var(--tile-a);color:var(--body)}
         { k: 'respected',    t: 'Respected',    p: 'power',  img: 'assets/power-office.webp',         pos: '50% 90%', alt: 'A woman in a tailored black suit at a desk, Power in front of her', why: 'Self-advocacy. Amber that recalls the rooms where deals are made, for the moment you make the call.' }
       ],
       moment: [
-        { k: 'workday', t: 'Collaboration',    p: 'focus',  img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket', why: 'The team meeting, the first coffee, every room where you want collaboration.' },
-        { k: 'evening', t: 'Negotiation',    p: 'warmth', img: 'assets/her-evening.webp',     alt: 'Warmth in evening light', why: 'Wear it before a negotiation to show the other side that you care.' },
+        { k: 'workday', t: 'Team meeting',    p: 'focus',  img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket', why: 'Likeability that invites collaboration, for the meeting where you want everyone on your side.' },
+        { k: 'evening', t: 'Client dinner',    p: 'warmth', img: 'assets/her-evening.webp',     alt: 'Warmth in evening light', why: 'Trust that builds loyalty. Wear it to the dinner before a negotiation, to show the other side you care.' },
         { k: 'big',     t: 'Presentation', p: 'power',  img: 'assets/him-desk.webp',        alt: 'Power on a glass desk', why: 'The pitch, the board, the high-stakes presentation. Credibility that inspires decisions.' }
       ]
     };
@@ -2837,10 +2841,10 @@ body{background:var(--tile-a);color:var(--body)}
     const stepEl = document.getElementById('quizStep'), bar = document.getElementById('quizBar'),
       qEl = document.getElementById('quizQ'), opts = document.getElementById('quizOpts'), back = document.getElementById('quizBack');
     const Q = [
-      { q: 'When are you at your best?', img: true, opts: [
-        { p: 'focus',  label: 'Working together', sub: 'Ideas, people, momentum.', img: 'assets/quiz-workday.webp', pos: '70% 42%' },
-        { p: 'power',  label: 'The big presentation', sub: 'All eyes on you.', img: 'assets/him-car.webp' },
-        { p: 'warmth', label: 'The negotiation', sub: 'Both sides leave better off.', img: 'assets/her-evening.webp' } ] },
+      { q: 'Where are you wearing it?', img: true, opts: [
+        { p: 'focus',  label: 'The team meeting', sub: 'Ideas, people, momentum.', img: 'assets/quiz-workday.webp', pos: '70% 42%' },
+        { p: 'power',  label: 'The presentation', sub: 'All eyes on you.', img: 'assets/him-car.webp' },
+        { p: 'warmth', label: 'The client dinner', sub: 'Both sides leave better off.', img: 'assets/her-evening.webp' } ] },
       { q: 'How should the room read you?', img: true, opts: [
         { p: 'focus',  label: 'Likeable',  sub: 'People want to work with you.', img: 'assets/together-concrete.webp' },
         { p: 'power',  label: 'Credible',  sub: 'People act on what you say.',   img: 'assets/him-spray.webp' },
