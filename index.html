@@ -1647,6 +1647,16 @@ body{background:var(--tile-a);color:var(--body)}
   .col-meta h3{white-space:nowrap}
   .col-meta > .cap:first-child{white-space:nowrap;letter-spacing:0;font-size:clamp(.75rem,3.6vw,.875rem);overflow:hidden;text-overflow:ellipsis}
 }
+/* Focus notes: three floats balanced across both sides of the bottle (pink pepper top left, sandalwood right,
+   cedarwood lower left) now that the five-note set is down to the brief's three */
+.f-float.c{left:auto;right:4vw;top:30%;width:30vw;text-align:right;z-index:4}
+.f-float.c .f-img{aspect-ratio:4/5}
+.f-float.e{left:7vw;top:64%;width:24vw}
+@media (min-width:900px){
+  .f-float.a{width:14vw;left:8vw;top:10%}
+  .f-float.c{width:15vw;left:auto;right:8vw;top:22%}
+  .f-float.e{width:12vw;left:14vw;top:62%}
+}
 </style>
 </head>
 <body>
@@ -1708,15 +1718,15 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
       <ol class="pb-tri" aria-label="Three styles of presence">
         <li class="pb-p pb-focus"><a href="#focus">
-          <img src="assets/problem-focus.webp" alt="Holding a bottle of Focus against a grey blazer" loading="lazy" style="object-position:50% 58%">
+          <img src="assets/problem-focus-900.webp" alt="Holding a bottle of Focus against a grey blazer" decoding="async" fetchpriority="high" style="object-position:50% 58%">
           <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><circle cx="50" cy="50" r="47" vector-effect="non-scaling-stroke"/><path d="M50 3V97" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Likeability that invites collaboration.</span><span class="pb-name">Focus</span></span>
         </a></li>
         <li class="pb-p pb-warmth"><a href="#warmth">
-          <img src="assets/problem-warmth-mobile.webp" width="1030" height="1527" alt="Warmth on an office desk" loading="lazy">
+          <img src="assets/problem-warmth-mobile-900.webp" width="900" height="1334" alt="Warmth on an office desk" decoding="async" fetchpriority="high">
           <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><path d="M50 96V4M50 96L25 12M50 96L75 12M50 96L4 42M50 96L96 42" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Trust that builds loyalty.</span><span class="pb-name">Warmth</span></span>
         </a></li>
         <li class="pb-p pb-power"><a href="#power">
-          <img src="assets/him-dressing.webp" alt="Power on a dressing table before a black-tie evening" loading="lazy" style="object-position:50% 45%">
+          <img src="assets/him-dressing-900.webp" alt="Power on a dressing table before a black-tie evening" decoding="async" fetchpriority="high" style="object-position:50% 45%">
           <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><circle cx="50" cy="13" r="10" vector-effect="non-scaling-stroke"/><path d="M50 23L3 97H97Z" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Credibility that inspires decision-making.</span><span class="pb-name">Power</span></span>
         </a></li>
       </ol>
@@ -2328,11 +2338,12 @@ body{background:var(--tile-a);color:var(--body)}
       if (t.startsWith('<em>')) return '<em>' + t.slice(4, -5).split(/\s+/).map(w => '<span class="w">' + w + '</span>').join(' ') + '</em>';
       return '<span class="w">' + t + '</span>';
     }).join(' ');
-    const tl = gsap.timeline({ scrollTrigger: { trigger: '#problem', start: 'top 70%' } });
-    tl.from('#pbTitle .w', { yPercent: 60, autoAlpha: 0, duration: 1, stagger: 0.06, ease: 'expo.out' })
-      .from('.pb-answer > *', { y: 16, autoAlpha: 0, duration: 0.9, stagger: 0.12, ease: 'expo.out' }, '-=0.5')
-      .from('.pb-p', { clipPath: 'inset(100% 0 0 0)', duration: 1.2, stagger: 0.12, ease: 'expo.out', clearProps: 'clipPath' }, '-=0.5')
-      .from('.pb-p img', { scale: 1.2, duration: 1.6, stagger: 0.12, ease: 'expo.out', clearProps: 'transform' }, '<');
+    // Everything starts together and earlier, so the panels are in place within about a second
+    const tl = gsap.timeline({ scrollTrigger: { trigger: '#problem', start: 'top 88%' } });
+    tl.from('#pbTitle .w', { yPercent: 60, autoAlpha: 0, duration: 0.7, stagger: 0.03, ease: 'expo.out' })
+      .from('.pb-answer > *', { y: 12, autoAlpha: 0, duration: 0.6, stagger: 0.08, ease: 'expo.out' }, 0.1)
+      .from('.pb-p', { clipPath: 'inset(100% 0 0 0)', duration: 0.8, stagger: 0.07, ease: 'expo.out', clearProps: 'clipPath' }, 0.1)
+      .from('.pb-p img', { scale: 1.12, duration: 1, stagger: 0.07, ease: 'expo.out', clearProps: 'transform' }, '<');
   })();
 
   /* CLAIMS: clone the list once so the marquee loops seamlessly */
