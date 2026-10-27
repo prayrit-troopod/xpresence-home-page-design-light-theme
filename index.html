@@ -1491,18 +1491,19 @@ body{background:var(--tile-a);color:var(--body)}
    no two same-colour sections stack their padding into a double gap (Discovery, Notes and the finder
    were all the same tile, which read as 128px of space between them instead of 64). */
 #problem{--bg:var(--tile-b)}
-#collection,.claims{--bg:var(--tile-a)}
+#collection,.claims,#occasions{--bg:var(--tile-a)}
 .manifesto{--bg:var(--tile-b)}
 #discovery{--bg:var(--tile-a)}
 #notes{--bg:var(--tile-b)}
-#occasions{--bg:var(--tile-a)}
-#quiz{--bg:var(--tile-b)}
-#reviews{--bg:var(--tile-a)}
-#worn{--bg:var(--tile-b)}
-#faq{--bg:var(--tile-a)}
-#house{--bg:var(--tile-b)}
+#quiz{--bg:var(--tile-a)}
+#reviews{--bg:var(--tile-b)}
+#worn{--bg:var(--tile-a)}
+#faq{--bg:var(--tile-b)}
+#house{--bg:var(--tile-a)}
 #problem,#collection,.claims,.manifesto,#discovery,#notes,#occasions,#quiz,#reviews,#worn,#faq,#house{background:var(--bg)}
-.footer{--bg:var(--tile-a);background:var(--tile-a)}
+.footer{--bg:var(--tile-b);background:var(--tile-b)}
+/* The claims strip divides the collection from the finder on one tile: the finder's top padding is the gap below it */
+.claims{padding-bottom:0}
 /* The notes panel sits on the tile; keep its own card surface */
 #notes .notes-panel:not([class*="theme-"]){background:var(--paper)}
 /* Focus and Power product blocks: one rhythm for name, badges, line and Add to bag.
@@ -1824,6 +1825,30 @@ body{background:var(--tile-a);color:var(--body)}
     </div></div>
   </section>
 
+  <!-- SHOP: by occasion -->
+  <section class="occasion" id="occasions" aria-labelledby="occTitle">
+    <div class="shop-wrap">
+      <div class="sec-head">
+        <h2 id="occTitle" data-reveal>How do you want to feel today?</h2>
+      </div>
+      <div class="occ-mode" role="group" aria-label="Browse by">
+        <button class="occ-m is-on" type="button" data-mode="mood" aria-pressed="true">By mood</button>
+        <button class="occ-m" type="button" data-mode="moment" aria-pressed="false">By event</button>
+      </div>
+      <div class="occ-tags" id="occTags" role="tablist" aria-label="Moods"></div>
+      <div class="occ-panel" id="occPanel" role="tabpanel" aria-live="polite">
+        <div class="occ-media" id="occMedia"></div>
+        <div class="occ-info">
+          <p class="cap" id="occCap"></p>
+          <div class="occ-title"><i class="occ-thumb" id="occThumb" aria-hidden="true"></i><h3 id="occName"></h3></div>
+          <p class="occ-why" id="occWhy"></p>
+          <p class="cap" id="occSpec"></p>
+          <div class="occ-actions"><button class="btn" id="occAdd" data-add="" data-img="">Add to bag</button><a class="text-link" id="occLink" href="#focus">Its chapter</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="manifesto" aria-label="Manifesto">
     <p id="manifesto">Nobody remembers who spoke first. They remember who the room *turned *toward. We make fragrance for that half-second, the moment *before *your *name *is *said.</p>
   </section>
@@ -2006,30 +2031,6 @@ body{background:var(--tile-a);color:var(--body)}
     </div>
   </section>
 
-  <!-- SHOP: by occasion -->
-  <section class="occasion" id="occasions" aria-labelledby="occTitle">
-    <div class="shop-wrap">
-      <div class="sec-head">
-        <h2 id="occTitle" data-reveal>How do you want to feel today?</h2>
-      </div>
-      <div class="occ-mode" role="group" aria-label="Browse by">
-        <button class="occ-m is-on" type="button" data-mode="mood" aria-pressed="true">By mood</button>
-        <button class="occ-m" type="button" data-mode="moment" aria-pressed="false">By event</button>
-      </div>
-      <div class="occ-tags" id="occTags" role="tablist" aria-label="Moods"></div>
-      <div class="occ-panel" id="occPanel" role="tabpanel" aria-live="polite">
-        <div class="occ-media" id="occMedia"></div>
-        <div class="occ-info">
-          <p class="cap" id="occCap"></p>
-          <div class="occ-title"><i class="occ-thumb" id="occThumb" aria-hidden="true"></i><h3 id="occName"></h3></div>
-          <p class="occ-why" id="occWhy"></p>
-          <p class="cap" id="occSpec"></p>
-          <div class="occ-actions"><button class="btn" id="occAdd" data-add="" data-img="">Add to bag</button><a class="text-link" id="occLink" href="#focus">Its chapter</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- SHOP: find your fragrance quiz -->
   <section class="quiz" id="quiz" aria-labelledby="quizTitle">
     <div class="shop-wrap">
@@ -2081,27 +2082,34 @@ body{background:var(--tile-a);color:var(--body)}
       </div>
       <div class="ugc-fan" id="ugcFan" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Customer posts. Tap a side post, swipe or use the arrow keys to browse.">
       <div class="ugc-row">
-        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/him-spray.webp" alt="Spraying Power before heading out" loading="lazy" style="object-position:40% 40%"></div><figcaption><span class="cap">@handle</span><a href="#power" class="text-link">Wearing Power</a></figcaption></figure>
-        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/her-lobby.webp" alt="Holding Focus in a hotel lobby" loading="lazy" style="object-position:42% 30%"></div><figcaption><span class="cap">@handle</span><a href="#focus" class="text-link">Wearing Focus</a></figcaption></figure>
-        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/her-evening.webp" alt="Warmth in evening light" loading="lazy" style="object-position:60% 35%"></div><figcaption><span class="cap">@handle</span><a href="#warmth" class="text-link">Wearing Warmth</a></figcaption></figure>
-        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/him-dressing.webp" alt="Power on a dressing table before a black-tie evening" loading="lazy" style="object-position:50% 45%"></div><figcaption><span class="cap">@handle</span><a href="#power" class="text-link">Wearing Power</a></figcaption></figure>
-        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/focus-tailoring.webp" alt="Focus on a tailored jacket" loading="lazy" style="object-position:50% 45%"></div><figcaption><span class="cap">@handle</span><a href="#focus" class="text-link">Wearing Focus</a></figcaption></figure>
-        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/together-rome.webp" alt="Two people in Rome with Focus" loading="lazy" style="object-position:50% 40%"></div><figcaption><span class="cap">@handle</span><a href="#focus" class="text-link">Wearing Focus</a></figcaption></figure>
+        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/ugc-focus-duo.webp" alt="Two colleagues outside a glass office, two bottles of Focus in front of them" loading="lazy" style="object-position:90% 50%"></div><figcaption><span class="cap">@handle</span><a href="#focus" class="text-link">Wearing Focus</a></figcaption></figure>
+        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/problem-warmth-mobile.webp" alt="A woman in white seated on her desk, Warmth beside her" loading="lazy" style="object-position:60% 40%"></div><figcaption><span class="cap">@handle</span><a href="#warmth" class="text-link">Wearing Warmth</a></figcaption></figure>
+        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/finder-power-bench.webp" alt="A woman in a navy tailored suit seated on a glass bench, Power beside her" loading="lazy" style="object-position:35% 10%"></div><figcaption><span class="cap">@handle</span><a href="#power" class="text-link">Wearing Power</a></figcaption></figure>
+        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/him-dressing.webp" alt="Power on a dressing table before a black-tie evening" loading="lazy" style="object-position:50% 60%"></div><figcaption><span class="cap">@handle</span><a href="#power" class="text-link">Wearing Power</a></figcaption></figure>
+        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/power-office.webp" alt="A woman in a tailored black suit at a desk, Power in front of her" loading="lazy" style="object-position:50% 100%"></div><figcaption><span class="cap">@handle</span><a href="#power" class="text-link">Wearing Power</a></figcaption></figure>
+        <figure class="ugc-tile"><div class="ugc-media"><img src="assets/him-spray.webp" alt="Spraying Power, a silhouette in mist" loading="lazy" style="object-position:50% 30%"></div><figcaption><span class="cap">@handle</span><a href="#power" class="text-link">Wearing Power</a></figcaption></figure>
       </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ: longevity, trying before buying, shipping, returns (client brief) -->
+  <!-- FAQ: the questions shoppers most often search and ask about perfume (longevity, application, EDP vs EDT,
+       office wear, heat, skin chemistry, safety, storage), then trial, shipping and returns (client brief) -->
   <section class="faq" id="faq" aria-labelledby="faqTitle">
     <div class="shop-wrap">
       <div class="sec-head"><h2 id="faqTitle" data-reveal>Questions</h2></div>
       <div class="faq-list">
-        <details class="faq-item"><summary>How long does it last?</summary><div class="faq-a"><p>All three last 8+ hours on skin, with moderate projection: noticed within arm's length, never overpowering.</p></div></details>
+        <details class="faq-item"><summary>How long does the fragrance last?</summary><div class="faq-a"><p>All three last 8+ hours on skin. Like any perfume, it lasts a little longer on moisturised skin and on clothes, and a little less on dry skin or in strong heat.</p></div></details>
+        <details class="faq-item"><summary>How do I make my perfume last longer?</summary><div class="faq-a"><p>Apply it straight after a shower, on moisturised skin. Spray the pulse points (wrists, neck, behind the ears, inside the elbows) and let it dry; rubbing your wrists together breaks down the top notes faster. A light mist on your collar or scarf carries it further into the day.</p></div></details>
+        <details class="faq-item"><summary>What is the difference between Eau de Parfum and Eau de Toilette?</summary><div class="faq-a"><p>Concentration. An Eau de Parfum holds more fragrance oil than an Eau de Toilette, so it lasts longer and needs fewer sprays. Focus, Warmth and Power are all Eau de Parfum.</p></div></details>
+        <details class="faq-item"><summary>Is it too strong for the office?</summary><div class="faq-a"><p>No. All three have moderate projection: noticed within arm's length, never overpowering. Two or three sprays are enough for a full working day.</p></div></details>
+        <details class="faq-item"><summary>Does it work in Indian heat?</summary><div class="faq-a"><p>Heat makes any fragrance project more and fade sooner, so go lighter in summer: one or two sprays on moisturised skin. Focus, with its clean pink pepper and cedarwood, is the easiest in the day's heat; Warmth and Power, richer with vanilla and amber, come into their own in the evening and in air-conditioned rooms.</p></div></details>
+        <details class="faq-item"><summary>Why does the same perfume smell different on different people?</summary><div class="faq-a"><p>Skin chemistry. Your skin's oils, warmth and pH change how the notes open and settle, so the same bottle can read softer on one person and brighter on another. That is why we suggest wearing each one for a full day before you choose.</p></div></details>
         <details class="faq-item"><summary>Can I try before buying a full bottle?</summary><div class="faq-a"><p>Yes. The Discovery Set (₹999) holds three 10 ml bottles of Focus, Warmth and Power. Wear each for a day, then choose your 30 ml.</p></div></details>
         <details class="faq-item"><summary>Which one is right for me?</summary><div class="faq-a"><p>Focus is likeability that invites collaboration: pink pepper, cedarwood and sandalwood. Warmth is trust that builds loyalty: vanilla and florals. Power is credibility that inspires decision-making: saffron, Turkish rose and amber. Not sure? Take the 30-second quiz.</p></div></details>
-        <details class="faq-item"><summary>Is it unisex?</summary><div class="faq-a"><p>Yes. All three are 30 ml unisex Eau de Parfum.</p></div></details>
-        <details class="faq-item"><summary>What's in it?</summary><div class="faq-a"><p>More than half of every formula is natural ingredients. Every fragrance is IFRA compliant, cruelty-free, vegan and made in India.</p></div></details>
+        <details class="faq-item"><summary>Is it unisex?</summary><div class="faq-a"><p>Yes. All three are 30 ml unisex Eau de Parfum, made to be worn by anyone.</p></div></details>
+        <details class="faq-item"><summary>What is in it, and is it safe for my skin?</summary><div class="faq-a"><p>More than half of every formula is natural ingredients. Every fragrance is IFRA compliant, cruelty-free, vegan and made in India. If your skin is sensitive, try a spray on your inner arm first and wait a day.</p></div></details>
+        <details class="faq-item"><summary>How should I store it, and does perfume expire?</summary><div class="faq-a"><p>Keep the bottle capped, in its box, somewhere cool and dark: a drawer or cupboard, not the bathroom or a sunny windowsill. Heat and light are what age a perfume; stored well, it keeps its character for years.</p></div></details>
         <details class="faq-item"><summary>How long does shipping take?</summary><div class="faq-a"><p class="todo">Shipping timelines and the free-shipping threshold are to be confirmed by XPresence.</p></div></details>
         <details class="faq-item"><summary>What is the return policy?</summary><div class="faq-a"><p class="todo">Return policy to be confirmed by XPresence.</p></div></details>
       </div>
