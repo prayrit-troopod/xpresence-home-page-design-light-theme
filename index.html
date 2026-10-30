@@ -1721,10 +1721,6 @@ body{background:var(--tile-a);color:var(--body)}
       <p class="hero-sub">Presence, raised to the power of X. Three fragrances for Focus, Warmth and Power.</p>
       <div class="hero-ctas">
         <a href="#problem" class="btn">Begin the story</a>
-        <button class="film-trigger" id="filmOpen" aria-haspopup="dialog">
-          <span class="ft-icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.8v12.4L13.6 8z"/></svg></span>
-          <span class="ft-text">Watch the film</span>
-        </button>
       </div>
     </div>
   </section>
@@ -2164,11 +2160,6 @@ body{background:var(--tile-a);color:var(--body)}
   </footer>
 </main>
 
-<div class="film-dialog" id="filmDialog" role="dialog" aria-modal="true" aria-label="The XPresence film" aria-hidden="true">
-  <div class="fd-backdrop"></div>
-  <button class="fd-close" id="filmClose" aria-label="Close film"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
-  <div class="fd-frame"><video id="filmVideo" src="assets/film.mp4" poster="assets/ritual-poster.jpg" controls playsinline preload="none"></video></div>
-</div>
 <div class="hp-card" id="hpCard" aria-hidden="true"><div class="hp-img" id="hpImg"></div><span id="hpLabel"></span></div>
 <aside class="chapter-bar" id="chapterBar" aria-label="Add the fragrance shown here to your bag">
   <i class="cb-img" id="cbImg" aria-hidden="true"></i>
@@ -2253,7 +2244,7 @@ body{background:var(--tile-a);color:var(--body)}
   intro.from('.hero-media', { clipPath: isDesktop() ? 'inset(0 0 0 100%)' : 'inset(100% 0 0 0)', duration: 1.9 })
        .from('#heroVideo', { scale: 1.25, duration: 2.4 }, 0)
        .from('.hero h1 .line > span', { yPercent: 110, duration: 1.4, stagger: 0.12 }, 0.5)
-       .from('.hero-sub, .hero-ctas, .film-trigger', { autoAlpha: 0, y: 18, duration: 1.1, stagger: 0.08 }, 0.9);
+       .from('.hero-sub, .hero-ctas', { autoAlpha: 0, y: 18, duration: 1.1, stagger: 0.08 }, 0.9);
 
   gsap.to('#heroVideo', { scale: 1.12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.hero-content', { yPercent: -18, autoAlpha: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: '30% top', end: 'bottom top', scrub: true } });
@@ -2626,37 +2617,6 @@ body{background:var(--tile-a);color:var(--body)}
   })();
 
   /* Magic UI-inspired: Hero Video Dialog */
-  (function filmDialog() {
-    const dlg = document.getElementById('filmDialog');
-    if (!dlg) return;
-    const vid = document.getElementById('filmVideo'), frame = dlg.querySelector('.fd-frame'), bd = dlg.querySelector('.fd-backdrop');
-    const openBtn = document.getElementById('filmOpen'), closeBtn = document.getElementById('filmClose');
-    let lastFocus = null;
-    const open = () => {
-      lastFocus = document.activeElement;
-      dlg.classList.add('open'); dlg.setAttribute('aria-hidden', 'false');
-      if (lenis) lenis.stop();
-      gsap.fromTo(bd, { opacity: 0 }, { opacity: 1, duration: 0.5 });
-      gsap.fromTo(frame, { scale: 0.5, y: 60, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.9, ease: 'expo.out' });
-      vid.currentTime = 0; vid.muted = false;
-      const p = vid.play(); if (p) p.catch(() => {});
-      closeBtn.focus();
-    };
-    const close = () => {
-      vid.pause();
-      gsap.to(frame, { scale: 0.6, y: 40, opacity: 0, duration: 0.45, ease: 'power3.in' });
-      gsap.to(bd, { opacity: 0, duration: 0.45, onComplete: () => {
-        dlg.classList.remove('open'); dlg.setAttribute('aria-hidden', 'true');
-        if (lenis) lenis.start();
-        if (lastFocus) lastFocus.focus();
-      } });
-    };
-    openBtn.addEventListener('click', open);
-    closeBtn.addEventListener('click', close);
-    bd.addEventListener('click', close);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && dlg.classList.contains('open')) close(); });
-  })();
-
   /* Magic UI-inspired: Video Text ("Power" filled with his film) */
   (function videoText() {
     const cv = document.getElementById('vtCanvas'), v = document.getElementById('vtVideo');
@@ -3068,7 +3028,7 @@ body{background:var(--tile-a);color:var(--body)}
     const v = e.target;
     if (e.isIntersecting) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
   }), { threshold: 0.05 });
-  document.querySelectorAll('video:not(#filmVideo)').forEach(v => { v.muted = true; vio.observe(v); });
+  document.querySelectorAll('video').forEach(v => { v.muted = true; vio.observe(v); });
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
 })();
