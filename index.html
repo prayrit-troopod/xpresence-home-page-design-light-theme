@@ -1677,6 +1677,10 @@ body{background:var(--tile-a);color:var(--body)}
 .wt-clock{white-space:nowrap;font-size:clamp(2rem,3.4vw,3.2rem);letter-spacing:-.01em}
 @media (max-width:899px){ .wt-clock{font-size:clamp(1.6rem,7.4vw,2.2rem)} }
 .wt-rail li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Problem panels: the combined CoachVikram emblem on all three; bigger, with finer lines so its detail reads */
+.pb-x{width:34px;height:34px}
+.pb-x *{stroke-width:1.2px}
+@media (min-width:900px){ .pb-x{width:44px;height:44px} .pb-x *{stroke-width:1.3px} }
 </style>
 </head>
 <body>
@@ -1735,15 +1739,15 @@ body{background:var(--tile-a);color:var(--body)}
       <ol class="pb-tri" aria-label="Three styles of presence">
         <li class="pb-p pb-focus"><a href="#focus">
           <img src="assets/problem-focus-900.webp" alt="Holding a bottle of Focus against a grey blazer" decoding="async" fetchpriority="high" style="object-position:50% 58%">
-          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><circle cx="50" cy="50" r="47" vector-effect="non-scaling-stroke"/><path d="M50 3V97" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Likeability that invites collaboration.</span><span class="pb-name">Focus</span></span>
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="47" vector-effect="non-scaling-stroke"/><circle cx="50" cy="12" r="8" vector-effect="non-scaling-stroke"/><path d="M50 20V97M50 97L24 10M50 97L76 10M50 97L5 42M50 97L95 42" vector-effect="non-scaling-stroke"/><path d="M50 20L10 74H32M50 20L90 74H68" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Likeability that invites collaboration.</span><span class="pb-name">Focus</span></span>
         </a></li>
         <li class="pb-p pb-warmth"><a href="#warmth">
           <img src="assets/problem-warmth-mobile-900.webp" width="900" height="1334" alt="Warmth on an office desk" decoding="async" fetchpriority="high">
-          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><path d="M50 96V4M50 96L25 12M50 96L75 12M50 96L4 42M50 96L96 42" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Trust that builds loyalty.</span><span class="pb-name">Warmth</span></span>
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="47" vector-effect="non-scaling-stroke"/><circle cx="50" cy="12" r="8" vector-effect="non-scaling-stroke"/><path d="M50 20V97M50 97L24 10M50 97L76 10M50 97L5 42M50 97L95 42" vector-effect="non-scaling-stroke"/><path d="M50 20L10 74H32M50 20L90 74H68" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Trust that builds loyalty.</span><span class="pb-name">Warmth</span></span>
         </a></li>
         <li class="pb-p pb-power"><a href="#power">
           <img src="assets/him-dressing-900.webp" alt="Power on a dressing table before a black-tie evening" decoding="async" fetchpriority="high" style="object-position:50% 45%">
-          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"><circle cx="50" cy="13" r="10" vector-effect="non-scaling-stroke"/><path d="M50 23L3 97H97Z" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Credibility that inspires decision-making.</span><span class="pb-name">Power</span></span>
+          <span class="pb-cap"><svg class="pb-x" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="47" vector-effect="non-scaling-stroke"/><circle cx="50" cy="12" r="8" vector-effect="non-scaling-stroke"/><path d="M50 20V97M50 97L24 10M50 97L76 10M50 97L5 42M50 97L95 42" vector-effect="non-scaling-stroke"/><path d="M50 20L10 74H32M50 20L90 74H68" vector-effect="non-scaling-stroke"/></svg><span class="pb-line">Credibility that inspires decision-making.</span><span class="pb-name">Power</span></span>
         </a></li>
       </ol>
     </div>
@@ -2740,9 +2744,9 @@ body{background:var(--tile-a);color:var(--body)}
         { k: 'respected',    t: 'Respected',    p: 'power',  img: 'assets/power-office.webp',         pos: '50% 90%', alt: 'A woman in a tailored black suit at a desk, Power in front of her', why: 'Self-advocacy. Amber that recalls the rooms where deals are made, for the moment you make the call.' }
       ],
       moment: [
-        { k: 'workday', t: 'Team meeting',    p: 'focus',  img: 'assets/finder-event-meeting.webp',      alt: 'Three colleagues working through a problem at a laptop, Focus on the desk', why: 'Likeability that invites collaboration, for the meeting where you want everyone on your side.' },
-        { k: 'networking', t: 'Networking drinks', p: 'warmth', img: 'assets/finder-event-networking.webp', alt: 'A woman laughing with colleagues over drinks, Warmth on the table', why: 'Approachable from across the room. Soft florals open first, so people find it easy to start talking.' },
-        { k: 'investor',  t: 'Investor meet', p: 'power',  img: 'assets/finder-event-interview.webp',    alt: 'A woman in a navy tailored suit seated on a glass bench, Power beside her', why: 'Credibility before you say a word. Saffron and Turkish rose for the room that decides whether to back you.' },
+        { k: 'workday', t: 'Team meeting',    p: 'focus',  img: 'assets/finder-team-meeting.webp', imgM: 'assets/finder-team-meeting-mobile.webp',      alt: 'Four colleagues around a laptop in a meeting, Focus on the table', why: 'Likeability that invites collaboration, for the meeting where you want everyone on your side.' },
+        { k: 'networking', t: 'Client dinner', p: 'warmth', img: 'assets/finder-event-networking.webp', alt: 'A woman laughing with colleagues over drinks, Warmth on the table', why: 'Approachable from across the room. Soft florals open first, so people find it easy to start talking.' },
+        { k: 'investor',  t: 'Investor meet', p: 'power',  img: 'assets/finder-investor-meet.webp', imgM: 'assets/finder-investor-meet-mobile.webp',    alt: 'A founder presenting an investor overview to his team', why: 'Credibility before you say a word. Saffron and Turkish rose for the room that decides whether to back you.' },
         { k: 'boss',      t: 'Meeting your boss', p: 'power', img: 'assets/finder-event-boss.webp',   alt: 'Power on a dresser, a man in a tuxedo fixing his bow tie in the mirror behind it', why: 'Self-advocacy, said calmly. Saffron and amber for the one-to-one where you ask for what you have earned.' }
       ]
     };
