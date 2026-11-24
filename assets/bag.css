@@ -1,0 +1,47 @@
+/* XPresence bag drawer: shared by the home, collection and product designs (and the Shopify theme). */
+.xb-scrim{position:fixed;inset:0;z-index:400;background:rgba(28,26,23,.38);opacity:0;visibility:hidden;transition:opacity .45s cubic-bezier(.2,.7,.2,1),visibility .45s}
+.xb{position:fixed;z-index:401;top:0;right:0;bottom:0;width:min(440px,100%);display:flex;flex-direction:column;background:#FBFAF8;color:#1C1A17;
+  font-family:"DM Sans",system-ui,sans-serif;font-size:15px;line-height:1.45;box-shadow:-24px 0 60px rgba(28,26,23,.12);
+  transform:translateX(100%);visibility:hidden;transition:transform .55s cubic-bezier(.2,.7,.2,1),visibility .55s}
+html.xb-open .xb-scrim{opacity:1;visibility:visible}
+html.xb-open .xb{transform:none;visibility:visible}
+html.xb-open,html.xb-open body{overflow:hidden}
+.xb *{box-sizing:border-box}
+.xb-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 24px 18px;border-bottom:1px solid rgba(28,26,23,.1)}
+.xb-title{margin:0;font-family:"PP Cirka","Cormorant Garamond",Georgia,serif;font-weight:300;font-size:1.75rem;line-height:1.1;letter-spacing:-.01em}
+.xb-title small{font-family:"DM Sans",system-ui,sans-serif;font-size:.8125rem;color:#6E6258;margin-left:8px;letter-spacing:0}
+.xb-x{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(28,26,23,.14);border-radius:50%;background:none;color:inherit;cursor:pointer;transition:background-color .3s}
+.xb-x:hover{background:rgba(28,26,23,.06)}
+.xb-x svg{width:16px;height:16px}
+.xb-body{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:8px 24px}
+.xb-empty{padding:56px 0 24px;text-align:center;color:#6E6258}
+.xb-empty p{margin:0 0 18px;font-family:"PP Cirka","Cormorant Garamond",Georgia,serif;font-size:1.5rem;color:#1C1A17}
+.xb-items{list-style:none;margin:0;padding:0}
+.xb-item{display:grid;grid-template-columns:76px 1fr auto;gap:14px;align-items:start;padding:18px 0;border-bottom:1px solid rgba(28,26,23,.08)}
+.xb-img{width:76px;height:95px;border-radius:8px;background:#EAE7E1 center/cover no-repeat}
+.xb-name{margin:0;font-family:"PP Cirka","Cormorant Garamond",Georgia,serif;font-weight:400;font-size:1.15rem;text-transform:uppercase;letter-spacing:.06em;line-height:1.2}
+.xb-spec{margin:2px 0 12px;color:#6E6258;font-size:.8125rem}
+.xb-qty{display:inline-flex;align-items:center;height:34px;border:1px solid rgba(28,26,23,.16);border-radius:999px}
+.xb-qty button{width:32px;height:32px;border:0;background:none;color:inherit;font-size:1rem;cursor:pointer;border-radius:50%}
+.xb-qty button:hover{background:rgba(28,26,23,.06)}
+.xb-qty output{min-width:22px;text-align:center;font-variant-numeric:tabular-nums;font-size:.875rem}
+.xb-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.xb-price{font-variant-numeric:tabular-nums;font-size:.9375rem}
+.xb-rm{border:0;background:none;padding:0;color:#6E6258;font:inherit;font-size:.75rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.xb-up{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;margin:18px 0 8px;padding:12px;border-radius:12px;background:#F3F3F0}
+.xb-up .xb-img{width:56px;height:56px}
+.xb-up p{margin:0;font-size:.8125rem;color:#6E6258}
+.xb-up b{display:block;color:#1C1A17;font-weight:500;font-size:.875rem}
+.xb-mini{height:36px;padding:0 14px;border:1px solid #1C1A17;border-radius:999px;background:none;color:#1C1A17;font:inherit;font-size:.8125rem;cursor:pointer;white-space:nowrap;transition:background-color .3s,color .3s}
+.xb-mini:hover{background:#1C1A17;color:#FBFAF8}
+.xb-foot{padding:18px 24px calc(20px + env(safe-area-inset-bottom));border-top:1px solid rgba(28,26,23,.1);background:#FBFAF8}
+.xb-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;font-size:1rem}
+.xb-row b{font-weight:500;font-variant-numeric:tabular-nums}
+.xb-note{margin:0 0 14px;color:#6E6258;font-size:.75rem}
+.xb-go{display:flex;align-items:center;justify-content:center;width:100%;height:52px;border:0;border-radius:999px;background:#1C1A17;color:#FBFAF8;font:inherit;font-size:1rem;text-decoration:none;cursor:pointer;transition:opacity .3s}
+.xb-go:hover{opacity:.88}
+.xb-go[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.xb-cont{display:block;margin:12px auto 0;border:0;background:none;color:#1C1A17;font:inherit;font-size:.875rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.xb.is-busy .xb-body{opacity:.6;pointer-events:none;transition:opacity .2s}
+@media (max-width:480px){.xb-head{padding:18px 18px 14px}.xb-body{padding:6px 18px}.xb-foot{padding:16px 18px calc(18px + env(safe-area-inset-bottom))}}
+@media (prefers-reduced-motion:reduce){.xb,.xb-scrim{transition:none}}

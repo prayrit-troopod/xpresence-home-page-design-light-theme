@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bag.css">
 <style>
 /* XPresence collection page. Same system as product.html: DESIGN.md (Apple analysis, design language only) + the XPresence light palette. */
 @font-face{font-family:"PP Cirka";src:url(assets/fonts/PPCirka-Light.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
@@ -332,6 +333,7 @@ p{margin:0}
 
 <div class="toast" id="toast" role="status" aria-live="polite"><i id="toastImg"></i><span id="toastText"></span></div>
 
+<script src="assets/bag.js"></script>
 <script>
 (function () {
   const PRICE_30 = 2000, PRICE_SET = 999;
@@ -451,7 +453,8 @@ p{margin:0}
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-add]'); if (!b) return;
     const k = b.dataset.add, set = k === 'set';
-    bag++; $('bagCount').textContent = bag;
+    if (window.XPBag) { XPBag.add(set ? 'set' : k, 1); bag = XPBag.count(); } else bag++;
+    $('bagCount').textContent = bag;
     $('toastImg').style.backgroundImage = `url(${set ? 'assets/discovery-creative-9x16.webp' : P[k].thumb})`;
     $('toastText').textContent = (set ? 'Discovery Set' : P[k].name) + ' added to your bag';
     const t = $('toast'); t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2400);

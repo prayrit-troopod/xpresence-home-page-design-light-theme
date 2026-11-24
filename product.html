@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bag.css">
 <style>
 /* XPresence PDP. Design system: DESIGN.md (Apple analysis, used as design language only) + the XPresence light palette.
    Product colours are surfaces only; the one action colour is near-black ink. */
@@ -111,9 +112,25 @@ p{margin:0}
 .acc details[open] summary::after,.faq details[open] summary::after{transform:rotate(45deg)}
 .acc .a{padding:0 0 18px;font-size:15px;color:var(--body)}
 .acc .a p+p{margin-top:8px}
-.acc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0}
-.acc dt{color:var(--muted)}
-.acc dd{margin:0;color:var(--fg)}
+/* Notes: one image per layer (Pinterest references until the brand's own note photography arrives) */
+.notes-static{border-bottom:1px solid var(--hair);padding-bottom:22px}
+.ns-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0 14px}
+.notes-static .ns-h{font-family:var(--text);font-weight:500;font-size:16px;letter-spacing:0;color:var(--fg)}
+.ns-char{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border:1px solid var(--hair-strong);border-radius:999px;font-size:13px;color:var(--fg);white-space:nowrap}
+.ns-char .swatch{width:8px;height:8px}
+.n-imgs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.n-imgs figure{margin:0}
+.n-imgs .ni{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:3/4;background:var(--tile-b)}
+.n-imgs img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.n-imgs li:hover img{transform:scale(1.05)}
+.n-imgs .ni::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.18) 38%,rgba(0,0,0,0) 56%);pointer-events:none}
+.n-imgs figcaption{position:absolute;left:10px;right:10px;bottom:10px;z-index:1;color:#fff;line-height:1.15}
+.n-imgs figcaption span{display:block;font-size:11px;letter-spacing:.04em;opacity:.85;margin-bottom:3px}
+.n-imgs figcaption b{display:block;font-family:var(--display);font-weight:300;font-size:clamp(1.05rem,1.6vw,1.3rem)}
+.n-time{list-style:none;margin:14px 0 0;padding:14px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;font-size:12px;color:var(--muted)}
+.n-time::before{content:"";position:absolute;left:3px;right:0;top:0;height:1px;background:var(--hair-strong)}
+.n-time li{position:relative}
+.n-time li::before{content:"";position:absolute;top:-17.5px;left:0;width:7px;height:7px;border-radius:50%;background:var(--pc)}
 
 @media (min-width:900px){
   .buy{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,5vw,88px);padding-top:20px}
@@ -165,8 +182,12 @@ p{margin:0}
 
 /* Notes: pyramid as a timeline across the day */
 .wear{display:grid;gap:0;list-style:none;margin:0;padding:0;border-top:1px solid var(--hair-strong)}
-.wear li{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--hair)}
-.wear .when{font-size:14px;color:var(--muted);padding-top:6px}
+.wear li{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid var(--hair)}
+.wear .w-img{width:76px;height:76px;border-radius:50%;overflow:hidden;background:var(--tile-b);box-shadow:0 0 0 1px var(--hair),0 0 0 5px var(--tile-a),0 0 0 6px var(--pc)}
+.wear .w-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.wear li:hover .w-img img{transform:scale(1.08)}
+.wear .when{font-size:14px;color:var(--muted)}
+.wear .meta{display:block}
 .wear .layer{font-size:14px;color:var(--muted)}
 .wear .note{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.1;color:var(--fg);margin-top:2px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
@@ -176,8 +197,8 @@ p{margin:0}
 @media (min-width:900px){
   .notes-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:start}
   .wear{grid-template-columns:repeat(3,1fr);border-top:0}
-  .wear li{grid-template-columns:1fr;border-bottom:0;border-top:1px solid var(--hair-strong);padding:20px 24px 0 0}
-  .wear .when{padding-top:0}
+  .wear li{grid-template-columns:1fr;align-items:start;gap:14px;border-bottom:0;border-top:1px solid var(--hair-strong);padding:24px 24px 0 0}
+  .wear .w-img{width:112px;height:112px}
 }
 @media (max-width:420px){.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1 / -1}}
 
@@ -191,6 +212,16 @@ p{margin:0}
 .mood p{font-size:15px}
 @media (min-width:700px){.moods{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1100px){.moods{grid-template-columns:repeat(var(--mcols,3),1fr)}}
+/* Phones only: the cards become a swipe carousel with dots */
+.m-dots{display:none}
+@media (max-width:699px){
+  .moods{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--gutter) * -1);padding:0 var(--gutter);scroll-padding:0 var(--gutter)}
+  .moods::-webkit-scrollbar{display:none}
+  .mood{flex:0 0 84%;scroll-snap-align:start}
+  .m-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+  .m-dots i{width:6px;height:6px;border-radius:50%;background:var(--hair-strong);transition:background .3s,transform .3s}
+  .m-dots i.on{background:var(--fg);transform:scale(1.2)}
+}
 
 /* Ritual: how to wear */
 .ritual{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:r}
@@ -268,6 +299,27 @@ p{margin:0}
 [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 [data-reveal].in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* One-screen sections: the feel tile and the rest of the collection fill the space between the nav and the sticky buy bar */
+:root{--sbar:65px;--screen:calc(100svh - var(--nav) - var(--sbar))}
+.feel{height:var(--screen);min-height:0;overflow:hidden;grid-template-rows:minmax(0,1fr)}
+.feel-media{min-height:0;height:100%}
+@media (max-width:899px){
+  .feel{grid-template-rows:auto minmax(0,1fr)}
+  .feel-media{aspect-ratio:auto}
+  .feel-copy{padding:28px var(--gutter) 22px;gap:10px}
+  .feel h2{font-size:clamp(1.9rem,8.4vw,2.5rem)}
+  .feel .f-body{font-size:16px}
+}
+@media (min-width:900px){.feel{min-height:0}}
+.sec.fit{height:var(--screen);display:flex;flex-direction:column;padding-top:clamp(24px,4.5vh,56px);padding-bottom:clamp(16px,3vh,36px)}
+.fit .sec-head{margin-bottom:clamp(14px,2.5vh,32px)}
+.fit .more{flex:1;min-height:0}
+.fit .m-card{min-height:0}
+.fit .m-card .m-media{flex:1;min-height:96px;aspect-ratio:auto}
+/* Short phones: drop the card line and keep both actions on one row */
+@media (max-width:699px) and (max-height:720px){.fit .m-card > p:not(.m-top){display:none}.fit .m-card .m-act{gap:12px;flex-wrap:nowrap;padding-top:10px}.fit .m-card .btn{padding:0 16px}.fit .m-card .m-top{margin-top:10px}}
+@media (min-width:700px){.fit .more{grid-template-rows:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -331,7 +383,7 @@ p{margin:0}
       </ul>
 
       <div class="acc">
-        <details open><summary>Notes</summary><div class="a"><dl><dt>Top</dt><dd id="aTop"></dd><dt>Heart</dt><dd id="aHeart"></dd><dt>Base</dt><dd id="aBase"></dd><dt>Character</dt><dd id="aFamily"></dd></dl></div></details>
+        <div class="notes-static" aria-labelledby="nsH"><div class="ns-top"><h2 class="ns-h" id="nsH">Notes</h2><p class="ns-char"><span class="swatch" aria-hidden="true"></span><span class="sr">Character: </span><span id="aFamily"></span></p></div><ol class="n-imgs"><li><figure><div class="ni"><img id="iTop" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>Top</span><b id="aTop"></b></figcaption></div></figure></li><li><figure><div class="ni"><img id="iHeart" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>Heart</span><b id="aHeart"></b></figcaption></div></figure></li><li><figure><div class="ni"><img id="iBase" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>Base</span><b id="aBase"></b></figcaption></div></figure></li></ol><ol class="n-time" aria-label="How it unfolds"><li>First spray</li><li>After an hour</li><li>All day</li></ol></div>
         <details><summary>How to wear it</summary><div class="a"><p>Two or three sprays on moisturised skin, straight after a shower: wrists, neck, behind the ears. Let it dry; don't rub. A light mist on your collar carries it further into the day.</p></div></details>
         <details><summary>Ingredients</summary><div class="a"><p>More than half of the formula is natural ingredients. IFRA compliant, vegan, no animal ingredients, made in India.</p><p class="todo">Full ingredient list to be confirmed by XPresence.</p></div></details>
         <details><summary>Shipping and returns</summary><div class="a"><p class="todo">Shipping timelines, the free-shipping threshold and the return policy are to be confirmed by XPresence.</p></div></details>
@@ -359,9 +411,9 @@ p{margin:0}
       </div>
       <div data-reveal>
         <ol class="wear">
-          <li><span class="when">First spray</span><div><span class="layer">Top</span><p class="note" id="wTop"></p></div></li>
-          <li><span class="when">After an hour</span><div><span class="layer">Heart</span><p class="note" id="wHeart"></p></div></li>
-          <li><span class="when">All day</span><div><span class="layer">Base</span><p class="note" id="wBase"></p></div></li>
+          <li><div class="w-img"><img id="wiTop" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when">First spray</span> <span class="layer">· Top</span></span><p class="note" id="wTop"></p></div></li>
+          <li><div class="w-img"><img id="wiHeart" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when">After an hour</span> <span class="layer">· Heart</span></span><p class="note" id="wHeart"></p></div></li>
+          <li><div class="w-img"><img id="wiBase" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when">All day</span> <span class="layer">· Base</span></span><p class="note" id="wBase"></p></div></li>
         </ol>
         <div class="stats">
           <div class="stat"><b>8+ hours</b><span>On skin</span></div>
@@ -379,6 +431,7 @@ p{margin:0}
         <h2 id="mTitle">Wear it when you want to be remembered as</h2>
       </div>
       <div class="moods" id="moods"></div>
+      <div class="m-dots" id="mDots" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -410,7 +463,7 @@ p{margin:0}
   </section>
 
   <!-- THE REST OF THE COLLECTION -->
-  <section class="sec wrap" aria-labelledby="moreTitle">
+  <section class="sec wrap fit" aria-labelledby="moreTitle">
     <div class="sec-head" data-reveal>
       <h2 id="moreTitle">The rest of the collection</h2>
       <p>One fragrance for each style of presence. Not sure yet? Start with all three.</p>
@@ -472,6 +525,7 @@ p{margin:0}
 </aside>
 <div class="toast" id="toast" role="status" aria-live="polite"><i id="toastImg"></i><span id="toastText"></span></div>
 
+<script src="assets/bag.js"></script>
 <script>
 (function () {
   /* Copy is the client's own (home page, design brief, Star Adjectives). The 30 ml price is not set yet. */
@@ -481,6 +535,7 @@ p{margin:0}
       name: 'Focus', colour: '#1F8977', on: '#FFFFFF',
       line: 'Likeability that invites collaboration.',
       family: 'Clean, grounding', top: 'Pink pepper', heart: 'Cedarwood', base: 'Sandalwood',
+      nimg: { top: 'https://i.pinimg.com/736x/99/26/95/9926955dcc2561de488d30f207781c3f.jpg', heart: 'https://i.pinimg.com/736x/5c/76/d4/5c76d4e8fc9893c9b69cc61b0da208e0.jpg', base: 'https://i.pinimg.com/736x/55/7b/6a/557b6a96a082c1166fa269822f7b6d62.jpg' },
       notes: 'Pink pepper, cedarwood, sandalwood',
       feel: { eyebrow: 'Focus, for the team meeting', title: 'The room leans in when you listen.', sub: 'Phone face down. Presence face up.', body: 'Clean, grounding notes for clarity and attentiveness. For when you want the room on your side.', img: 'assets/focus-tailoring.webp', pos: '50% 50%', alt: 'Focus on a tailored jacket' },
       intro: 'Pink pepper opens bright and clean, cedarwood steadies it, and sandalwood stays close to the skin for the rest of the day.',
@@ -502,6 +557,7 @@ p{margin:0}
       name: 'Warmth', colour: '#BF692C', on: '#160D08',
       line: 'Trust that builds loyalty.',
       family: 'Soft, comforting', top: 'Florals', heart: 'Florals and vanilla', base: 'Vanilla',
+      nimg: { top: 'https://i.pinimg.com/736x/2f/82/8b/2f828b4bf9ab4c4997d26bc32af07e01.jpg', heart: 'https://i.pinimg.com/736x/b6/2e/22/b62e226110ba9bfdade70aba8fced0b4.jpg', base: 'https://i.pinimg.com/736x/87/fb/d0/87fbd0e9323eb66731206310a7a915e8.jpg' },
       notes: 'Vanilla, florals',
       feel: { eyebrow: 'Warmth, for the client dinner', title: 'Warm, not a pushover.', sub: 'Easy to talk to. They call you first.', body: 'Soft, comforting notes for approachability and care. For when you want them to trust you.', img: 'assets/warmth-evening-gathering.webp', pos: '50% 70%', alt: 'A man laughing with colleagues at an evening gathering, Warmth on the table' },
       intro: 'Soft florals open first, so people find it easy to start talking. Vanilla comes through as the evening settles, and stays.',
@@ -522,6 +578,7 @@ p{margin:0}
       name: 'Power', colour: '#243D5C', on: '#FFFFFF',
       line: 'Credibility that inspires decision-making.',
       family: 'Rich, bold', top: 'Saffron', heart: 'Turkish rose', base: 'Tobacco-like amber',
+      nimg: { top: 'https://i.pinimg.com/736x/37/76/37/3776370d6256778aa9a2930bebb7e374.jpg', heart: 'https://i.pinimg.com/736x/a7/c2/00/a7c200e5b70ac975afad1984576b8f05.jpg', base: 'https://i.pinimg.com/736x/ee/13/bc/ee13bc54b1382941732240d8462b3c2d.jpg' },
       notes: 'Saffron, Turkish rose, amber',
       feel: { eyebrow: 'Power, for the presentation', title: 'Credibility before you say a word.', sub: 'For when you want them to act on what you say.', body: 'Rich, bold notes that carry authority. For the room that decides whether to back you.', img: 'assets/power-office.webp', pos: '50% 90%', alt: 'A woman in a tailored black suit at a desk, Power in front of her' },
       intro: 'Saffron opens with intent, Turkish rose gives it composure, and amber holds the room long after you have made the call.',
@@ -559,6 +616,7 @@ p{margin:0}
   ['aTop', 'wTop'].forEach(id => txt(id, p.top));
   ['aHeart', 'wHeart'].forEach(id => txt(id, p.heart));
   ['aBase', 'wBase'].forEach(id => txt(id, p.base));
+  [['iTop', 'top'], ['iHeart', 'heart'], ['iBase', 'base'], ['wiTop', 'top'], ['wiHeart', 'heart'], ['wiBase', 'base']].forEach(([id, l]) => { const im = $(id); im.src = p.nimg[l]; im.alt = id[0] === 'w' ? '' : p[l]; });
   txt('aFamily', p.family); txt('nIntro', p.intro); txt('faqHeat', p.heat);
   txt('fEyebrow', p.feel.eyebrow); txt('fTitle', p.feel.title); txt('fSub', p.feel.sub); txt('fBody', p.feel.body);
   const fImg = $('fImg'); fImg.src = p.feel.img; fImg.alt = p.feel.alt; fImg.style.objectPosition = p.feel.pos;
@@ -612,7 +670,8 @@ p{margin:0}
   /* Bag + toast */
   let bag = 0, tt;
   function add(name, img, n) {
-    bag += n; txt('bagCount', bag);
+    if (window.XPBag) { XPBag.add(name, n); bag = XPBag.count(); } else bag += n;
+    txt('bagCount', bag);
     $('toastImg').style.backgroundImage = `url(${img})`;
     txt('toastText', (n > 1 ? n + ' × ' : '') + name + ' added to your bag');
     const t = $('toast'); t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2400);
@@ -624,6 +683,12 @@ p{margin:0}
   /* Moods */
   const moods = $('moods');
   moods.style.setProperty('--mcols', p.moods.length);
+  p.moods.forEach((m, i) => $('mDots').insertAdjacentHTML('beforeend', `<i class="${i ? '' : 'on'}"></i>`));
+  moods.addEventListener('scroll', () => requestAnimationFrame(() => {
+    const c = moods.querySelector('.mood'); if (!c) return;
+    const idx = Math.round(moods.scrollLeft / (c.getBoundingClientRect().width + 12));
+    [...$('mDots').children].forEach((d, j) => d.classList.toggle('on', j === Math.min(idx, p.moods.length - 1)));
+  }), { passive: true });
   p.moods.forEach(m => moods.insertAdjacentHTML('beforeend',
     `<article class="mood" data-reveal><img src="${m.img}" alt="${m.alt}" loading="lazy" style="object-position:${m.pos || '50% 50%'}"><div class="m-body"><p class="m-k">${p.name}</p><h3>${m.t}</h3><p>${m.why}</p></div></article>`));
 
