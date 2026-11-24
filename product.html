@@ -98,7 +98,9 @@ p{margin:0}
 .qty{display:inline-flex;align-items:center;height:48px;border:1px solid var(--hair-strong);border-radius:999px;flex:0 0 auto}
 .qty button{width:40px;height:46px;font-size:1.2rem;color:var(--fg);border-radius:999px}
 .qty output{min-width:22px;text-align:center;color:var(--fg)}
+.buy-actions{flex-wrap:wrap}
 .buy-actions .btn{flex:1}
+.buy-actions .btn-buy{flex:1 1 100%}
 .ds-note{margin-top:12px;font-size:14px;color:var(--body)}
 .ds-note[hidden]{display:none}
 .usps{list-style:none;margin:22px 0 0;padding:16px 0 0;border-top:1px solid var(--hair);display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;font-size:14px;color:var(--body)}
@@ -372,7 +374,8 @@ p{margin:0}
 
       <div class="buy-actions" id="buyActions">
         <div class="qty" aria-label="Quantity"><button type="button" data-q="-1" aria-label="One fewer">−</button><output id="qty" aria-live="polite">1</output><button type="button" data-q="1" aria-label="One more">+</button></div>
-        <button class="btn" id="addBtn" type="button">Add to bag</button>
+        <button class="btn btn-ghost" id="addBtn" type="button">Add to bag</button>
+        <button class="btn btn-buy" id="buyBtn" type="button">Buy now</button>
       </div>
 
       <ul class="usps">
@@ -672,6 +675,7 @@ p{margin:0}
   function add(name, img, n) {
     if (window.XPBag) { XPBag.add(name, n); bag = XPBag.count(); } else bag += n;
     txt('bagCount', bag);
+    if (window.XPBag) { XPBag.open(); return; }
     $('toastImg').style.backgroundImage = `url(${img})`;
     txt('toastText', (n > 1 ? n + ' × ' : '') + name + ' added to your bag');
     const t = $('toast'); t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2400);
@@ -679,6 +683,11 @@ p{margin:0}
   const addCurrent = () => add(opt === 'ds' ? 'Discovery Set' : p.name, opt === 'ds' ? 'assets/discovery-creative-9x16.webp' : p.gallery[1].src, qty);
   $('addBtn').addEventListener('click', addCurrent);
   $('sBtn').addEventListener('click', addCurrent);
+  /* Buy now: add the current choice and go straight to the bag (checkout in the live store) */
+  $('buyBtn').addEventListener('click', () => {
+    const n = opt === 'ds' ? 'Discovery Set' : p.name;
+    if (window.XPBag) { XPBag.add(n, qty); bag = XPBag.count(); txt('bagCount', bag); XPBag.open(); } else addCurrent();
+  });
 
   /* Moods */
   const moods = $('moods');

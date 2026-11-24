@@ -2253,6 +2253,7 @@ body{background:var(--tile-a);color:var(--body)}
       bagCount.textContent = window.XPBag ? XPBag.count() : ++bag;
       bagCount.classList.add('bump');
       setTimeout(() => bagCount.classList.remove('bump'), 500);
+      if (window.XPBag) { XPBag.open(); return; }
       document.getElementById('toastText').textContent = btn.dataset.add + ' added to your bag';
       document.getElementById('toastImg').style.backgroundImage = 'url(' + btn.dataset.img + ')';
       toast.classList.add('show');

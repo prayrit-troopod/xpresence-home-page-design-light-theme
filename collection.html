@@ -455,6 +455,7 @@ p{margin:0}
     const k = b.dataset.add, set = k === 'set';
     if (window.XPBag) { XPBag.add(set ? 'set' : k, 1); bag = XPBag.count(); } else bag++;
     $('bagCount').textContent = bag;
+    if (window.XPBag) { XPBag.open(); return; }
     $('toastImg').style.backgroundImage = `url(${set ? 'assets/discovery-creative-9x16.webp' : P[k].thumb})`;
     $('toastText').textContent = (set ? 'Discovery Set' : P[k].name) + ' added to your bag';
     const t = $('toast'); t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2400);
