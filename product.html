@@ -322,6 +322,17 @@ p{margin:0}
 /* Short phones: drop the card line and keep both actions on one row */
 @media (max-width:699px) and (max-height:720px){.fit .m-card > p:not(.m-top){display:none}.fit .m-card .m-act{gap:12px;flex-wrap:nowrap;padding-top:10px}.fit .m-card .btn{padding:0 16px}.fit .m-card .m-top{margin-top:10px}}
 @media (min-width:700px){.fit .more{grid-template-rows:minmax(0,1fr)}}
+
+/* Discovery Set page: same template, three colours instead of one */
+.is-set .swatch{background:conic-gradient(#1F8977 0 33.3%,#BF692C 0 66.6%,#243D5C 0)}
+.is-set .p-name{letter-spacing:.16em}
+.is-set .chip[data-opt="full"]{display:none}
+.is-set .n-time li:nth-child(1)::before{background:#1F8977}
+.is-set .n-time li:nth-child(2)::before{background:#BF692C}
+.is-set .n-time li:nth-child(3)::before{background:#243D5C}
+.is-set .wear li:nth-child(1) .w-img{box-shadow:0 0 0 1px var(--hair),0 0 0 5px var(--tile-a),0 0 0 6px #1F8977}
+.is-set .wear li:nth-child(2) .w-img{box-shadow:0 0 0 1px var(--hair),0 0 0 5px var(--tile-a),0 0 0 6px #BF692C}
+.is-set .wear li:nth-child(3) .w-img{box-shadow:0 0 0 1px var(--hair),0 0 0 5px var(--tile-a),0 0 0 6px #243D5C}
 </style>
 </head>
 <body>
@@ -334,7 +345,7 @@ p{margin:0}
   <a href="index.html" aria-label="XPresence home"><span class="logo-mark" aria-hidden="true"></span></a>
   <div class="nav-side right">
     <a class="nav-d" href="index.html#quiz">Find yours</a>
-    <a class="nav-d" href="index.html#discovery">Discovery Set</a>
+    <a class="nav-d" href="product.html?p=discovery">Discovery Set</a>
     <a href="#bag">Bag<span class="bag-count" id="bagCount">0</span></a>
   </div>
 </header>
@@ -386,7 +397,7 @@ p{margin:0}
       </ul>
 
       <div class="acc">
-        <div class="notes-static" aria-labelledby="nsH"><div class="ns-top"><h2 class="ns-h" id="nsH">Notes</h2><p class="ns-char"><span class="swatch" aria-hidden="true"></span><span class="sr">Character: </span><span id="aFamily"></span></p></div><ol class="n-imgs"><li><figure><div class="ni"><img id="iTop" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>Top</span><b id="aTop"></b></figcaption></div></figure></li><li><figure><div class="ni"><img id="iHeart" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>Heart</span><b id="aHeart"></b></figcaption></div></figure></li><li><figure><div class="ni"><img id="iBase" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span>Base</span><b id="aBase"></b></figcaption></div></figure></li></ol><ol class="n-time" aria-label="How it unfolds"><li>First spray</li><li>After an hour</li><li>All day</li></ol></div>
+        <div class="notes-static" aria-labelledby="nsH"><div class="ns-top"><h2 class="ns-h" id="nsH">Notes</h2><p class="ns-char"><span class="swatch" aria-hidden="true"></span><span class="sr">Character: </span><span id="aFamily"></span></p></div><ol class="n-imgs"><li><figure><div class="ni"><img id="iTop" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span id="lTop">Top</span><b id="aTop"></b></figcaption></div></figure></li><li><figure><div class="ni"><img id="iHeart" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span id="lHeart">Heart</span><b id="aHeart"></b></figcaption></div></figure></li><li><figure><div class="ni"><img id="iBase" src="" alt="" loading="lazy" referrerpolicy="no-referrer"><figcaption><span id="lBase">Base</span><b id="aBase"></b></figcaption></div></figure></li></ol><ol class="n-time" id="nTime" aria-label="How it unfolds"><li>First spray</li><li>After an hour</li><li>All day</li></ol></div>
         <details><summary>How to wear it</summary><div class="a"><p>Two or three sprays on moisturised skin, straight after a shower: wrists, neck, behind the ears. Let it dry; don't rub. A light mist on your collar carries it further into the day.</p></div></details>
         <details><summary>Ingredients</summary><div class="a"><p>More than half of the formula is natural ingredients. IFRA compliant, vegan, no animal ingredients, made in India.</p><p class="todo">Full ingredient list to be confirmed by XPresence.</p></div></details>
         <details><summary>Shipping and returns</summary><div class="a"><p class="todo">Shipping timelines, the free-shipping threshold and the return policy are to be confirmed by XPresence.</p></div></details>
@@ -414,9 +425,9 @@ p{margin:0}
       </div>
       <div data-reveal>
         <ol class="wear">
-          <li><div class="w-img"><img id="wiTop" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when">First spray</span> <span class="layer">· Top</span></span><p class="note" id="wTop"></p></div></li>
-          <li><div class="w-img"><img id="wiHeart" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when">After an hour</span> <span class="layer">· Heart</span></span><p class="note" id="wHeart"></p></div></li>
-          <li><div class="w-img"><img id="wiBase" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when">All day</span> <span class="layer">· Base</span></span><p class="note" id="wBase"></p></div></li>
+          <li><div class="w-img"><img id="wiTop" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when" id="wWhenTop">First spray</span> <span class="layer" id="wLayerTop">· Top</span></span><p class="note" id="wTop"></p></div></li>
+          <li><div class="w-img"><img id="wiHeart" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when" id="wWhenHeart">After an hour</span> <span class="layer" id="wLayerHeart">· Heart</span></span><p class="note" id="wHeart"></p></div></li>
+          <li><div class="w-img"><img id="wiBase" src="" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><span class="meta"><span class="when" id="wWhenBase">All day</span> <span class="layer" id="wLayerBase">· Base</span></span><p class="note" id="wBase"></p></div></li>
         </ol>
         <div class="stats">
           <div class="stat"><b>8+ hours</b><span>On skin</span></div>
@@ -442,7 +453,7 @@ p{margin:0}
   <section class="sec wrap" aria-labelledby="rTitle">
     <div class="sec-head" data-reveal>
       <h2 id="rTitle">Three sprays. No more.</h2>
-      <p>Noticed within arm's length, never overpowering. Enough for a full working day.</p>
+      <p id="rIntro">Noticed within arm's length, never overpowering. Enough for a full working day.</p>
     </div>
     <ol class="ritual" data-reveal>
       <li><h3>After a shower</h3><p>Apply on moisturised skin. It holds the fragrance longer than dry skin does.</p></li>
@@ -469,7 +480,7 @@ p{margin:0}
   <section class="sec wrap fit" aria-labelledby="moreTitle">
     <div class="sec-head" data-reveal>
       <h2 id="moreTitle">The rest of the collection</h2>
-      <p>One fragrance for each style of presence. Not sure yet? Start with all three.</p>
+      <p id="moreIntro">One fragrance for each style of presence. Not sure yet? Start with all three.</p>
     </div>
     <div class="more" id="more"></div>
   </section>
@@ -499,7 +510,7 @@ p{margin:0}
     </div>
     <div class="foot-col">
       <h4>Fragrances</h4>
-      <a href="collection.html">Shop all</a><a href="product.html?p=focus">Focus</a><a href="product.html?p=warmth">Warmth</a><a href="product.html?p=power">Power</a><a href="index.html#discovery">Discovery Set</a><a href="index.html#quiz">Find your fragrance</a>
+      <a href="collection.html">Shop all</a><a href="product.html?p=focus">Focus</a><a href="product.html?p=warmth">Warmth</a><a href="product.html?p=power">Power</a><a href="product.html?p=discovery">Discovery Set</a><a href="index.html#quiz">Find your fragrance</a>
     </div>
     <div class="foot-col">
       <h4>House</h4>
@@ -600,8 +611,43 @@ p{margin:0}
       ]
     }
   };
+  /* The Discovery Set: same template. Its "notes" are the three fragrances, worn one a day. */
+  P.discovery = {
+    set: true,
+    name: 'Discovery Set', colour: '#A09084', on: '#160D08',
+    line: 'Three styles of presence. One you keep.',
+    family: 'Focus, Warmth and Power',
+    top: 'Focus', heart: 'Warmth', base: 'Power',
+    nimg: { top: 'assets/focus-pack.webp', heart: 'assets/warmth-pack.webp', base: 'assets/power-pack.webp' },
+    npos: { top: '35% 60%', heart: '40% 60%', base: '55% 60%' },
+    labels: ['Clean, grounding', 'Soft, comforting', 'Rich, bold'],
+    notes: 'Focus, Warmth and Power, 10 ml each',
+    feel: { eyebrow: 'The Discovery Set, for the week ahead', title: 'Commitment issues? Start with 10 ml.', sub: 'Three days. Three rooms. One you keep.', body: 'Wear each one for a full working day, then choose your 30 ml, with ₹300 off.', img: 'assets/discovery-creative-16x9.webp', pos: '60% 55%', alt: 'The Discovery Set: Focus, Warmth and Power in 10 ml bottles, in a gold case on a tweed jacket' },
+    nTitle: 'Three days. Three styles of presence.',
+    intro: 'Each 10 ml bottle holds about a week of wear. Start with the room you face first, then let the other two show you how differently you can be remembered.',
+    when: [['Day one', '· The team meeting'], ['Day two', '· The client dinner'], ['Day three', '· The presentation']],
+    wear: ['Focus', 'Warmth', 'Power'],
+    time: ['Day one', 'Day two', 'Day three'],
+    heat: 'Yes. Start with Focus in the day’s heat; it is the lightest of the three. Keep Warmth and Power for evenings and air-conditioned rooms, and go lighter in summer: one or two sprays.',
+    rIntro: 'Same ritual for all three. Noticed within arm\'s length, never overpowering. Enough for a full working day.',
+    mTitle: 'How do you want to be remembered?',
+    moreTitle: 'Found yours? Take home 30 ml.',
+    moreIntro: 'Your Discovery Set comes with ₹300 off your first 30 ml.',
+    gallery: [
+      { src: 'assets/discovery-creative-9x16.webp', pos: '50% 78%', alt: 'The Discovery Set: three 10 ml bottles in a gold case, beside its white box' },
+      { src: 'assets/discovery-creative-16x9.webp', pos: '58% 55%', alt: 'The Discovery Set on a tweed jacket, with a watch and a wallet' },
+      { src: 'assets/discovery-focus-suit.webp', pos: '50% 45%', alt: 'A 10 ml bottle slipped into the pocket of a navy suit' },
+      { src: 'assets/discovery-power-bag.webp', pos: '50% 50%', alt: 'A 10 ml bottle carried in a black handbag' }
+    ],
+    moods: [
+      { k: 'Focus', t: 'Attentive', why: 'Day one. Pink pepper and cedarwood for the meeting where you want everyone on your side.', img: 'assets/focus-tailoring.webp', alt: 'Focus on a tailored jacket' },
+      { k: 'Warmth', t: 'Appreciative', why: 'Day two. Soft florals and vanilla for the client dinner and the team that stayed late.', img: 'assets/finder-appreciative.webp', alt: 'Warmth on the table at an evening gathering' },
+      { k: 'Power', t: 'Confident', why: 'Day three. Saffron and Turkish rose for the minutes before the presentation.', img: 'assets/him-spray.webp', alt: 'Spraying Power' }
+    ]
+  };
   const ORDER = ['focus', 'warmth', 'power'];
-  const key = (new URLSearchParams(location.search).get('p') || 'focus').toLowerCase();
+  let key = (new URLSearchParams(location.search).get('p') || 'focus').toLowerCase();
+  if (key === 'ds' || key === 'set' || key === 'discovery-set') key = 'discovery';
   const k = P[key] ? key : 'focus';
   const p = P[k];
   const $ = id => document.getElementById(id);
@@ -609,17 +655,26 @@ p{margin:0}
   const inr = n => '₹' + n.toLocaleString('en-IN');
   const price30 = PRICE_30 ? inr(PRICE_30) : '₹ —';
 
-  document.title = p.name + ', Eau de Parfum | XPresence';
+  document.title = p.name + (p.set ? ', 3 × 10 ml' : ', Eau de Parfum') + ' | XPresence';
+  document.documentElement.classList.toggle('is-set', !!p.set);
   document.documentElement.style.setProperty('--pc', p.colour);
   document.documentElement.style.setProperty('--on-pc', p.on);
 
   txt('crumbName', p.name); txt('pName', p.name); txt('pLine', p.line); txt('pNotes', p.notes);
-  txt('pFamily', '30 ml Eau de Parfum, unisex');
+  txt('pFamily', p.set ? '3 × 10 ml Eau de Parfum, unisex' : '30 ml Eau de Parfum, unisex');
   txt('fullSub', p.name + ', Eau de Parfum'); txt('fullPrice', price30);
   ['aTop', 'wTop'].forEach(id => txt(id, p.top));
   ['aHeart', 'wHeart'].forEach(id => txt(id, p.heart));
   ['aBase', 'wBase'].forEach(id => txt(id, p.base));
-  [['iTop', 'top'], ['iHeart', 'heart'], ['iBase', 'base'], ['wiTop', 'top'], ['wiHeart', 'heart'], ['wiBase', 'base']].forEach(([id, l]) => { const im = $(id); im.src = p.nimg[l]; im.alt = id[0] === 'w' ? '' : p[l]; });
+  [['iTop', 'top'], ['iHeart', 'heart'], ['iBase', 'base'], ['wiTop', 'top'], ['wiHeart', 'heart'], ['wiBase', 'base']].forEach(([id, l]) => { const im = $(id); im.src = p.nimg[l]; im.alt = id[0] === 'w' ? '' : p[l]; if (p.npos) im.style.objectPosition = p.npos[l]; });
+  if (p.set) {
+    ['lTop', 'lHeart', 'lBase'].forEach((id, i) => txt(id, p.labels[i]));
+    [...$('nTime').children].forEach((li, i) => { li.textContent = p.time[i]; });
+    $('nTime').setAttribute('aria-label', 'One a day');
+    ['Top', 'Heart', 'Base'].forEach((w, i) => { txt('wWhen' + w, p.when[i][0]); txt('wLayer' + w, p.when[i][1]); txt('w' + w, p.wear[i]); });
+    $('nsH').textContent = 'Inside the set';
+    txt('nTitle', p.nTitle); txt('rIntro', p.rIntro); txt('mTitle', p.mTitle); txt('moreTitle', p.moreTitle); txt('moreIntro', p.moreIntro);
+  }
   txt('aFamily', p.family); txt('nIntro', p.intro); txt('faqHeat', p.heat);
   txt('fEyebrow', p.feel.eyebrow); txt('fTitle', p.feel.title); txt('fSub', p.feel.sub); txt('fBody', p.feel.body);
   const fImg = $('fImg'); fImg.src = p.feel.img; fImg.alt = p.feel.alt; fImg.style.objectPosition = p.feel.pos;
@@ -645,7 +700,7 @@ p{margin:0}
   }, { passive: true });
 
   /* Size choice */
-  let opt = 'full', qty = 1;
+  let opt = p.set ? 'ds' : 'full', qty = 1;
   const spec = () => opt === 'ds' ? 'Discovery Set, ' + inr(999) : p.name + ', 30 ml' + (PRICE_30 ? ', ' + inr(PRICE_30) : '');
   function renderOpt() {
     document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-checked', c.dataset.opt === opt ? 'true' : 'false'));
@@ -655,6 +710,7 @@ p{margin:0}
     note.textContent = ds ? '3 × 10 ml, all three' : (PRICE_30 ? '' : '30 ml price to be confirmed by XPresence');
     note.classList.toggle('todo', !ds && !PRICE_30);
     $('dsNote').hidden = !ds;
+    if (p.set) txt('optLabel', 'What you get');
     txt('sName', ds ? 'Discovery Set' : p.name);
     txt('sSpec', ds ? '3 × 10 ml, ' + inr(999) : '30 ml Eau de Parfum' + (PRICE_30 ? ', ' + inr(PRICE_30) : ''));
     $('sImg').style.backgroundImage = `url(${ds ? 'assets/discovery-creative-9x16.webp' : p.gallery[1].src})`;
@@ -662,7 +718,7 @@ p{margin:0}
   document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => { opt = c.dataset.opt; renderOpt(); }));
   document.querySelector('.chips').addEventListener('keydown', e => {
     if (!['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight'].includes(e.key)) return;
-    e.preventDefault(); opt = opt === 'full' ? 'ds' : 'full'; renderOpt();
+    e.preventDefault(); if (p.set) return; opt = opt === 'full' ? 'ds' : 'full'; renderOpt();
     document.querySelector(`.chip[data-opt="${opt}"]`).focus();
   });
   document.querySelectorAll('.qty button').forEach(b => b.addEventListener('click', () => {
@@ -699,7 +755,7 @@ p{margin:0}
     [...$('mDots').children].forEach((d, j) => d.classList.toggle('on', j === Math.min(idx, p.moods.length - 1)));
   }), { passive: true });
   p.moods.forEach(m => moods.insertAdjacentHTML('beforeend',
-    `<article class="mood" data-reveal><img src="${m.img}" alt="${m.alt}" loading="lazy" style="object-position:${m.pos || '50% 50%'}"><div class="m-body"><p class="m-k">${p.name}</p><h3>${m.t}</h3><p>${m.why}</p></div></article>`));
+    `<article class="mood" data-reveal><img src="${m.img}" alt="${m.alt}" loading="lazy" style="object-position:${m.pos || '50% 50%'}"><div class="m-body"><p class="m-k">${m.k || p.name}</p><h3>${m.t}</h3><p>${m.why}</p></div></article>`));
 
   /* The rest of the collection: the other two, then the Discovery Set */
   const more = $('more');
@@ -711,8 +767,8 @@ p{margin:0}
       <h3>${o.name}</h3><p>${o.line}</p>
       <div class="m-act"><button class="btn" type="button" data-add="${x}">Add to bag</button><a class="text-link" href="product.html?p=${x}">Discover ${o.name}</a></div></article>`);
   });
-  more.insertAdjacentHTML('beforeend', `<article class="m-card" data-reveal>
-    <a class="m-media" href="index.html#discovery" aria-label="The Discovery Set"><img src="assets/discovery-creative-9x16.webp" alt="The Discovery Set, three 10 ml bottles" loading="lazy" style="object-position:50% 80%"></a>
+  if (!p.set) more.insertAdjacentHTML('beforeend', `<article class="m-card" data-reveal>
+    <a class="m-media" href="product.html?p=discovery" aria-label="The Discovery Set"><img src="assets/discovery-creative-9x16.webp" alt="The Discovery Set, three 10 ml bottles" loading="lazy" style="object-position:50% 80%"></a>
     <p class="m-top">3 × 10 ml, ${inr(999)}</p>
     <h3>Discovery Set</h3><p>Commitment issues? Start with 10 ml. Plus ₹300 off your first 30 ml.</p>
     <div class="m-act"><button class="btn" type="button" data-add="ds">Add to bag</button></div></article>`);
